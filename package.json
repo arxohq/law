@@ -1,0 +1,26 @@
+{
+  "name": "arxo-law-public-examples",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Public Arxo Law documentation, delivery catalogue and runnable examples",
+  "license": "Apache-2.0",
+  "engines": { "node": ">=20" },
+  "repository": { "type": "git", "url": "git+https://github.com/arxohq/law.git" },
+  "scripts": {
+    "check": "node tools/check.mjs",
+    "test": "node --test test/*.test.mjs",
+    "examples": "node examples/run-all.mjs",
+    "example:rule": "node examples/own-rule.mjs",
+    "example:compiler": "node examples/compiler.mjs",
+    "example:benefits": "node examples/french-benefits.mjs",
+    "catalog:refresh": "node tools/catalog.mjs --refresh",
+    "catalog:render": "node tools/catalog.mjs --render",
+    "catalog:check": "node tools/catalog.mjs --check"
+  },
+  "dependencies": {
+    "@arxo/law": "0.4.2",
+    "@arxo/law-engine": "0.5.2",
+    "@arxo/canon-fr-benefits": "0.1.2"
+  }
+}
