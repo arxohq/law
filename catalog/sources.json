@@ -151,6 +151,39 @@
       "purpose": "Arxo and Catala comparison artefact"
     }
   ],
+  "pythonPackages": [
+    { "name": "arxo", "purpose": "Open a pinned canon and ask a question from Python" },
+    { "name": "arxo-canon-bgb-fristen", "purpose": "German Civil Code period and deadline model" },
+    { "name": "arxo-canon-unidroit-picc", "purpose": "UNIDROIT PICC models" },
+    { "name": "arxo-canon-ogpo-vts", "purpose": "Pinned Kazakhstan OGPO vehicle-insurance model" }
+  ],
+  "extensions": [
+    { "registry": "marketplace", "name": "arxo.law", "purpose": "Arxo Law for VS Code" },
+    { "registry": "open-vsx", "name": "arxo.law", "purpose": "Arxo Law through Open VSX" }
+  ],
+  "surfaces": [
+    { "group": "Browser", "title": "Playground", "url": "https://docs.arxo.io/play/", "purpose": "Write and run a small rule in the browser" },
+    { "group": "Browser", "title": "French benefits lab", "url": "https://french-benefits.law.arxo.io/", "purpose": "Change fictional case facts and inspect the model's answer" },
+    { "group": "Browser", "title": "Canon catalogue", "url": "https://law.arxo.io/", "purpose": "Choose a public canon hub and explore worked cases" },
+    { "group": "Browser", "title": "Lens", "url": "https://lens.arxo.io/", "purpose": "Read an answer with its grounds" },
+    { "group": "Build and integrate", "title": "Python SDK", "url": "https://docs.arxo.io/build/sdk/python/", "purpose": "Use the Python API over a pinned model" },
+    { "group": "Build and integrate", "title": "Connect an assistant", "url": "https://docs.arxo.io/guide/mcp/", "purpose": "Connect a client to the public MCP host" },
+    { "group": "Build and integrate", "title": "Host an HTTP or MCP service", "url": "https://docs.arxo.io/operate/", "purpose": "Follow the deployment and verification guides for your own instance" },
+    { "group": "Build and integrate", "title": "Integration patterns", "url": "https://docs.arxo.io/agent-engineering/integration-patterns/", "purpose": "Compare SDK, service, generated-module and MCP routes" },
+    { "group": "Learn", "title": "Documentation", "url": "https://docs.arxo.io/", "purpose": "Find authoring, application and agent guides" },
+    { "group": "Learn", "title": "Northbridge course", "url": "https://docs.arxo.io/tutorials/northbridge/", "purpose": "Build a municipal model through lessons and exercises" },
+    { "group": "Learn", "title": "Formalization Handbook", "url": "https://docs.arxo.io/handbook/", "purpose": "Prepare a source model for review" },
+    { "group": "Learn", "title": "Books", "url": "https://books.arxo.io/", "purpose": "Read longer introductions and worked examples" },
+    { "group": "Learn", "title": "Writings", "url": "https://blog.arxo.io/", "purpose": "Read project articles and investigations" }
+  ],
+  "community": [
+    { "title": "YouTube", "url": "https://www.youtube.com/@arxohq", "purpose": "Video explanations and tutorials" },
+    { "title": "X", "url": "https://x.com/arxohq", "purpose": "Project posts and updates" },
+    { "title": "Telegram", "url": "https://t.me/arxoio", "purpose": "Russian-language posts" },
+    { "title": "DEV.to", "url": "https://dev.to/arxo", "purpose": "Developer articles" },
+    { "title": "Medium", "url": "https://medium.com/@arxo", "purpose": "Articles and essays" },
+    { "title": "Instagram", "url": "https://www.instagram.com/arxo.io/", "purpose": "Visual stories and examples" }
+  ],
   "knownIssues": [
     {
       "package": "@arxo/canon-bgb-fristen",

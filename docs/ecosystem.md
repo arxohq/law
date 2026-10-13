@@ -2,8 +2,78 @@
 
 [← Arxo Law](../README.md)
 
-Model sources, examples, editor tools and delivery channels maintained separately.
-Last refresh attempt: **2026-10-13 08:51 UTC**.
+Choose an editor, installation route, browser tool or learning format.
+Last refresh attempt: **2026-10-13 09:56 UTC**.
+
+## Install the editor
+
+[Installation and first steps →](install-editor.md)
+
+| Store | Latest | Use it for |
+|---|---|---|
+| [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=arxo.law) | 0.1.1 | Arxo Law for VS Code |
+| [Open VSX](https://open-vsx.org/extension/arxo/law) | 0.1.1 | Arxo Law through Open VSX |
+
+VS Code command line:
+
+```sh
+code --install-extension arxo.law
+```
+
+Check the installed version in the extension's Details view. Store releases can differ.
+The [editor guide](install-editor.md#check-which-release-you-installed) distinguishes
+published features from newer development work.
+
+## Install the CLI
+
+| Route | Start here |
+|---|---|
+| npm | `npm install -g @arxo/cli` |
+| Homebrew | `brew install arxohq/tap/law` · [tap](https://github.com/arxohq/homebrew-tap) |
+| APT: Debian and Ubuntu amd64 | [Repository setup](https://packages.arxo.io/) · package `arxo-law` |
+| Archive or shell installer | [Release assets and checksums](https://github.com/arxohq/law-releases/releases) |
+
+Follow the [installation guide](https://docs.arxo.io/cli/install/) for platform requirements.
+After installation, inspect the command:
+
+```sh
+law --help
+```
+
+Observed stable binary release: [law-v0.2.2](https://github.com/arxohq/law-releases/releases/tag/law-v0.2.2).
+
+CLI and LSP archives, installers and matching checksums are in
+[law-releases](https://github.com/arxohq/law-releases).
+
+## Try in the browser
+
+| Start here | What you can do |
+|---|---|
+| [Playground](https://docs.arxo.io/play/) | Write and run a small rule in the browser |
+| [French benefits lab](https://french-benefits.law.arxo.io/) | Change fictional case facts and inspect the model's answer |
+| [Canon catalogue](https://law.arxo.io/) | Choose a public canon hub and explore worked cases |
+| [Lens](https://lens.arxo.io/) | Read an answer with its grounds |
+
+## Build and integrate
+
+| Start here | What you can do |
+|---|---|
+| [Python SDK](https://docs.arxo.io/build/sdk/python/) | Use the Python API over a pinned model |
+| [Connect an assistant](https://docs.arxo.io/guide/mcp/) | Connect a client to the public MCP host |
+| [Host an HTTP or MCP service](https://docs.arxo.io/operate/) | Follow the deployment and verification guides for your own instance |
+| [Integration patterns](https://docs.arxo.io/agent-engineering/integration-patterns/) | Compare SDK, service, generated-module and MCP routes |
+
+## Learn
+
+| Start here | What you can do |
+|---|---|
+| [Documentation](https://docs.arxo.io/) | Find authoring, application and agent guides |
+| [Northbridge course](https://docs.arxo.io/tutorials/northbridge/) | Build a municipal model through lessons and exercises |
+| [Formalization Handbook](https://docs.arxo.io/handbook/) | Prepare a source model for review |
+| [Books](https://books.arxo.io/) | Read longer introductions and worked examples |
+| [Writings](https://blog.arxo.io/) | Read project articles and investigations |
+
+## Public model and tool repositories
 
 | Project | What you can do |
 |---|---|
@@ -18,22 +88,35 @@ Last refresh attempt: **2026-10-13 08:51 UTC**.
 | [arxohq/law-as-code-france-examples](https://github.com/arxohq/law-as-code-france-examples) | Fictional French benefit cases and book examples |
 | [arxohq/arxo-catala-parity](https://github.com/arxohq/arxo-catala-parity) | Arxo and Catala comparison artefact |
 
-## Install the CLI
+## Other tools
 
-```sh
-npm install -g @arxo/cli
-law --help
-```
+The [integration-pattern guide](https://docs.arxo.io/agent-engineering/integration-patterns/)
+also describes generated-code use. No dedicated generated-module distribution is observed here.
+Public installation routes for Zed, the desktop app and standalone agent skills
+have not been verified by this catalogue.
 
-Observed stable binary release: [law-v0.2.2](https://github.com/arxohq/law-releases/releases/tag/law-v0.2.2).
+## Follow and participate
 
-CLI and LSP archives, installers and matching checksums are in
-[law-releases](https://github.com/arxohq/law-releases).
+[Ask a question](https://github.com/arxohq/law/discussions) ·
+[Report a problem](https://github.com/arxohq/law/issues) ·
+[Community](https://community.arxo.io/)
+
+| Channel | What you will find |
+|---|---|
+| [YouTube](https://www.youtube.com/@arxohq) | Video explanations and tutorials |
+| [X](https://x.com/arxohq) | Project posts and updates |
+| [Telegram](https://t.me/arxoio) | Russian-language posts |
+| [DEV.to](https://dev.to/arxo) | Developer articles |
+| [Medium](https://medium.com/@arxo) | Articles and essays |
+| [Instagram](https://www.instagram.com/arxo.io/) | Visual stories and examples |
+
+Website and community links are curated entry points. Registry observations
+below record publication metadata; they do not establish runtime compatibility.
 
 <details>
 <summary>Binary assets and observation details</summary>
 
-Binary observation (UTC): 2026-10-13T08:51:18.745Z.
+Binary observation (UTC): 2026-10-13T09:56:43.175Z.
 
 | Asset | Bytes |
 |---|---:|
@@ -46,25 +129,26 @@ Binary observation (UTC): 2026-10-13T08:51:18.745Z.
 
 | Repository | Last successful observation (UTC) |
 |---|---|
-| arxohq/law-releases | 2026-10-13T08:51:18.745Z |
-| arxohq/homebrew-tap | 2026-10-13T08:51:18.745Z |
-| arxohq/arxo-vscode | 2026-10-13T08:51:18.745Z |
-| arxohq/arxo-bgb | 2026-10-13T08:51:18.745Z |
-| arxohq/arxo-unidroit-picc | 2026-10-13T08:51:18.745Z |
-| arxohq/arxo-charter-1945 | 2026-10-13T08:51:18.745Z |
-| arxohq/arxo-ogpo-public | 2026-10-13T08:51:18.745Z |
-| arxohq/arxo-cnaf | 2026-10-13T08:51:18.745Z |
-| arxohq/law-as-code-france-examples | 2026-10-13T08:51:18.745Z |
-| arxohq/arxo-catala-parity | 2026-10-13T08:51:18.745Z |
+| arxohq/law-releases | 2026-10-13T09:56:43.175Z |
+| arxohq/homebrew-tap | 2026-10-13T09:56:43.175Z |
+| arxohq/arxo-vscode | 2026-10-13T09:56:43.175Z |
+| arxohq/arxo-bgb | 2026-10-13T09:56:43.175Z |
+| arxohq/arxo-unidroit-picc | 2026-10-13T09:56:43.175Z |
+| arxohq/arxo-charter-1945 | 2026-10-13T09:56:43.175Z |
+| arxohq/arxo-ogpo-public | 2026-10-13T09:56:43.175Z |
+| arxohq/arxo-cnaf | 2026-10-13T09:56:43.175Z |
+| arxohq/law-as-code-france-examples | 2026-10-13T09:56:43.175Z |
+| arxohq/arxo-catala-parity | 2026-10-13T09:56:43.175Z |
+
+| Editor store | Published / updated (UTC) | Last successful observation (UTC) |
+|---|---|---|
+| marketplace: arxo.law | 2026-09-21T19:18:46.95Z | 2026-10-13T09:56:43.175Z |
+| open-vsx: arxo.law | 2026-09-21T19:17:16.805374Z | 2026-10-13T09:56:43.175Z |
 
 Only repositories reported public at the selected address are accepted
 as successful observations. Linked projects retain their own licences and notices.
 
 </details>
 
-## More entry points
-
-- [Try the French benefits lab](https://french-benefits.law.arxo.io/).
-- [Read the authoring and integration guides](https://docs.arxo.io/).
 - [Choose an npm package or MCP slice](packages.md).
 - [Visit Arxo](https://www.arxo.io/).

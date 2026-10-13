@@ -28,7 +28,9 @@ how to run, inspect and modify them.
 
 `catalog/sources.json` owns this catalogue's selection and editorial purposes,
 not package versions. Package owners and their published artefacts own the
-deliveries; npm and the public GitHub API supply the observed metadata.
+deliveries; npm, PyPI, Visual Studio Marketplace, Open VSX and the public
+GitHub API supply the observed metadata. `surfaces` and `community` own
+curated public links, not observations of service availability.
 Its `knownIssues` entries record an observed package/engine version pair,
 with a link to its evidence and recovery guidance. They are not inferred from
 a successful publication. The renderer shows example-set membership only
@@ -40,7 +42,7 @@ npm run check
 ```
 
 Review changes to `catalog/snapshot.json`, `docs/packages.md`,
-`docs/ecosystem.md` and the README catalogue block together. A failed fetch
+`docs/ecosystem.md` and the README catalogue and community blocks together. A failed fetch
 preserves the previous successful observation, marks it as unavailable and
 returns a nonzero exit code. It does not turn a previous version into a fresh
 observation. `npm run catalog:check` verifies the rendered files offline.
@@ -57,6 +59,7 @@ lockfile and rerun the examples. Catalogue refreshes do not alter that lock.
 Include the package and version, Node.js version, operating system, exact
 model/case input and the observed status or diagnostic. Keep dates, calendar
 policies and model readings explicit. Use fictional or redacted case facts.
-For a missing catalogue entry, provide its public package or repository URL.
+For a missing catalogue entry, provide its public package, editor listing,
+repository or website URL.
 
 Contributions to this repository are under [Apache-2.0](LICENSE).
