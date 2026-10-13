@@ -1,10 +1,10 @@
 {
   "format": "arxo.public-delivery-catalogue/1",
-  "refreshedAt": "2026-10-13T09:56:43.175Z",
+  "refreshedAt": "2026-10-13T10:49:23.965Z",
   "packages": {
     "@arxo/law": {
       "availability": "available",
-      "observedAt": "2026-10-13T09:56:43.175Z",
+      "observedAt": "2026-10-13T10:49:23.965Z",
       "version": "0.4.2",
       "publishedAt": "2026-10-12T20:17:48.577Z",
       "distTags": {
@@ -26,7 +26,7 @@
     },
     "@arxo/law-engine": {
       "availability": "available",
-      "observedAt": "2026-10-13T09:56:43.175Z",
+      "observedAt": "2026-10-13T10:49:23.965Z",
       "version": "0.5.2",
       "publishedAt": "2026-10-12T20:14:41.020Z",
       "distTags": {
@@ -45,7 +45,7 @@
     },
     "@arxo/law-types": {
       "availability": "available",
-      "observedAt": "2026-10-13T09:56:43.175Z",
+      "observedAt": "2026-10-13T10:49:23.965Z",
       "version": "0.3.2",
       "publishedAt": "2026-10-12T20:13:16.538Z",
       "distTags": {
@@ -62,7 +62,7 @@
     },
     "@arxo/law-client": {
       "availability": "available",
-      "observedAt": "2026-10-13T09:56:43.175Z",
+      "observedAt": "2026-10-13T10:49:23.965Z",
       "version": "0.3.2",
       "publishedAt": "2026-10-12T20:17:02.832Z",
       "distTags": {
@@ -81,7 +81,7 @@
     },
     "@arxo/law-forms": {
       "availability": "available",
-      "observedAt": "2026-10-13T09:56:43.175Z",
+      "observedAt": "2026-10-13T10:49:23.965Z",
       "version": "0.3.2",
       "publishedAt": "2026-10-12T20:19:18.910Z",
       "distTags": {
@@ -100,7 +100,7 @@
     },
     "@arxo/cli": {
       "availability": "available",
-      "observedAt": "2026-10-13T09:56:43.175Z",
+      "observedAt": "2026-10-13T10:49:23.965Z",
       "version": "0.2.2",
       "publishedAt": "2026-10-12T16:37:55.336Z",
       "distTags": {
@@ -119,7 +119,7 @@
     },
     "create-arxo": {
       "availability": "available",
-      "observedAt": "2026-10-13T09:56:43.175Z",
+      "observedAt": "2026-10-13T10:49:23.965Z",
       "version": "0.3.1",
       "publishedAt": "2026-10-12T10:19:47.939Z",
       "distTags": {
@@ -136,7 +136,7 @@
     },
     "@arxo/canon-bgb-fristen": {
       "availability": "available",
-      "observedAt": "2026-10-13T09:56:43.175Z",
+      "observedAt": "2026-10-13T10:49:23.965Z",
       "version": "0.1.13",
       "publishedAt": "2026-10-10T13:53:40.077Z",
       "distTags": {
@@ -153,7 +153,7 @@
     },
     "@arxo/canon-fr-benefits": {
       "availability": "available",
-      "observedAt": "2026-10-13T09:56:43.175Z",
+      "observedAt": "2026-10-13T10:49:23.965Z",
       "version": "0.1.2",
       "publishedAt": "2026-10-12T22:23:56.825Z",
       "distTags": {
@@ -169,7 +169,7 @@
     },
     "@arxo/canon-ogpo-vts": {
       "availability": "available",
-      "observedAt": "2026-10-13T09:56:43.175Z",
+      "observedAt": "2026-10-13T10:49:23.965Z",
       "version": "0.1.10",
       "publishedAt": "2026-10-10T13:53:25.715Z",
       "distTags": {
@@ -186,7 +186,7 @@
     },
     "@arxo/canon-swift-lilliput": {
       "availability": "available",
-      "observedAt": "2026-10-13T09:56:43.175Z",
+      "observedAt": "2026-10-13T10:49:23.965Z",
       "version": "0.1.10",
       "publishedAt": "2026-10-10T13:54:55.460Z",
       "distTags": {
@@ -202,7 +202,7 @@
     },
     "@arxo/canon-unidroit-picc": {
       "availability": "available",
-      "observedAt": "2026-10-13T09:56:43.175Z",
+      "observedAt": "2026-10-13T10:49:23.965Z",
       "version": "0.1.11",
       "publishedAt": "2026-10-10T13:53:20.915Z",
       "distTags": {
@@ -219,7 +219,7 @@
     },
     "@arxo/mcp-charter": {
       "availability": "available",
-      "observedAt": "2026-10-13T09:56:43.175Z",
+      "observedAt": "2026-10-13T10:49:23.965Z",
       "version": "0.1.7",
       "publishedAt": "2026-10-10T14:11:35.375Z",
       "distTags": {
@@ -238,7 +238,7 @@
     },
     "@arxo/mcp-code-civil": {
       "availability": "available",
-      "observedAt": "2026-10-13T09:56:43.175Z",
+      "observedAt": "2026-10-13T10:49:23.965Z",
       "version": "0.1.9",
       "publishedAt": "2026-10-10T14:09:22.163Z",
       "distTags": {
@@ -257,7 +257,7 @@
     },
     "@arxo/mcp-de-bgb": {
       "availability": "available",
-      "observedAt": "2026-10-13T09:56:43.175Z",
+      "observedAt": "2026-10-13T10:49:23.965Z",
       "version": "0.1.8",
       "publishedAt": "2026-10-10T14:09:22.201Z",
       "distTags": {
@@ -276,7 +276,7 @@
     },
     "@arxo/mcp-picc": {
       "availability": "available",
-      "observedAt": "2026-10-13T09:56:43.175Z",
+      "observedAt": "2026-10-13T10:49:23.965Z",
       "version": "0.3.9",
       "publishedAt": "2026-10-10T14:05:57.337Z",
       "distTags": {
@@ -295,7 +295,7 @@
     },
     "@arxo/cli-darwin-arm64": {
       "availability": "available",
-      "observedAt": "2026-10-13T09:56:43.175Z",
+      "observedAt": "2026-10-13T10:49:23.965Z",
       "version": "0.2.2",
       "publishedAt": "2026-10-12T16:37:00.796Z",
       "distTags": {
@@ -311,7 +311,7 @@
     },
     "@arxo/cli-linux-x64": {
       "availability": "available",
-      "observedAt": "2026-10-13T09:56:43.175Z",
+      "observedAt": "2026-10-13T10:49:23.965Z",
       "version": "0.2.2",
       "publishedAt": "2026-10-12T16:37:04.932Z",
       "distTags": {
@@ -327,7 +327,7 @@
     },
     "@arxo/mcp-host-darwin-arm64": {
       "availability": "available",
-      "observedAt": "2026-10-13T09:56:43.175Z",
+      "observedAt": "2026-10-13T10:49:23.965Z",
       "version": "0.4.1",
       "publishedAt": "2026-10-12T10:13:46.720Z",
       "distTags": {
@@ -343,7 +343,7 @@
     },
     "@arxo/mcp-host-linux-x64": {
       "availability": "available",
-      "observedAt": "2026-10-13T09:56:43.175Z",
+      "observedAt": "2026-10-13T10:49:23.965Z",
       "version": "0.4.1",
       "publishedAt": "2026-10-12T10:26:49.436Z",
       "distTags": {
@@ -361,7 +361,7 @@
   "pythonPackages": {
     "arxo": {
       "availability": "available",
-      "observedAt": "2026-10-13T09:56:43.175Z",
+      "observedAt": "2026-10-13T10:49:23.965Z",
       "version": "0.2.0",
       "publishedAt": "2026-09-21T20:28:19.824263Z",
       "python": ">=3.12",
@@ -379,7 +379,7 @@
     },
     "arxo-canon-bgb-fristen": {
       "availability": "available",
-      "observedAt": "2026-10-13T09:56:43.175Z",
+      "observedAt": "2026-10-13T10:49:23.965Z",
       "version": "0.1.1",
       "publishedAt": "2026-09-21T20:28:21.413232Z",
       "python": ">=3.12",
@@ -397,7 +397,7 @@
     },
     "arxo-canon-unidroit-picc": {
       "availability": "available",
-      "observedAt": "2026-10-13T09:56:43.175Z",
+      "observedAt": "2026-10-13T10:49:23.965Z",
       "version": "0.1.0",
       "publishedAt": "2026-09-21T20:28:24.757029Z",
       "python": ">=3.12",
@@ -415,7 +415,7 @@
     },
     "arxo-canon-ogpo-vts": {
       "availability": "available",
-      "observedAt": "2026-10-13T09:56:43.175Z",
+      "observedAt": "2026-10-13T10:49:23.965Z",
       "version": "0.1.0",
       "publishedAt": "2026-09-21T20:28:23.173718Z",
       "python": ">=3.12",
@@ -435,20 +435,20 @@
   "extensions": {
     "marketplace:arxo.law": {
       "availability": "available",
-      "observedAt": "2026-10-13T09:56:43.175Z",
-      "version": "0.1.1",
-      "publishedAt": "2026-09-21T19:18:46.95Z",
-      "vscode": "^1.75.0",
+      "observedAt": "2026-10-13T10:49:23.965Z",
+      "version": "0.1.3",
+      "publishedAt": "2026-10-13T10:47:06.143Z",
+      "vscode": "^1.82.0",
       "licence": null,
       "preRelease": false,
       "url": "https://marketplace.visualstudio.com/items?itemName=arxo.law"
     },
     "open-vsx:arxo.law": {
       "availability": "available",
-      "observedAt": "2026-10-13T09:56:43.175Z",
-      "version": "0.1.1",
-      "publishedAt": "2026-09-21T19:17:16.805374Z",
-      "vscode": "^1.75.0",
+      "observedAt": "2026-10-13T10:49:23.965Z",
+      "version": "0.1.3",
+      "publishedAt": "2026-10-13T10:41:46.338008Z",
+      "vscode": "^1.82.0",
       "licence": "Apache-2.0",
       "preRelease": false,
       "url": "https://open-vsx.org/extension/arxo/law"
@@ -457,70 +457,70 @@
   "repositories": {
     "arxohq/law-releases": {
       "availability": "available",
-      "observedAt": "2026-10-13T09:56:43.175Z",
+      "observedAt": "2026-10-13T10:49:23.965Z",
       "url": "https://github.com/arxohq/law-releases",
       "defaultBranch": "main",
       "archived": false
     },
     "arxohq/homebrew-tap": {
       "availability": "available",
-      "observedAt": "2026-10-13T09:56:43.175Z",
+      "observedAt": "2026-10-13T10:49:23.965Z",
       "url": "https://github.com/arxohq/homebrew-tap",
       "defaultBranch": "main",
       "archived": false
     },
     "arxohq/arxo-vscode": {
       "availability": "available",
-      "observedAt": "2026-10-13T09:56:43.175Z",
+      "observedAt": "2026-10-13T10:49:23.965Z",
       "url": "https://github.com/arxohq/arxo-vscode",
       "defaultBranch": "main",
       "archived": false
     },
     "arxohq/arxo-bgb": {
       "availability": "available",
-      "observedAt": "2026-10-13T09:56:43.175Z",
+      "observedAt": "2026-10-13T10:49:23.965Z",
       "url": "https://github.com/arxohq/arxo-bgb",
       "defaultBranch": "main",
       "archived": false
     },
     "arxohq/arxo-unidroit-picc": {
       "availability": "available",
-      "observedAt": "2026-10-13T09:56:43.175Z",
+      "observedAt": "2026-10-13T10:49:23.965Z",
       "url": "https://github.com/arxohq/arxo-unidroit-picc",
       "defaultBranch": "main",
       "archived": false
     },
     "arxohq/arxo-charter-1945": {
       "availability": "available",
-      "observedAt": "2026-10-13T09:56:43.175Z",
+      "observedAt": "2026-10-13T10:49:23.965Z",
       "url": "https://github.com/arxohq/arxo-charter-1945",
       "defaultBranch": "main",
       "archived": false
     },
     "arxohq/arxo-ogpo-public": {
       "availability": "available",
-      "observedAt": "2026-10-13T09:56:43.175Z",
+      "observedAt": "2026-10-13T10:49:23.965Z",
       "url": "https://github.com/arxohq/arxo-ogpo-public",
       "defaultBranch": "main",
       "archived": false
     },
     "arxohq/arxo-cnaf": {
       "availability": "available",
-      "observedAt": "2026-10-13T09:56:43.175Z",
+      "observedAt": "2026-10-13T10:49:23.965Z",
       "url": "https://github.com/arxohq/arxo-cnaf",
       "defaultBranch": "main",
       "archived": false
     },
     "arxohq/law-as-code-france-examples": {
       "availability": "available",
-      "observedAt": "2026-10-13T09:56:43.175Z",
+      "observedAt": "2026-10-13T10:49:23.965Z",
       "url": "https://github.com/arxohq/law-as-code-france-examples",
       "defaultBranch": "main",
       "archived": false
     },
     "arxohq/arxo-catala-parity": {
       "availability": "available",
-      "observedAt": "2026-10-13T09:56:43.175Z",
+      "observedAt": "2026-10-13T10:49:23.965Z",
       "url": "https://github.com/arxohq/arxo-catala-parity",
       "defaultBranch": "main",
       "archived": false
@@ -528,7 +528,7 @@
   },
   "binaryRelease": {
     "availability": "available",
-    "observedAt": "2026-10-13T09:56:43.175Z",
+    "observedAt": "2026-10-13T10:49:23.965Z",
     "tag": "law-v0.2.2",
     "publishedAt": "2026-10-12T16:38:59Z",
     "url": "https://github.com/arxohq/law-releases/releases/tag/law-v0.2.2",
