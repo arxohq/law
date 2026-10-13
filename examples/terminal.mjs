@@ -2,7 +2,7 @@ import { pathToFileURL } from 'node:url';
 
 export const isMain = url => Boolean(process.argv[1]) && url === pathToFileURL(process.argv[1]).href;
 export const truthLabel = status => ({
-  TRUE_ONLY: 'yes', FALSE_ONLY: 'no', NEITHER: 'unknown (not established)',
+  TRUE_ONLY: 'yes', FALSE_ONLY: 'no', NEITHER: 'unknown',
   BOTH: 'conflicting conclusions',
 }[status] ?? String(status));
 export const fields = rows => rows.map(([label, value]) => `  ${label.padEnd(9)} ${value}`).join('\n');
@@ -57,8 +57,8 @@ export function describeRule(result) {
     ['Rule', result.rulesApplied.join(', ') || 'examples/age.law'],
     ['Input', `Alice, age ${result.age}`],
     ['Answer', `adult = ${truthLabel(result.truthStatus)}`],
-    ['Why', result.rulesApplied.length ? `Applied ${result.rulesApplied.join(', ')}` : 'No rule establishes adult for these facts'],
-    ['Missing', `Without the age fact: ${truthLabel(result.missingAge)}`],
+    ['Why', result.rulesApplied.length ? `Applied ${result.rulesApplied.join(', ')}` : 'No applicable rule'],
+    ['Missing', result.missingAge === 'NEITHER' ? 'unknown (no age fact)' : truthLabel(result.missingAge)],
     ['Replay', result.replayIdentical ? 'identical evaluation bytes' : 'evaluation bytes differ'],
   ]), '', 'Try another input: npm start -- --age 16',
     'Edit the rule:     examples/age.law', 'Inspect the JSON:  npm --silent start -- --json'].join('\n');
