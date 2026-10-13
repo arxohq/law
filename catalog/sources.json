@@ -59,6 +59,11 @@
       "purpose": "Selected German housing-benefit models and book cases"
     },
     {
+      "name": "@arxo/canon-fide-chess",
+      "group": "Canons",
+      "purpose": "Pinned FIDE Laws of Chess demonstration and fictional arbiter cases"
+    },
+    {
       "name": "@arxo/canon-ogpo-vts",
       "group": "Canons",
       "purpose": "Pinned Kazakhstan OGPO vehicle-insurance model"
@@ -158,6 +163,10 @@
     {
       "name": "arxohq/law-as-code-germany-examples",
       "purpose": "Fictional German housing-benefit cases and book examples"
+    },
+    {
+      "name": "arxohq/arxo-fide-chess",
+      "purpose": "FIDE Laws of Chess model, arbiter cases and Node.js distribution"
     },
     {
       "name": "arxohq/arxo-catala-parity",

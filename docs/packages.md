@@ -9,7 +9,7 @@
 | Work in Python | [Python packages](#python-pypi) and the Python SDK guide |
 | Connect an assistant | [Connect MCP](connect-mcp.md) with a selected slice |
 
-Last refresh attempt: **2026-10-13 17:51 UTC**.
+Last refresh attempt: **2026-10-13 19:19 UTC**.
 
 **Example set** means that exact version is used by this repository's CI examples.
 Other entries are observed deliveries with the checks stated below. Each package
@@ -29,7 +29,7 @@ has its own version. See [tested combinations](compatibility.md).
 
 | Package | Latest | Use it for | Checks |
 |---|---|---|---|
-| [@arxo/cli](https://www.npmjs.com/package/@arxo/cli) | 0.2.3 | Install the law command | Not checked here |
+| [@arxo/cli](https://www.npmjs.com/package/@arxo/cli) | 0.2.4 | Install the law command | Not checked here |
 | [create-arxo](https://www.npmjs.com/package/create-arxo) | 0.3.2 | Scaffold a TypeScript project | Not checked here |
 
 ## Canons
@@ -39,6 +39,7 @@ has its own version. See [tested combinations](compatibility.md).
 | [@arxo/canon-bgb-fristen](https://www.npmjs.com/package/@arxo/canon-bgb-fristen) | 0.1.13 | German Civil Code period and deadline model | [Model load issue](compatibility.md#bgb-package-load) |
 | [@arxo/canon-fr-benefits](https://www.npmjs.com/package/@arxo/canon-fr-benefits) | 0.1.2 | Selected French benefit models | [Example set](compatibility.md) |
 | [@arxo/canon-de-wohngeld](https://www.npmjs.com/package/@arxo/canon-de-wohngeld) | 0.1.0 | Selected German housing-benefit models and book cases | Not checked here |
+| [@arxo/canon-fide-chess](https://www.npmjs.com/package/@arxo/canon-fide-chess) | 0.1.0 | Pinned FIDE Laws of Chess demonstration and fictional arbiter cases | Not checked here |
 | [@arxo/canon-ogpo-vts](https://www.npmjs.com/package/@arxo/canon-ogpo-vts) | 0.1.10 | Pinned Kazakhstan OGPO vehicle-insurance model | Not checked here |
 | [@arxo/canon-swift-lilliput](https://www.npmjs.com/package/@arxo/canon-swift-lilliput) | 0.1.10 | Fictional Lilliput rules for learning | Not checked here |
 | [@arxo/canon-unidroit-picc](https://www.npmjs.com/package/@arxo/canon-unidroit-picc) | 0.1.11 | UNIDROIT PICC models | Not checked here |
@@ -80,8 +81,8 @@ These are normally selected automatically for the operating system and architect
 
 | Package | Latest | Use it for | Checks |
 |---|---|---|---|
-| [@arxo/cli-darwin-arm64](https://www.npmjs.com/package/@arxo/cli-darwin-arm64) | 0.2.3 | cli binary for darwin-arm64 | Not checked here |
-| [@arxo/cli-linux-x64](https://www.npmjs.com/package/@arxo/cli-linux-x64) | 0.2.3 | cli binary for linux-x64 | Not checked here |
+| [@arxo/cli-darwin-arm64](https://www.npmjs.com/package/@arxo/cli-darwin-arm64) | 0.2.4 | cli binary for darwin-arm64 | Not checked here |
+| [@arxo/cli-linux-x64](https://www.npmjs.com/package/@arxo/cli-linux-x64) | 0.2.4 | cli binary for linux-x64 | Not checked here |
 | [@arxo/mcp-host-darwin-arm64](https://www.npmjs.com/package/@arxo/mcp-host-darwin-arm64) | 0.4.2 | mcp-host binary for darwin-arm64 | Not checked here |
 | [@arxo/mcp-host-linux-x64](https://www.npmjs.com/package/@arxo/mcp-host-linux-x64) | 0.4.2 | mcp-host binary for linux-x64 | Not checked here |
 
@@ -92,31 +93,32 @@ These are normally selected automatically for the operating system and architect
 
 | Package | Published (UTC) | Last successful observation (UTC) |
 |---|---|---|
-| @arxo/law | 2026-10-13T17:36:18.907Z | 2026-10-13T17:51:07.486Z |
-| @arxo/law-engine | 2026-10-13T17:33:49.846Z | 2026-10-13T17:51:07.486Z |
-| @arxo/law-types | 2026-10-13T17:31:33.828Z | 2026-10-13T17:51:07.486Z |
-| @arxo/law-client | 2026-10-13T17:36:54.973Z | 2026-10-13T17:51:07.486Z |
-| @arxo/law-forms | 2026-10-13T17:38:29.357Z | 2026-10-13T17:51:07.486Z |
-| @arxo/cli | 2026-10-13T17:40:25.475Z | 2026-10-13T17:51:07.486Z |
-| create-arxo | 2026-10-13T17:37:02.090Z | 2026-10-13T17:51:07.486Z |
-| @arxo/canon-bgb-fristen | 2026-10-10T13:53:40.077Z | 2026-10-13T17:51:07.486Z |
-| @arxo/canon-fr-benefits | 2026-10-12T22:23:56.825Z | 2026-10-13T17:51:07.486Z |
-| @arxo/canon-de-wohngeld | 2026-10-13T16:58:35.285Z | 2026-10-13T17:51:07.486Z |
-| @arxo/canon-ogpo-vts | 2026-10-10T13:53:25.715Z | 2026-10-13T17:51:07.486Z |
-| @arxo/canon-swift-lilliput | 2026-10-10T13:54:55.460Z | 2026-10-13T17:51:07.486Z |
-| @arxo/canon-unidroit-picc | 2026-10-10T13:53:20.915Z | 2026-10-13T17:51:07.486Z |
-| @arxo/mcp-charter | 2026-10-10T14:11:35.375Z | 2026-10-13T17:51:07.486Z |
-| @arxo/mcp-code-civil | 2026-10-10T14:09:22.163Z | 2026-10-13T17:51:07.486Z |
-| @arxo/mcp-de-bgb | 2026-10-10T14:09:22.201Z | 2026-10-13T17:51:07.486Z |
-| @arxo/mcp-picc | 2026-10-10T14:05:57.337Z | 2026-10-13T17:51:07.486Z |
-| @arxo/cli-darwin-arm64 | 2026-10-13T17:35:49.895Z | 2026-10-13T17:51:07.486Z |
-| @arxo/cli-linux-x64 | 2026-10-13T17:35:33.361Z | 2026-10-13T17:51:07.486Z |
-| @arxo/mcp-host-darwin-arm64 | 2026-10-13T17:46:37.147Z | 2026-10-13T17:51:07.486Z |
-| @arxo/mcp-host-linux-x64 | 2026-10-13T17:48:10.068Z | 2026-10-13T17:51:07.486Z |
-| arxo (PyPI) | 2026-09-21T20:28:19.824263Z | 2026-10-13T17:51:07.486Z |
-| arxo-canon-bgb-fristen (PyPI) | 2026-09-21T20:28:21.413232Z | 2026-10-13T17:51:07.486Z |
-| arxo-canon-unidroit-picc (PyPI) | 2026-09-21T20:28:24.757029Z | 2026-10-13T17:51:07.486Z |
-| arxo-canon-ogpo-vts (PyPI) | 2026-09-21T20:28:23.173718Z | 2026-10-13T17:51:07.486Z |
+| @arxo/law | 2026-10-13T17:36:18.907Z | 2026-10-13T19:19:02.453Z |
+| @arxo/law-engine | 2026-10-13T17:33:49.846Z | 2026-10-13T19:19:02.453Z |
+| @arxo/law-types | 2026-10-13T17:31:33.828Z | 2026-10-13T19:19:02.453Z |
+| @arxo/law-client | 2026-10-13T17:36:54.973Z | 2026-10-13T19:19:02.453Z |
+| @arxo/law-forms | 2026-10-13T17:38:29.357Z | 2026-10-13T19:19:02.453Z |
+| @arxo/cli | 2026-10-13T18:58:55.355Z | 2026-10-13T19:19:02.453Z |
+| create-arxo | 2026-10-13T17:37:02.090Z | 2026-10-13T19:19:02.453Z |
+| @arxo/canon-bgb-fristen | 2026-10-10T13:53:40.077Z | 2026-10-13T19:19:02.453Z |
+| @arxo/canon-fr-benefits | 2026-10-12T22:23:56.825Z | 2026-10-13T19:19:02.453Z |
+| @arxo/canon-de-wohngeld | 2026-10-13T16:58:35.285Z | 2026-10-13T19:19:02.453Z |
+| @arxo/canon-fide-chess | 2026-10-13T19:14:35.642Z | 2026-10-13T19:19:02.453Z |
+| @arxo/canon-ogpo-vts | 2026-10-10T13:53:25.715Z | 2026-10-13T19:19:02.453Z |
+| @arxo/canon-swift-lilliput | 2026-10-10T13:54:55.460Z | 2026-10-13T19:19:02.453Z |
+| @arxo/canon-unidroit-picc | 2026-10-10T13:53:20.915Z | 2026-10-13T19:19:02.453Z |
+| @arxo/mcp-charter | 2026-10-10T14:11:35.375Z | 2026-10-13T19:19:02.453Z |
+| @arxo/mcp-code-civil | 2026-10-10T14:09:22.163Z | 2026-10-13T19:19:02.453Z |
+| @arxo/mcp-de-bgb | 2026-10-10T14:09:22.201Z | 2026-10-13T19:19:02.453Z |
+| @arxo/mcp-picc | 2026-10-10T14:05:57.337Z | 2026-10-13T19:19:02.453Z |
+| @arxo/cli-darwin-arm64 | 2026-10-13T19:01:52.095Z | 2026-10-13T19:19:02.453Z |
+| @arxo/cli-linux-x64 | 2026-10-13T18:59:26.951Z | 2026-10-13T19:19:02.453Z |
+| @arxo/mcp-host-darwin-arm64 | 2026-10-13T17:46:37.147Z | 2026-10-13T19:19:02.453Z |
+| @arxo/mcp-host-linux-x64 | 2026-10-13T17:48:10.068Z | 2026-10-13T19:19:02.453Z |
+| arxo (PyPI) | 2026-09-21T20:28:19.824263Z | 2026-10-13T19:19:02.453Z |
+| arxo-canon-bgb-fristen (PyPI) | 2026-09-21T20:28:21.413232Z | 2026-10-13T19:19:02.453Z |
+| arxo-canon-unidroit-picc (PyPI) | 2026-09-21T20:28:24.757029Z | 2026-10-13T19:19:02.453Z |
+| arxo-canon-ogpo-vts (PyPI) | 2026-09-21T20:28:23.173718Z | 2026-10-13T19:19:02.453Z |
 
 Full integrity strings and exact dependency pins are in the
 [captured snapshot](../catalog/snapshot.json), alongside SHA-256 hashes of PyPI release files.
