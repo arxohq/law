@@ -1,33 +1,33 @@
-# Runnable examples
+# Examples: run, inspect, change
 
-From the repository root, with Node.js 20 or newer:
+[← Arxo Law](../README.md)
+
+With Node.js 20 or newer, from the repository root:
 
 ```sh
 npm ci --ignore-scripts
-npm run examples
+npm start
 ```
 
-All three examples execute locally using the exact versions in the lockfile.
-Dates and policies are fixed inputs, never the current date.
+| Example | Run | Expect | Change next |
+|---|---|---|---|
+| [Your first rule](../docs/write-rules.md) | `npm start` | Adult = yes; missing age = unknown; replay identical | `npm start -- --age 16` or edit [age.law](age.law) |
+| [Compiler](../docs/write-rules.md#try-compiler-diagnostics) | `npm run example:compiler` | `LDC-E2102` for a typo; corrected source compiles | Inspect [compiler.mjs](compiler.mjs) and the source |
+| [French model](../docs/run-a-model.md) | `npm run example:benefits` | 20.17 EUR as the supplied formula amount | `npm run example:benefits -- --rent 300` |
 
-| Example | Command | What it demonstrates |
-|---|---|---|
-| [Your own rule](own-rule.mjs) | `npm run example:rule` | Compile a small source model, supply a fact, omit it and compare evaluation bytes on replay |
-| [Compiler](compiler.mjs) | `npm run example:compiler` | A diagnostic for an undeclared predicate, followed by a successful check and compilation |
-| [French benefit formula](french-benefits.mjs) | `npm run example:benefits` | Loading a pinned model with its imports and evaluating an explicit supplied case |
+`npm run examples` runs all three. Readable output comes first; use `--json`
+for complete result summaries and hashes:
 
-The synthetic [age rule](age.law) declares that a person aged at least 18 is
-an adult within this model. With an age of 20 it establishes the conclusion;
-without an age fact it does not guess. The rule is a small language example,
-not a model of any jurisdiction's capacity or age law.
+```sh
+npm --silent start -- --json
+npm --silent run examples -- --json
+```
 
-The French case is the package's technical zero-rent APL probe dated 15 June
-2024: one person, no dependants, metropolitan zone II, supplied resources of
-EUR 4,000 and the explicit `PpPlancherFinal` reading. The computed **EUR 20.17
-is a formula amount, separate from a final payable benefit**. It is a teaching
-and integration example, not a claim about a person's entitlement.
+The examples execute locally after installation using the exact package
+versions in [package-lock.json](../package-lock.json). Dates and model
+policies are explicit inputs. See [compatibility notes](../docs/compatibility.md)
+for the tested set and the observed BGB package-load issue.
 
-`npm test` checks these behaviours against the installed packages. Tests use
-these particular models and inputs; they do not establish corpus completeness.
-See [the compatibility notes](../docs/compatibility.md) for a published BGB
-package that is currently outside this tested example set.
+The age rule is synthetic. The French case is a teaching and integration probe;
+its formula amount does not determine a person's final payable benefit.
+[`npm test`](../CONTRIBUTING.md) checks the supplied baseline and CLI behaviour.

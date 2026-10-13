@@ -1,113 +1,78 @@
 # Arxo Law
 
-**Turn rules into answers you can inspect, test and replay.**
-
-Arxo compiles rules into an executable model. Give it a case and a question;
-it returns an answer, a graph of the rules it applied and a canonical evaluation
-document. Law is the first domain; the same machinery works with standards
-and other rulebooks.
+**Run a rule. See the answer and why. Replay the result.**
 
 [![Checks](https://github.com/arxohq/law/actions/workflows/ci.yml/badge.svg)](https://github.com/arxohq/law/actions/workflows/ci.yml)
 [![npm](https://img.shields.io/npm/v/@arxo/law)](https://www.npmjs.com/package/@arxo/law)
 
-[Start here](#try-it) · [Packages](docs/packages.md) · [Examples](examples/README.md) ·
-[Ecosystem](docs/ecosystem.md) · [Source availability](docs/source-availability.md)
+[Try in browser](https://french-benefits.law.arxo.io/) · [Run locally](#run-locally) ·
+[Write rules](docs/write-rules.md) · [Connect MCP](docs/connect-mcp.md)
 
-This is the official public entry point for Arxo Law. Today it contains
-documentation, a catalogue of published packages and runnable examples.
-**Engine source code is not published here yet.** The planned open core will
-be added to this repository; [its scope and contribution process](docs/source-availability.md)
-are described separately from the packages available today.
+SDK and CLI packages are available. [Engine source is planned](docs/source-availability.md).
 
-## Try it
+## Run locally
 
-With Node.js 20 or newer, run the tested examples in this repository:
+With **Node.js 20 or newer**:
 
 ```sh
-git clone https://github.com/arxohq/law.git arxo-law
+git clone https://github.com/arxohq/law arxo-law
 cd arxo-law
 npm ci --ignore-scripts
-npm run examples
+npm start
 ```
 
-The examples use exact package versions and fixed inputs. After installation
-they execute locally in WebAssembly, without a service account.
-
-## One model, one answer
-
-Load a pinned French housing-aid model and its supplied demonstration case:
-
-```js
-import { open } from '@arxo/law';
-import { loadModel } from '@arxo/canon-fr-benefits/apl';
-import { household, caseInput } from '@arxo/canon-fr-benefits/examples/apl';
-
-const model = await loadModel();
-const apl = await open(model.spec, {
-  offline: true,
-  local: { packages: { [model.spec]: model.package } },
-});
-const answer = await apl.collect('aide_formule', [household, '?amount'], caseInput);
-
-console.log(answer.evaluationStatus); // COMPUTED
-console.log(answer.value[0].value);   // 20.17
-console.log(answer.value[0].currency); // EUR
-console.log(answer.hashes.result);   // sha256:...
+```text
+Your first rule
+  Rule      Adult
+  Input     Alice, age 20
+  Answer    adult = yes
+  Why       Applied Adult
+  Missing   Without the age fact: unknown (not established)
+  Replay    identical evaluation bytes
 ```
 
-Install `@arxo/law@0.4.2` and `@arxo/canon-fr-benefits@0.1.2` to run this snippet.
-This is a technical zero-rent probe dated 15 June 2024 with explicit facts and
-the selected `PpPlancherFinal` reading. **EUR 20.17 is a formula amount, separate
-from a final payable benefit.** See [the complete example](examples/french-benefits.mjs)
-and [the case description](examples/README.md).
-An answer establishes what follows from the selected model and supplied facts;
-its proof graph is not a claim that the model captures every real-world rule.
+Try **`npm start -- --age 16`**. The answer becomes unknown: this model has no
+rule establishing adulthood below 18. Then edit [the rule](examples/age.law)
+and run again. [Walk through the example →](docs/write-rules.md)
 
-## Choose a package
+## Choose your next step
+
+| I want to… | Start here |
+|---|---|
+| Run an existing model | [French housing-aid formula: input → answer → evidence](docs/run-a-model.md) |
+| Write my own rules | [A small `.law` source, compiler diagnostics and replay](docs/write-rules.md) |
+| Use a model with an assistant | [Install a specific MCP slice and verify the connection](docs/connect-mcp.md) |
+
+## How an answer is built
+
+![Age 20 and the rule age at least 18 produce adult yes; the explanation names Adult and the same input replays identically.](docs/assets/answer-flow.svg)
+
+Arxo compiles rules into a model, applies the supplied facts and attaches an
+explanation and canonical evaluation document. The examples execute locally
+after installation. Law is the first domain; standards and other rulebooks
+use the same machinery. A proof explains the selected model's answer.
+
+## Packages
 
 <!-- catalog:featured:start -->
 
-| Package | Observed `latest` | Use it for |
+| Package | Latest | Start with |
 |---|---|---|
-| [@arxo/law](https://www.npmjs.com/package/@arxo/law) | 0.4.2 | Open a canon and ask a question |
-| [@arxo/law-engine](https://www.npmjs.com/package/@arxo/law-engine) | 0.5.2 | Compile sources and embed the WebAssembly evaluator |
-| [@arxo/law-types](https://www.npmjs.com/package/@arxo/law-types) | 0.3.2 | TypeScript document and diagnostic types |
-| [@arxo/law-client](https://www.npmjs.com/package/@arxo/law-client) | 0.3.2 | Typed MCP and registry client |
-| [@arxo/law-forms](https://www.npmjs.com/package/@arxo/law-forms) | 0.3.2 | Question forms and structural case assembly |
-| [@arxo/cli](https://www.npmjs.com/package/@arxo/cli) | 0.2.2 | Install the law command |
-| [create-arxo](https://www.npmjs.com/package/create-arxo) | 0.3.1 | Scaffold a TypeScript project |
+| [@arxo/law](https://www.npmjs.com/package/@arxo/law) | 0.4.2 | [Run a model](docs/run-a-model.md) |
+| [@arxo/law-engine](https://www.npmjs.com/package/@arxo/law-engine) | 0.5.2 | [Write rules](docs/write-rules.md) |
+| [@arxo/cli](https://www.npmjs.com/package/@arxo/cli) | 0.2.2 | [CLI and editor](docs/write-rules.md#use-the-cli-or-editor) |
 
 <!-- catalog:featured:end -->
 
-See the [full catalogue](docs/packages.md) for canon packages, MCP slices,
-platform dependencies, publication dates and observation times.
-Versions belong to individual packages. The catalogue observes published
-artefacts; it does not certify engine correctness or corpus completeness.
-The examples' tested dependency set is pinned in [package-lock.json](package-lock.json).
-Known package limitations are recorded in [the compatibility notes](docs/compatibility.md).
-
-## CLI and editors
-
-```sh
-npm install -g @arxo/cli
-law --help
-```
-
-The npm CLI currently targets macOS ARM64 and Linux x64. Downloadable archives
-and checksums are maintained in [law-releases](https://github.com/arxohq/law-releases).
-The [VS Code and Cursor extension](https://github.com/arxohq/arxo-vscode) adds
-syntax support, diagnostics and compiler-backed hints for `.law` files.
+[All packages and compatibility notes →](docs/packages.md) ·
+[Public canons, editors and binary downloads →](docs/ecosystem.md)
 
 ## Explore and contribute
 
-- [Compiler diagnostics](examples/compiler.mjs): check a small rule, fix a typo and compile it.
-- [Your own rule](examples/own-rule.mjs): compile sources, inspect a missing fact and compare replay bytes.
-- [French benefits](examples/french-benefits.mjs): load a pinned model and calculate its explicit demonstration case.
-- [Public canons and integrations](docs/ecosystem.md): models, repositories and installation routes.
-- [Report an issue](https://github.com/arxohq/law/issues): include package versions and a small reproducible input.
-- [Contribute](CONTRIBUTING.md): documentation, examples and catalogue corrections.
+- `npm run examples` — run all three examples with readable output.
+- `npm --silent start -- --json` — inspect the result summary, statuses and full hash.
+- [Example commands and expected results](examples/README.md).
+- [Report a problem](https://github.com/arxohq/law/issues) or [ask a question](https://github.com/arxohq/law/discussions).
+- [Contribution guide](CONTRIBUTING.md) · [source availability](docs/source-availability.md).
 
-Read more at [arxo.io](https://www.arxo.io/) and [docs.arxo.io](https://docs.arxo.io/).
-
-The files in this repository are licensed under [Apache-2.0](LICENSE).
-Linked projects and installed packages carry their own notices and licences.
+[arxo.io](https://www.arxo.io/) · [Documentation](https://docs.arxo.io/) · [Apache-2.0](LICENSE)

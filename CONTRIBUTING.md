@@ -18,11 +18,21 @@ npm test
 The examples use installed packages and fixed cases. They do not require a
 parent checkout, an Arxo account or access to a hosted runtime.
 
+`npm start` is the first-run example. Changing its `--age` fact or `.law`
+source produces a new answer; baseline expectations belong in tests, not
+in the runnable example. Keep readable default output and parseable `--json`
+output when changing examples. The [task guides](docs/write-rules.md) explain
+how to run, inspect and modify them.
+
 ## Catalogue changes
 
 `catalog/sources.json` owns this catalogue's selection and editorial purposes,
 not package versions. Package owners and their published artefacts own the
 deliveries; npm and the public GitHub API supply the observed metadata.
+Its `knownIssues` entries record an observed package/engine version pair,
+with a link to its evidence and recovery guidance. They are not inferred from
+a successful publication. The renderer shows example-set membership only
+when the observed version matches a direct dependency pin.
 
 ```sh
 npm run catalog:refresh
