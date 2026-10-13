@@ -167,7 +167,7 @@
     { "group": "Browser", "title": "Canon catalogue", "url": "https://law.arxo.io/", "purpose": "Choose a public canon hub and explore worked cases" },
     { "group": "Browser", "title": "Lens", "url": "https://lens.arxo.io/", "purpose": "Read an answer with its grounds" },
     { "group": "Build and integrate", "title": "Python SDK", "url": "https://docs.arxo.io/build/sdk/python/", "purpose": "Use the Python API over a pinned model" },
-    { "group": "Build and integrate", "title": "Connect an assistant", "url": "https://docs.arxo.io/guide/mcp/", "purpose": "Connect a client to the public MCP host" },
+    { "group": "Build and integrate", "title": "Connect an assistant", "url": "https://docs.arxo.io/guide/mcp/", "purpose": "Run a local MCP slice or connect to your own server" },
     { "group": "Build and integrate", "title": "Host an HTTP or MCP service", "url": "https://docs.arxo.io/operate/", "purpose": "Follow the deployment and verification guides for your own instance" },
     { "group": "Build and integrate", "title": "Integration patterns", "url": "https://docs.arxo.io/agent-engineering/integration-patterns/", "purpose": "Compare SDK, service, generated-module and MCP routes" },
     { "group": "Learn", "title": "Documentation", "url": "https://docs.arxo.io/", "purpose": "Find authoring, application and agent guides" },

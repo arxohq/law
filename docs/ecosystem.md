@@ -59,7 +59,7 @@ CLI and LSP archives, installers and matching checksums are in
 | Start here | What you can do |
 |---|---|
 | [Python SDK](https://docs.arxo.io/build/sdk/python/) | Use the Python API over a pinned model |
-| [Connect an assistant](https://docs.arxo.io/guide/mcp/) | Connect a client to the public MCP host |
+| [Connect an assistant](https://docs.arxo.io/guide/mcp/) | Run a local MCP slice or connect to your own server |
 | [Host an HTTP or MCP service](https://docs.arxo.io/operate/) | Follow the deployment and verification guides for your own instance |
 | [Integration patterns](https://docs.arxo.io/agent-engineering/integration-patterns/) | Compare SDK, service, generated-module and MCP routes |
 

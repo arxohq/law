@@ -36,11 +36,7 @@ Configure a local stdio server with command `npx` and arguments
 `["-y", "@arxo/mcp-picc@0.3.9"]`. Use the host client's MCP settings and inspect
 its connection status. Do not substitute the SDK package as a server command.
 
-## Use the public host or run your own
-
-For a hosted connection, follow [Connect an assistant](https://docs.arxo.io/guide/mcp/)
-and inspect the tools and models exposed by that host. Use fictional case facts
-when trying the public endpoint.
+## Run your own server
 
 For a deployment you control, start with [Operate](https://docs.arxo.io/operate/):
 the guides cover a private HTTP service and a private MCP server, including
