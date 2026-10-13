@@ -15,7 +15,9 @@ SDK and CLI packages are available. [Engine source is planned](docs/source-avail
 With **Node.js 20 or newer**:
 
 ```sh
-git clone https://github.com/arxohq/law arxo-law
+git clone \
+  https://github.com/arxohq/law \
+  arxo-law
 cd arxo-law
 npm ci --ignore-scripts
 npm start
@@ -27,7 +29,7 @@ Your first rule
   Input     Alice, age 20
   Answer    adult = yes
   Why       Applied Adult
-  Missing   Without the age fact: unknown (not established)
+  Missing   unknown (no age fact)
   Replay    identical evaluation bytes
 ```
 
@@ -45,7 +47,7 @@ and run again. [Walk through the example →](docs/write-rules.md)
 
 ## How an answer is built
 
-![Age 20 and the rule age at least 18 produce adult yes; the explanation names Adult and the same input replays identically.](docs/assets/answer-flow.svg)
+<img src="docs/assets/answer-flow.svg" width="440" alt="Age 20 and the rule age at least 18 produce adult yes; the explanation names Adult and the same input replays identically.">
 
 Arxo compiles rules into a model, applies the supplied facts and attaches an
 explanation and canonical evaluation document. The examples execute locally

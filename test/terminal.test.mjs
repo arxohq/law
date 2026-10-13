@@ -28,7 +28,7 @@ test('invalid options exit nonzero with an actionable message and no runtime sta
   assert.doesNotMatch(result.stderr, /at file:/);
 });
 test('truth labels keep missing evidence distinct from an explicit negative conclusion', () => {
-  assert.equal(truthLabel('NEITHER'), 'unknown (not established)');
+  assert.equal(truthLabel('NEITHER'), 'unknown');
   assert.equal(truthLabel('FALSE_ONLY'), 'no');
   assert.equal(truthLabel('BOTH'), 'conflicting conclusions');
 });

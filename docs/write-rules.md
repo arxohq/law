@@ -34,7 +34,7 @@ age or capacity law.
 npm start -- --age 16
 ```
 
-The answer is `unknown (not established)`: the supplied age does not satisfy
+The answer is `unknown`: the supplied age does not satisfy
 the rule. This model contains no rule concluding the opposite. Missing
 evidence and an explicit negative conclusion are different statuses.
 

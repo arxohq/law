@@ -33,7 +33,9 @@ for (const full of await files(root)) {
   if (privateReference.test(content)) throw Error(`Private workspace reference: ${relative}`);
   if (full.endsWith('.json')) JSON.parse(content);
   if (!full.endsWith('.md')) continue;
-  for (const match of content.matchAll(/\]\(([^\s)]+)(?:\s+"[^"]*")?\)/g)) {
+  const references = [...content.matchAll(/\]\(([^\s)]+)(?:\s+"[^"]*")?\)/g),
+    ...content.matchAll(/\b(?:src|href)="([^"]+)"/g)];
+  for (const match of references) {
     const target = match[1];
     if (/^(?:https?:|mailto:|#)/.test(target)) continue;
     const local = path.resolve(path.dirname(full), decodeURIComponent(target.split('#')[0]));
