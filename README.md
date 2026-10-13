@@ -1,3 +1,9 @@
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/cover-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="docs/assets/cover-light.svg">
+  <img src="docs/assets/cover-light.svg" width="1440" alt="A highlighted rule connects to a result through a visible trail of evidence.">
+</picture>
+
 # Arxo Law
 
 **Run a rule. See the answer and why. Replay the result.**

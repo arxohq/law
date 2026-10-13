@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="240" viewBox="0 0 1440 240" role="img" aria-labelledby="title desc">
+  <title id="title">A rule leaves a trace</title>
+  <desc id="desc">An abstract rule fragment has one highlighted condition. A green line follows its application through three connected points to a result, with the supporting fragments still attached.</desc>
+  <!-- Geometry is shared with cover-dark.svg; only the palette differs. -->
+  <rect width="1440" height="240" fill="#f7f8f4"/>
+
+  <!-- Source: the indentation and token groups suggest a rulebook or code. -->
+  <path d="M104 48V192" fill="none" stroke="#d9e2da" stroke-width="2"/>
+  <path d="M96 48H112M96 192H112" fill="none" stroke="#d9e2da" stroke-width="2"/>
+  <g fill="none" stroke-linecap="round" stroke-width="9">
+    <path d="M144 48H186M206 48H326M346 48H410" stroke="#6c8075"/>
+    <path d="M168 84H216M236 84H352M372 84H454" stroke="#b1c1b6"/>
+    <path d="M168 156H230M250 156H356M376 156H410" stroke="#b1c1b6"/>
+    <path d="M144 192H204M224 192H300" stroke="#6c8075"/>
+  </g>
+  <path d="M130 73H120V94M120 146V167H130" fill="none" stroke="#6c8075" stroke-width="2"/>
+  <rect x="150" y="102" width="342" height="36" fill="#e0eee4"/>
+  <g fill="none" stroke="#145e50" stroke-linecap="round" stroke-width="9">
+    <path d="M168 120H214M234 120H340M360 120H458"/>
+  </g>
+
+  <!-- The condition's route remains continuous from source to result. -->
+  <path d="M462 120H650C704 120 704 84 756 84H840C892 84 892 120 944 120H1066" fill="none" stroke="#145e50" stroke-width="3"/>
+
+  <!-- Supporting fragments stay connected to the application. -->
+  <g fill="none" stroke="#8ca698" stroke-width="2">
+    <path d="M650 128V166H600"/>
+    <path d="M798 92V182"/>
+    <path d="M946 128V166H996"/>
+  </g>
+  <g fill="none" stroke="#b1c1b6" stroke-linecap="round" stroke-width="5">
+    <path d="M552 166H600M552 180H582"/>
+    <path d="M770 182H826M770 196H806"/>
+    <path d="M996 166H1044M996 180H1026"/>
+  </g>
+  <g fill="#f7f8f4" stroke="#145e50" stroke-width="3">
+    <circle cx="650" cy="120" r="8"/>
+    <circle cx="798" cy="84" r="10"/>
+    <circle cx="946" cy="120" r="8"/>
+  </g>
+  <circle cx="798" cy="84" r="3" fill="#145e50"/>
+
+  <!-- Result: a compact statement, framed without a truth/approval badge. -->
+  <path d="M1082 76H1066V164H1082M1308 76H1324V164H1308" fill="none" stroke="#8ca698" stroke-width="2"/>
+  <g fill="none" stroke-linecap="round" stroke-width="11">
+    <path d="M1100 106H1160M1182 106H1288" stroke="#145e50"/>
+    <path d="M1100 138H1226" stroke="#6c8075"/>
+  </g>
+</svg>
