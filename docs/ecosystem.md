@@ -3,7 +3,7 @@
 [← Arxo Law](../README.md)
 
 Choose an editor, installation route, browser tool or learning format.
-Last refresh attempt: **2026-10-13 09:56 UTC**.
+Last refresh attempt: **2026-10-13 10:49 UTC**.
 
 ## Install the editor
 
@@ -11,8 +11,8 @@ Last refresh attempt: **2026-10-13 09:56 UTC**.
 
 | Store | Latest | Use it for |
 |---|---|---|
-| [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=arxo.law) | 0.1.1 | Arxo Law for VS Code |
-| [Open VSX](https://open-vsx.org/extension/arxo/law) | 0.1.1 | Arxo Law through Open VSX |
+| [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=arxo.law) | 0.1.3 | Arxo Law for VS Code |
+| [Open VSX](https://open-vsx.org/extension/arxo/law) | 0.1.3 | Arxo Law through Open VSX |
 
 VS Code command line:
 
@@ -116,7 +116,7 @@ below record publication metadata; they do not establish runtime compatibility.
 <details>
 <summary>Binary assets and observation details</summary>
 
-Binary observation (UTC): 2026-10-13T09:56:43.175Z.
+Binary observation (UTC): 2026-10-13T10:49:23.965Z.
 
 | Asset | Bytes |
 |---|---:|
@@ -129,21 +129,21 @@ Binary observation (UTC): 2026-10-13T09:56:43.175Z.
 
 | Repository | Last successful observation (UTC) |
 |---|---|
-| arxohq/law-releases | 2026-10-13T09:56:43.175Z |
-| arxohq/homebrew-tap | 2026-10-13T09:56:43.175Z |
-| arxohq/arxo-vscode | 2026-10-13T09:56:43.175Z |
-| arxohq/arxo-bgb | 2026-10-13T09:56:43.175Z |
-| arxohq/arxo-unidroit-picc | 2026-10-13T09:56:43.175Z |
-| arxohq/arxo-charter-1945 | 2026-10-13T09:56:43.175Z |
-| arxohq/arxo-ogpo-public | 2026-10-13T09:56:43.175Z |
-| arxohq/arxo-cnaf | 2026-10-13T09:56:43.175Z |
-| arxohq/law-as-code-france-examples | 2026-10-13T09:56:43.175Z |
-| arxohq/arxo-catala-parity | 2026-10-13T09:56:43.175Z |
+| arxohq/law-releases | 2026-10-13T10:49:23.965Z |
+| arxohq/homebrew-tap | 2026-10-13T10:49:23.965Z |
+| arxohq/arxo-vscode | 2026-10-13T10:49:23.965Z |
+| arxohq/arxo-bgb | 2026-10-13T10:49:23.965Z |
+| arxohq/arxo-unidroit-picc | 2026-10-13T10:49:23.965Z |
+| arxohq/arxo-charter-1945 | 2026-10-13T10:49:23.965Z |
+| arxohq/arxo-ogpo-public | 2026-10-13T10:49:23.965Z |
+| arxohq/arxo-cnaf | 2026-10-13T10:49:23.965Z |
+| arxohq/law-as-code-france-examples | 2026-10-13T10:49:23.965Z |
+| arxohq/arxo-catala-parity | 2026-10-13T10:49:23.965Z |
 
 | Editor store | Published / updated (UTC) | Last successful observation (UTC) |
 |---|---|---|
-| marketplace: arxo.law | 2026-09-21T19:18:46.95Z | 2026-10-13T09:56:43.175Z |
-| open-vsx: arxo.law | 2026-09-21T19:17:16.805374Z | 2026-10-13T09:56:43.175Z |
+| marketplace: arxo.law | 2026-10-13T10:47:06.143Z | 2026-10-13T10:49:23.965Z |
+| open-vsx: arxo.law | 2026-10-13T10:41:46.338008Z | 2026-10-13T10:49:23.965Z |
 
 Only repositories reported public at the selected address are accepted
 as successful observations. Linked projects retain their own licences and notices.

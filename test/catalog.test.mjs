@@ -145,6 +145,8 @@ test('store versions stay independent and an older editor fetch is never present
   const post = requests.find(row => row.url.includes('marketplace.visualstudio.com')).options;
   assert.equal(post.method, 'POST');
   assert.equal(JSON.parse(post.body).filters[0].criteria[0].value, 'arxo.law');
+  const storeUrl = requests.find(row => row.url.includes('marketplace.visualstudio.com')).url;
+  assert.equal(new URL(storeUrl).searchParams.get('arxo_observed_at'), now);
   failStore = true;
   const nextDate = '2026-10-14T12:00:00.000Z';
   const second = await refresh(sources, first, get, nextDate);

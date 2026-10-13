@@ -196,10 +196,13 @@ export async function refresh(sources, previous = {}, get = fetchJson, now = new
     ...(sources.extensions ?? []).map(row => async () => {
       const key = extensionKey(row);
       snapshot.extensions[key] = await attemptObservation(previous.extensions?.[key], async () => {
+        // Registry/CDN caches can retain the preceding release after a publish.
+        // Give this observation a fresh cache key without changing the selection.
+        const fresh = `?arxo_observed_at=${encodeURIComponent(now)}`;
         const data = row.registry === 'open-vsx'
-          ? await get(`https://open-vsx.org/api/${row.name.replace('.', '/')}/latest`)
-          : await get('https://marketplace.visualstudio.com/_apis/public/gallery/extensionquery', {
-            method: 'POST', headers: { Accept: 'application/json;api-version=7.2-preview.1', 'Content-Type': 'application/json' },
+          ? await get(`https://open-vsx.org/api/${row.name.replace('.', '/')}/latest${fresh}`)
+          : await get(`https://marketplace.visualstudio.com/_apis/public/gallery/extensionquery${fresh}`, {
+            method: 'POST', headers: { Accept: 'application/json;api-version=7.2-preview.1', 'Content-Type': 'application/json', 'Cache-Control': 'no-cache' },
             body: JSON.stringify({ filters: [{ criteria: [{ filterType: 7, value: row.name }] }], flags: 914 }),
           });
         return extensionObservation(row, data, now);
