@@ -12,7 +12,8 @@
 [![npm](https://img.shields.io/npm/v/@arxo/law)](https://www.npmjs.com/package/@arxo/law)
 
 [Try in browser](https://french-benefits.law.arxo.io/) · [Run locally](#run-locally) ·
-[Write rules](docs/write-rules.md) · [Connect MCP](docs/connect-mcp.md)
+[Write rules](docs/write-rules.md) · [Install in VS Code](https://marketplace.visualstudio.com/items?itemName=arxo.law) ·
+[Connect MCP](docs/connect-mcp.md)
 
 SDK and CLI packages are available. [Engine source is planned](docs/source-availability.md).
 
@@ -49,6 +50,8 @@ and run again. [Walk through the example →](docs/write-rules.md)
 |---|---|
 | Run an existing model | [French housing-aid formula: input → answer → evidence](docs/run-a-model.md) |
 | Write my own rules | [A small `.law` source, compiler diagnostics and replay](docs/write-rules.md) |
+| Work in an editor | [Install Arxo Law in VS Code or through Open VSX](docs/install-editor.md) |
+| Use Python | [Published Python SDK and canon packages](docs/packages.md#python-pypi) |
 | Use a model with an assistant | [Install a specific MCP slice and verify the connection](docs/connect-mcp.md) |
 
 ## How an answer is built
@@ -72,8 +75,8 @@ use the same machinery. A proof explains the selected model's answer.
 
 <!-- catalog:featured:end -->
 
-[All packages and compatibility notes →](docs/packages.md) ·
-[Public canons, editors and binary downloads →](docs/ecosystem.md)
+[npm and Python packages →](docs/packages.md) ·
+[Editors, installations, browser tools and learning →](docs/ecosystem.md)
 
 ## Explore and contribute
 
@@ -82,5 +85,15 @@ use the same machinery. A proof explains the selected model's answer.
 - [Example commands and expected results](examples/README.md).
 - [Report a problem](https://github.com/arxohq/law/issues) or [ask a question](https://github.com/arxohq/law/discussions).
 - [Contribution guide](CONTRIBUTING.md) · [source availability](docs/source-availability.md).
+
+## Follow Arxo
+
+<!-- catalog:community:start -->
+
+[YouTube](https://www.youtube.com/@arxohq) · [X](https://x.com/arxohq) · [Telegram](https://t.me/arxoio) · [DEV.to](https://dev.to/arxo) · [Medium](https://medium.com/@arxo) · [Instagram](https://www.instagram.com/arxo.io/)
+
+<!-- catalog:community:end -->
+
+[Community](https://community.arxo.io/) · [Books](https://books.arxo.io/) · [Writings](https://blog.arxo.io/)
 
 [arxo.io](https://www.arxo.io/) · [Documentation](https://docs.arxo.io/) · [Apache-2.0](LICENSE)

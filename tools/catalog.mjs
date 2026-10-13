@@ -7,6 +7,21 @@ const readJson = async name => JSON.parse(await readFile(path.join(root, name), 
 const stable = value => JSON.stringify(value, null, 2) + '\n';
 const cell = value => String(value ?? '—').replaceAll('|', '\\|').replace(/[\r\n]+/g, ' ');
 const versionPattern = /^\d+\.\d+\.\d+(?:-[\w.-]+)?(?:\+[\w.-]+)?$/;
+const pythonVersionPattern = /^[0-9][a-zA-Z0-9.!+_-]{0,127}$/;
+const validDate = value => typeof value === 'string' && Number.isFinite(Date.parse(value));
+export const extensionKey = row => `${row.registry}:${row.name}`;
+export const extensionUrl = row => row.registry === 'marketplace'
+  ? `https://marketplace.visualstudio.com/items?itemName=${row.name}`
+  : `https://open-vsx.org/extension/${row.name.replace('.', '/')}`;
+
+function publicLink(row) {
+  let url;
+  try { url = new URL(row.url); } catch { throw Error('Invalid public link'); }
+  if (url.protocol !== 'https:' || url.username || url.password ||
+      typeof row.title !== 'string' || !row.title || typeof row.purpose !== 'string' || !row.purpose) {
+    throw Error('Public links need an HTTPS URL, title and purpose');
+  }
+}
 
 export function validateSources(sources) {
   if (sources.format !== 'arxo.public-delivery-sources/1') throw Error('Unknown sources format');
@@ -30,6 +45,25 @@ export function validateSources(sources) {
       }
     }
   }
+  for (const key of ['pythonPackages', 'extensions', 'surfaces', 'community']) {
+    if (sources[key] !== undefined && !Array.isArray(sources[key])) throw Error(`Invalid ${key} selection`);
+    const names = new Set();
+    for (const row of sources[key] ?? []) {
+      const name = key === 'extensions' ? extensionKey(row) : row.name ?? row.url;
+      if (names.has(name)) throw Error(`Duplicate ${name}`);
+      names.add(name);
+      if (typeof row.purpose !== 'string' || !row.purpose) throw Error(`Missing purpose: ${name}`);
+      if (key === 'pythonPackages' && !/^arxo(?:-[a-z0-9-]+)?$/.test(row.name)) {
+        throw Error(`Unapproved Python namespace: ${row.name}`);
+      }
+      if (key === 'extensions' && (row.name !== 'arxo.law' ||
+          !['marketplace', 'open-vsx'].includes(row.registry))) throw Error('Unapproved editor listing');
+      if (key === 'surfaces' || key === 'community') publicLink(row);
+      if (key === 'surfaces' && !['Browser', 'Build and integrate', 'Learn'].includes(row.group)) {
+        throw Error(`Unknown surface group: ${row.group}`);
+      }
+    }
+  }
   if (sources.knownIssues !== undefined && !Array.isArray(sources.knownIssues)) throw Error('Invalid knownIssues selection');
   for (const issue of sources.knownIssues ?? []) {
     if (!sources.packages.some(row => row.name === issue.package) ||
@@ -42,12 +76,12 @@ export function validateSources(sources) {
   }
 }
 
-export async function fetchJson(url) {
-  const headers = { Accept: 'application/json', 'User-Agent': 'arxo-law-public-catalogue' };
+export async function fetchJson(url, options = {}) {
+  const headers = { Accept: 'application/json', 'User-Agent': 'arxo-law-public-catalogue', ...options.headers };
   if (url.startsWith('https://api.github.com/') && process.env.GITHUB_TOKEN) {
     headers.Authorization = `Bearer ${process.env.GITHUB_TOKEN}`;
   }
-  const response = await fetch(url, { headers, signal: AbortSignal.timeout(20000) });
+  const response = await fetch(url, { ...options, headers, signal: AbortSignal.timeout(20000) });
   if (!response.ok) throw Error(`HTTP ${response.status}`);
   return response.json();
 }
@@ -83,6 +117,56 @@ export function repositoryObservation(name, data, now) {
     defaultBranch: data.default_branch, archived: data.archived === true };
 }
 
+export function pythonPackageObservation(name, data, now) {
+  const normalize = value => String(value).toLowerCase().replace(/[-_.]+/g, '-');
+  const version = data.info?.version;
+  if (normalize(data.info?.name) !== normalize(name) || !pythonVersionPattern.test(version ?? '')) {
+    throw Error('Missing valid PyPI release');
+  }
+  const files = data.releases?.[version]?.filter(file => !file.yanked);
+  if (!files?.length) throw Error('No non-yanked PyPI release files');
+  const artifacts = files.map(file => {
+    const publishedAt = file.upload_time_iso_8601;
+    if (!validDate(publishedAt) || !/^[a-f0-9]{64}$/.test(file.digests?.sha256 ?? '') ||
+        !file.url?.startsWith('https://files.pythonhosted.org/') || !file.filename ||
+        !Number.isSafeInteger(file.size) || file.size < 0) throw Error('Incomplete PyPI release file');
+    return { name: file.filename, bytes: file.size, sha256: file.digests.sha256,
+      publishedAt, url: file.url };
+  });
+  artifacts.sort((a, b) => a.name.localeCompare(b.name));
+  return { availability: 'available', observedAt: now, version,
+    publishedAt: artifacts.map(file => file.publishedAt).sort()[0],
+    python: data.info.requires_python ?? null,
+    licence: data.info.license_expression ?? data.info.license ?? null,
+    artifacts, url: `https://pypi.org/project/${name}/` };
+}
+
+export function extensionObservation(spec, data, now) {
+  let version, publishedAt, vscode, licence, preRelease;
+  if (spec.registry === 'marketplace') {
+    const matches = (data.results ?? []).flatMap(result => result.extensions ?? [])
+      .filter(row => `${row.publisher?.publisherName}.${row.extensionName}` === spec.name);
+    if (matches.length !== 1) throw Error('Missing exact Marketplace listing');
+    const release = matches[0].versions?.[0];
+    version = release?.version;
+    publishedAt = release?.lastUpdated;
+    const properties = Object.fromEntries((release?.properties ?? []).map(row => [row.key, row.value]));
+    vscode = properties['Microsoft.VisualStudio.Code.Engine'] ?? null;
+    licence = null;
+    preRelease = properties['Microsoft.VisualStudio.Code.PreRelease'] === 'true';
+  } else if (spec.registry === 'open-vsx') {
+    if (`${data.namespace}.${data.name}` !== spec.name || data.error) throw Error('Missing exact Open VSX listing');
+    version = data.version;
+    publishedAt = data.timestamp;
+    vscode = data.engines?.vscode ?? null;
+    licence = data.license ?? null;
+    preRelease = data.preRelease === true;
+  } else throw Error('Unknown editor registry');
+  if (!versionPattern.test(version ?? '') || !validDate(publishedAt)) throw Error('Incomplete editor release');
+  return { availability: 'available', observedAt: now, version, publishedAt,
+    vscode, licence, preRelease, url: extensionUrl(spec) };
+}
+
 export async function attemptObservation(previous, observe, now) {
   try { return await observe(); }
   catch (error) {
@@ -94,7 +178,7 @@ export async function attemptObservation(previous, observe, now) {
 export async function refresh(sources, previous = {}, get = fetchJson, now = new Date().toISOString()) {
   validateSources(sources);
   const snapshot = { format: 'arxo.public-delivery-catalogue/1', refreshedAt: now,
-    packages: {}, repositories: {}, binaryRelease: null };
+    packages: {}, pythonPackages: {}, extensions: {}, repositories: {}, binaryRelease: null };
   // A bounded pool avoids both registry bursts and an unbounded public API fan-out.
   const tasks = [
     ...sources.packages.map(row => async () => {
@@ -105,6 +189,22 @@ export async function refresh(sources, previous = {}, get = fetchJson, now = new
       snapshot.repositories[row.name] = await attemptObservation(previous.repositories?.[row.name], async () =>
         repositoryObservation(row.name, await get(`https://api.github.com/repos/${row.name}`), now), now);
     }),
+    ...(sources.pythonPackages ?? []).map(row => async () => {
+      snapshot.pythonPackages[row.name] = await attemptObservation(previous.pythonPackages?.[row.name], async () =>
+        pythonPackageObservation(row.name, await get(`https://pypi.org/pypi/${row.name}/json`), now), now);
+    }),
+    ...(sources.extensions ?? []).map(row => async () => {
+      const key = extensionKey(row);
+      snapshot.extensions[key] = await attemptObservation(previous.extensions?.[key], async () => {
+        const data = row.registry === 'open-vsx'
+          ? await get(`https://open-vsx.org/api/${row.name.replace('.', '/')}/latest`)
+          : await get('https://marketplace.visualstudio.com/_apis/public/gallery/extensionquery', {
+            method: 'POST', headers: { Accept: 'application/json;api-version=7.2-preview.1', 'Content-Type': 'application/json' },
+            body: JSON.stringify({ filters: [{ criteria: [{ filterType: 7, value: row.name }] }], flags: 914 }),
+          });
+        return extensionObservation(row, data, now);
+      }, now);
+    }),
   ];
   let cursor = 0;
   await Promise.all(Array.from({ length: 4 }, async () => {
@@ -112,6 +212,8 @@ export async function refresh(sources, previous = {}, get = fetchJson, now = new
   }));
   snapshot.packages = Object.fromEntries(sources.packages.map(row => [row.name, snapshot.packages[row.name]]));
   snapshot.repositories = Object.fromEntries(sources.repositories.map(row => [row.name, snapshot.repositories[row.name]]));
+  snapshot.pythonPackages = Object.fromEntries((sources.pythonPackages ?? []).map(row => [row.name, snapshot.pythonPackages[row.name]]));
+  snapshot.extensions = Object.fromEntries((sources.extensions ?? []).map(row => [extensionKey(row), snapshot.extensions[extensionKey(row)]]));
   snapshot.binaryRelease = await attemptObservation(previous.binaryRelease, async () => {
     if (snapshot.repositories['arxohq/law-releases']?.availability !== 'available') {
       throw Error('Binary repository has no fresh public observation');
@@ -180,6 +282,7 @@ export function render(sources, snapshot, dependencies = {}) {
     '| I want to… | Start with |', '|---|---|',
     '| Run a published model | [Run a model](run-a-model.md) with `@arxo/law` |',
     '| Compile my own rules | [Write rules](write-rules.md) with `@arxo/law-engine` |',
+    '| Work in Python | [Python packages](#python-pypi) and the Python SDK guide |',
     '| Connect an assistant | [Connect MCP](connect-mcp.md) with a selected slice |', '',
     `Last refresh attempt: **${shortDate(snapshot.refreshedAt)}**.`, '',
     '**Example set** means that exact version is used by this repository\'s CI examples.',
@@ -192,6 +295,19 @@ export function render(sources, snapshot, dependencies = {}) {
     if (group === 'MCP') packages.push('A slice keeps its own pinned MCP host version.',
       '[Connection instructions →](connect-mcp.md)', '');
   }
+  if (sources.pythonPackages?.length) {
+    packages.push('## Python (PyPI)', '',
+      '[Python SDK guide](https://docs.arxo.io/build/sdk/python/). Select the canon package as well as the facade.', '',
+      '```sh', 'pip install arxo arxo-canon-bgb-fristen', '```', '',
+      'Check the observed Python requirement and pin the package versions for your application.',
+      'The Node.js example set does not validate these Python packages.', '',
+      '| Package | Latest | Python | Use it for |', '|---|---|---|---|');
+    for (const spec of sources.pythonPackages) {
+      const row = snapshot.pythonPackages?.[spec.name];
+      packages.push(`| [${spec.name}](https://pypi.org/project/${spec.name}/) | ${cell((row?.version ?? 'not observed') + availability(row))} | ${cell(row?.python)} | ${cell(spec.purpose)} |`);
+    }
+    packages.push('');
+  }
   packages.push('<details>', '<summary>Platform dependencies — installed by the launchers</summary>', '',
     'These are normally selected automatically for the operating system and architecture.', '',
     packageTable(sources.packages.filter(row => row.group === 'Platform dependencies'), snapshot,
@@ -202,8 +318,13 @@ export function render(sources, snapshot, dependencies = {}) {
     const row = snapshot.packages[spec.name];
     packages.push(`| ${spec.name} | ${cell(row?.publishedAt)} | ${cell(observed(row))} |`);
   }
+  for (const spec of sources.pythonPackages ?? []) {
+    const row = snapshot.pythonPackages?.[spec.name];
+    packages.push(`| ${spec.name} (PyPI) | ${cell(row?.publishedAt)} | ${cell(observed(row))} |`);
+  }
   packages.push('', 'Full integrity strings and exact dependency pins are in the',
-    '[captured snapshot](../catalog/snapshot.json). npm `latest` is a distribution',
+    '[captured snapshot](../catalog/snapshot.json), alongside SHA-256 hashes of PyPI release files.',
+    'npm `latest` is a distribution',
     'tag; it does not establish compatibility. When a fetch fails, the version',
     'retains its original observation date and is labelled unavailable.', '',
     'The [source selection](../catalog/sources.json) is curated. Follow the',
@@ -212,20 +333,64 @@ export function render(sources, snapshot, dependencies = {}) {
     'Refreshing the catalogue does not upgrade those examples or validate the full corpus.', '');
 
   const ecosystem = ['# Explore the public ecosystem', '', '[← Arxo Law](../README.md)', '',
-    'Model sources, examples, editor tools and delivery channels maintained separately.',
-    `Last refresh attempt: **${shortDate(snapshot.refreshedAt)}**.`, '',
-    '| Project | What you can do |', '|---|---|'];
-  for (const spec of sources.repositories) {
-    const row = snapshot.repositories[spec.name];
-    ecosystem.push(`| [${spec.name}](https://github.com/${spec.name})${cell(availability(row))} | ${cell(spec.purpose)} |`);
+    'Choose an editor, installation route, browser tool or learning format.',
+    `Last refresh attempt: **${shortDate(snapshot.refreshedAt)}**.`, ''];
+  if (sources.extensions?.length) {
+    ecosystem.push('## Install the editor', '',
+      '[Installation and first steps →](install-editor.md)', '',
+      '| Store | Latest | Use it for |', '|---|---|---|');
+    for (const spec of sources.extensions) {
+      const row = snapshot.extensions?.[extensionKey(spec)];
+      const title = spec.registry === 'marketplace' ? 'Visual Studio Marketplace' : 'Open VSX';
+      ecosystem.push(`| [${title}](${extensionUrl(spec)}) | ${cell((row?.version ?? 'not observed') + (row?.preRelease ? ' (prerelease)' : '') + availability(row))} | ${cell(spec.purpose)} |`);
+    }
+    ecosystem.push('', 'VS Code command line:', '', '```sh', 'code --install-extension arxo.law', '```', '',
+      'Check the installed version in the extension\'s Details view. Store releases can differ.',
+      'The [editor guide](install-editor.md#check-which-release-you-installed) distinguishes',
+      'published features from newer development work.', '');
   }
   const binary = snapshot.binaryRelease;
-  ecosystem.push('', '## Install the CLI', '', '```sh', 'npm install -g @arxo/cli',
+  ecosystem.push('## Install the CLI', '',
+    '| Route | Start here |', '|---|---|',
+    '| npm | `npm install -g @arxo/cli` |',
+    '| Homebrew | `brew install arxohq/tap/law` · [tap](https://github.com/arxohq/homebrew-tap) |',
+    '| APT: Debian and Ubuntu amd64 | [Repository setup](https://packages.arxo.io/) · package `arxo-law` |',
+    '| Archive or shell installer | [Release assets and checksums](https://github.com/arxohq/law-releases/releases) |', '',
+    'Follow the [installation guide](https://docs.arxo.io/cli/install/) for platform requirements.',
+    'After installation, inspect the command:', '', '```sh',
     'law --help', '```', '',
     binary?.tag ? `Observed stable binary release: [${cell(binary.tag)}](${binary.url})${cell(availability(binary))}.`
       : 'A stable binary release has not been observed.', '',
     'CLI and LSP archives, installers and matching checksums are in',
-    '[law-releases](https://github.com/arxohq/law-releases).', '',
+    '[law-releases](https://github.com/arxohq/law-releases).', '');
+  for (const group of ['Browser', 'Build and integrate', 'Learn']) {
+    const selection = (sources.surfaces ?? []).filter(row => row.group === group);
+    if (!selection.length) continue;
+    ecosystem.push(`## ${group === 'Browser' ? 'Try in the browser' : group}`, '',
+      '| Start here | What you can do |', '|---|---|');
+    for (const row of selection) ecosystem.push(`| [${cell(row.title)}](${row.url}) | ${cell(row.purpose)} |`);
+    ecosystem.push('');
+  }
+  ecosystem.push('## Public model and tool repositories', '', '| Project | What you can do |', '|---|---|');
+  for (const spec of sources.repositories) {
+    const row = snapshot.repositories[spec.name];
+    ecosystem.push(`| [${spec.name}](https://github.com/${spec.name})${cell(availability(row))} | ${cell(spec.purpose)} |`);
+  }
+  ecosystem.push('', '## Other tools', '',
+    'The [integration-pattern guide](https://docs.arxo.io/agent-engineering/integration-patterns/)',
+    'also describes generated-code use. No dedicated generated-module distribution is observed here.',
+    'Public installation routes for Zed, the desktop app and standalone agent skills',
+    'have not been verified by this catalogue.', '', '## Follow and participate', '',
+    '[Ask a question](https://github.com/arxohq/law/discussions) ·',
+    '[Report a problem](https://github.com/arxohq/law/issues) ·',
+    '[Community](https://community.arxo.io/)', '');
+  if (sources.community?.length) {
+    ecosystem.push('| Channel | What you will find |', '|---|---|');
+    for (const row of sources.community) ecosystem.push(`| [${cell(row.title)}](${row.url}) | ${cell(row.purpose)} |`);
+    ecosystem.push('');
+  }
+  ecosystem.push('Website and community links are curated entry points. Registry observations',
+    'below record publication metadata; they do not establish runtime compatibility.', '',
     '<details>', '<summary>Binary assets and observation details</summary>', '',
     `Binary observation (UTC): ${observed(binary)}.`, '');
   if (binary?.assets?.length) {
@@ -237,36 +402,44 @@ export function render(sources, snapshot, dependencies = {}) {
   for (const spec of sources.repositories) {
     ecosystem.push(`| ${spec.name} | ${cell(observed(snapshot.repositories[spec.name]))} |`);
   }
+  if (sources.extensions?.length) {
+    ecosystem.push('', '| Editor store | Published / updated (UTC) | Last successful observation (UTC) |', '|---|---|---|');
+    for (const spec of sources.extensions) {
+      const row = snapshot.extensions?.[extensionKey(spec)];
+      ecosystem.push(`| ${cell(spec.registry)}: ${spec.name} | ${cell(row?.publishedAt)} | ${cell(observed(row))} |`);
+    }
+  }
   ecosystem.push('', 'Only repositories reported public at the selected address are accepted',
     'as successful observations. Linked projects retain their own licences and notices.', '',
-    '</details>', '', '## More entry points', '',
-    '- [Try the French benefits lab](https://french-benefits.law.arxo.io/).',
-    '- [Read the authoring and integration guides](https://docs.arxo.io/).',
+    '</details>', '',
     '- [Choose an npm package or MCP slice](packages.md).',
     '- [Visit Arxo](https://www.arxo.io/).', '');
   return { featured: packageTable(sources.packages.filter(row => row.featured), snapshot, { featured: true }),
-    packages: packages.join('\n'), ecosystem: ecosystem.join('\n') };
+    packages: packages.join('\n'), ecosystem: ecosystem.join('\n'),
+    community: (sources.community ?? []).map(row => `[${row.title}](${row.url})`).join(' · ') };
 }
 
 export async function renderedFiles(sources, snapshot) {
   const pkg = await readJson('package.json');
   const pages = render(sources, snapshot, pkg.dependencies);
   const readme = await readFile(path.join(root, 'README.md'), 'utf8');
-  const start = '<!-- catalog:featured:start -->';
-  const end = '<!-- catalog:featured:end -->';
-  if (readme.split(start).length !== 2 || readme.split(end).length !== 2 || readme.indexOf(start) > readme.indexOf(end)) {
-    throw Error('README catalogue markers missing or ambiguous');
+  function block(content, name, body) {
+    const start = `<!-- catalog:${name}:start -->`, end = `<!-- catalog:${name}:end -->`;
+    if (content.split(start).length !== 2 || content.split(end).length !== 2 || content.indexOf(start) > content.indexOf(end)) {
+      throw Error(`README ${name} markers missing or ambiguous`);
+    }
+    return content.slice(0, content.indexOf(start) + start.length) + '\n\n' + body + '\n\n' + content.slice(content.indexOf(end));
   }
-  const updated = readme.slice(0, readme.indexOf(start) + start.length) + '\n\n' +
-    pages.featured + '\n\n' + readme.slice(readme.indexOf(end));
+  let updated = block(readme, 'featured', pages.featured);
+  if (sources.community !== undefined) updated = block(updated, 'community', pages.community);
   return { 'README.md': updated, 'docs/packages.md': pages.packages, 'docs/ecosystem.md': pages.ecosystem };
 }
 
 export async function checkCatalogue() {
   const sources = await readJson('catalog/sources.json');
   const snapshot = await readJson('catalog/snapshot.json');
-  for (const key of ['packages', 'repositories']) {
-    const expected = sources[key].map(row => row.name).sort();
+  for (const key of ['packages', 'repositories', 'pythonPackages', 'extensions']) {
+    const expected = (sources[key] ?? []).map(row => key === 'extensions' ? extensionKey(row) : row.name).sort();
     const actual = Object.keys(snapshot[key] ?? {}).sort();
     if (stable(expected) !== stable(actual)) throw Error(`Snapshot ${key} differs from selected sources`);
     for (const [name, row] of Object.entries(snapshot[key])) {
@@ -275,6 +448,16 @@ export async function checkCatalogue() {
       if (row.availability === 'available' && !row.observedAt) throw Error(`Undated observation: ${name}`);
       if (key === 'packages' && row.observedAt && (!versionPattern.test(row.version ?? '') || !row.integrity)) {
         throw Error(`Invalid published package: ${name}`);
+      }
+      if (key === 'pythonPackages' && row.observedAt && (!pythonVersionPattern.test(row.version ?? '') ||
+          !row.artifacts?.length || row.artifacts.some(file => !/^[a-f0-9]{64}$/.test(file.sha256 ?? '')))) {
+        throw Error(`Invalid published Python package: ${name}`);
+      }
+      if (key === 'extensions' && row.observedAt && !versionPattern.test(row.version ?? '')) {
+        throw Error(`Invalid published extension: ${name}`);
+      }
+      if (['pythonPackages', 'extensions'].includes(key) && row.observedAt && !validDate(row.publishedAt)) {
+        throw Error(`Invalid publication date: ${name}`);
       }
     }
   }
@@ -300,9 +483,10 @@ async function main() {
   for (const [name, content] of Object.entries(await renderedFiles(sources, snapshot))) {
     await writeFile(path.join(root, name), content);
   }
-  const failed = [...Object.values(snapshot.packages), ...Object.values(snapshot.repositories), snapshot.binaryRelease]
+  const failed = ['packages', 'repositories', 'pythonPackages', 'extensions']
+    .flatMap(key => Object.values(snapshot[key] ?? {})).concat(snapshot.binaryRelease)
     .filter(row => row?.availability === 'unavailable');
-  console.log(`Catalogue: ${sources.packages.length} packages, ${sources.repositories.length} repositories; ${failed.length} unavailable observations.`);
+  console.log(`Catalogue: ${sources.packages.length} npm packages, ${sources.pythonPackages?.length ?? 0} PyPI packages, ${sources.extensions?.length ?? 0} editor listings, ${sources.repositories.length} repositories; ${failed.length} unavailable observations.`);
   if (mode[0] === '--refresh' && failed.length) process.exitCode = 1;
 }
 

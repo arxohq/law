@@ -79,7 +79,8 @@ law --help
 ```
 
 The current CLI platform packages target macOS ARM64 and Linux x64.
-The [VS Code and Cursor extension](https://github.com/arxohq/arxo-vscode)
-adds syntax support, diagnostics and compiler-backed hints for `.law` files.
+The [editor installation guide](install-editor.md) links directly to
+Marketplace and Open VSX and explains how to check the installed version.
+Arxo Law adds syntax support and compiler-backed tools for `.law` files.
 Binary downloads and alternative installation routes are in
 [the ecosystem catalogue](ecosystem.md#install-the-cli).
