@@ -54,6 +54,11 @@
       "purpose": "Selected French benefit models"
     },
     {
+      "name": "@arxo/canon-de-wohngeld",
+      "group": "Canons",
+      "purpose": "Selected German housing-benefit models and book cases"
+    },
+    {
       "name": "@arxo/canon-ogpo-vts",
       "group": "Canons",
       "purpose": "Pinned Kazakhstan OGPO vehicle-insurance model"
@@ -145,6 +150,14 @@
     {
       "name": "arxohq/law-as-code-france-examples",
       "purpose": "Fictional French benefit cases and book examples"
+    },
+    {
+      "name": "arxohq/arxo-wohngeld",
+      "purpose": "German housing-benefit models and Node.js distribution"
+    },
+    {
+      "name": "arxohq/law-as-code-germany-examples",
+      "purpose": "Fictional German housing-benefit cases and book examples"
     },
     {
       "name": "arxohq/arxo-catala-parity",

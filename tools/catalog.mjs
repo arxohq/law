@@ -221,9 +221,15 @@ export async function refresh(sources, previous = {}, get = fetchJson, now = new
     if (snapshot.repositories['arxohq/law-releases']?.availability !== 'available') {
       throw Error('Binary repository has no fresh public observation');
     }
-    const data = await get('https://api.github.com/repos/arxohq/law-releases/releases/latest');
-    if (data.draft || data.prerelease || !data.tag_name ||
-        !data.html_url?.startsWith('https://github.com/arxohq/law-releases/releases/')) {
+    // This repository also carries canon illustrations. GitHub's latest release
+    // can therefore be an asset release rather than a CLI/LSP distribution.
+    const releases = await get('https://api.github.com/repos/arxohq/law-releases/releases?per_page=100');
+    const data = Array.isArray(releases) ? releases.filter(row =>
+      !row.draft && !row.prerelease && /^law-v\d+\.\d+\.\d+$/.test(row.tag_name ?? '') &&
+      validDate(row.published_at) && Array.isArray(row.assets) &&
+      row.html_url === `https://github.com/arxohq/law-releases/releases/tag/${row.tag_name}`)
+      .sort((a, b) => Date.parse(b.published_at) - Date.parse(a.published_at))[0] : undefined;
+    if (!data) {
       throw Error('No public stable binary release');
     }
     return { availability: 'available', observedAt: now, tag: data.tag_name,
