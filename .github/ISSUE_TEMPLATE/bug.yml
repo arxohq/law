@@ -1,0 +1,31 @@
+name: Bug report
+description: Report a reproducible problem with a package or example.
+body:
+  - type: input
+    id: versions
+    attributes:
+      label: Package and versions
+      placeholder: '@arxo/law 0.4.2, @arxo/canon-bgb-fristen 0.1.13'
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Node.js version and operating system
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Small reproduction
+      description: Include exact input, model, dates and policies. Use fictional or redacted facts.
+      render: javascript
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: Expected and observed result
+      description: Include the diagnostic or evaluation status and relevant output.
+    validations:
+      required: true

@@ -1,0 +1,472 @@
+{
+  "format": "arxo.public-delivery-catalogue/1",
+  "refreshedAt": "2026-10-13T08:42:07.132Z",
+  "packages": {
+    "@arxo/law": {
+      "availability": "available",
+      "observedAt": "2026-10-13T08:42:07.132Z",
+      "version": "0.4.2",
+      "publishedAt": "2026-10-12T20:17:48.577Z",
+      "distTags": {
+        "latest": "0.4.2",
+        "next": "0.2.0"
+      },
+      "licence": "Apache-2.0",
+      "node": ">=18",
+      "deprecated": null,
+      "dependencies": {
+        "@arxo/law-client": "0.3.2",
+        "@arxo/law-engine": "0.5.2",
+        "@arxo/law-forms": "0.3.2",
+        "@arxo/law-types": "0.3.2"
+      },
+      "optionalDependencies": {},
+      "integrity": "sha512-lE/7AxKh1BPRMSJLKKHDsIekG3XAevzhePm6lxU7d7/3xx0vBCLXWCJECBDp4FrAl41Xq74K585crX3N+f5O7w==",
+      "url": "https://www.npmjs.com/package/@arxo/law"
+    },
+    "@arxo/law-engine": {
+      "availability": "available",
+      "observedAt": "2026-10-13T08:42:07.132Z",
+      "version": "0.5.2",
+      "publishedAt": "2026-10-12T20:14:41.020Z",
+      "distTags": {
+        "latest": "0.5.2",
+        "next": "0.3.2"
+      },
+      "licence": "Apache-2.0",
+      "node": ">=18",
+      "deprecated": null,
+      "dependencies": {
+        "@arxo/law-types": "0.3.2"
+      },
+      "optionalDependencies": {},
+      "integrity": "sha512-L7zxsrH5Gd1G+LAfVUGICvPSEk0rXJbfDAfbW7534tG8xBExUgBeyuEQVa/9fnZiR6Z3BkNSVqgQ4BOHstWuxA==",
+      "url": "https://www.npmjs.com/package/@arxo/law-engine"
+    },
+    "@arxo/law-types": {
+      "availability": "available",
+      "observedAt": "2026-10-13T08:42:07.132Z",
+      "version": "0.3.2",
+      "publishedAt": "2026-10-12T20:13:16.538Z",
+      "distTags": {
+        "latest": "0.3.2",
+        "next": "0.2.0"
+      },
+      "licence": "Apache-2.0",
+      "node": ">=18",
+      "deprecated": null,
+      "dependencies": {},
+      "optionalDependencies": {},
+      "integrity": "sha512-020dLd/+yGoO1goC90GhihUFgZVWMFSk27gD1XeRQLXfrogmH/szICx7b64VEiuPSUnxZd94kM8ZMdOHLtMPYA==",
+      "url": "https://www.npmjs.com/package/@arxo/law-types"
+    },
+    "@arxo/law-client": {
+      "availability": "available",
+      "observedAt": "2026-10-13T08:42:07.132Z",
+      "version": "0.3.2",
+      "publishedAt": "2026-10-12T20:17:02.832Z",
+      "distTags": {
+        "latest": "0.3.2",
+        "next": "0.1.0"
+      },
+      "licence": "Apache-2.0",
+      "node": ">=18",
+      "deprecated": null,
+      "dependencies": {
+        "@arxo/law-types": "0.3.2"
+      },
+      "optionalDependencies": {},
+      "integrity": "sha512-iV6eHxNK//IWorxc3uy148YXujqm4apMHrUMaVTfVveJnoMMajFq8wZ7U6vLEsO2zZBt4/UE1gCJoHFC94Khww==",
+      "url": "https://www.npmjs.com/package/@arxo/law-client"
+    },
+    "@arxo/law-forms": {
+      "availability": "available",
+      "observedAt": "2026-10-13T08:42:07.132Z",
+      "version": "0.3.2",
+      "publishedAt": "2026-10-12T20:19:18.910Z",
+      "distTags": {
+        "latest": "0.3.2",
+        "next": "0.1.0"
+      },
+      "licence": "Apache-2.0",
+      "node": ">=18",
+      "deprecated": null,
+      "dependencies": {
+        "@arxo/law-types": "0.3.2"
+      },
+      "optionalDependencies": {},
+      "integrity": "sha512-jicxgjBZnP+f4gASDrlkxdYZZOLd4/rLH0p8XrBuBBqKXMsKi8bYZNscHu+31ByZHD3Yrgykz3MFH11MSKw/vw==",
+      "url": "https://www.npmjs.com/package/@arxo/law-forms"
+    },
+    "@arxo/cli": {
+      "availability": "available",
+      "observedAt": "2026-10-13T08:42:07.132Z",
+      "version": "0.2.2",
+      "publishedAt": "2026-10-12T16:37:55.336Z",
+      "distTags": {
+        "latest": "0.2.2"
+      },
+      "licence": "Apache-2.0",
+      "node": ">=20",
+      "deprecated": null,
+      "dependencies": {},
+      "optionalDependencies": {
+        "@arxo/cli-darwin-arm64": "0.2.2",
+        "@arxo/cli-linux-x64": "0.2.2"
+      },
+      "integrity": "sha512-VMiHZyzhU35RN0CQLR5XBv3gvsdD6XKi0cvN0LJ2wXX4e6J/R0qYorQMBsRU+FwPFXV6+SDiFQI1jndavWWaEQ==",
+      "url": "https://www.npmjs.com/package/@arxo/cli"
+    },
+    "create-arxo": {
+      "availability": "available",
+      "observedAt": "2026-10-13T08:42:07.132Z",
+      "version": "0.3.1",
+      "publishedAt": "2026-10-12T10:19:47.939Z",
+      "distTags": {
+        "latest": "0.3.1",
+        "next": "0.2.0"
+      },
+      "licence": "Apache-2.0",
+      "node": ">=18",
+      "deprecated": null,
+      "dependencies": {},
+      "optionalDependencies": {},
+      "integrity": "sha512-NeEDs3JPByEI1Zof2O4KEu/1X1fd++wVHXyOFlDyyPbLV/6ZYOxXJW3Ta8W4IleE5TecL5iSHrorDgedlFso2A==",
+      "url": "https://www.npmjs.com/package/create-arxo"
+    },
+    "@arxo/canon-bgb-fristen": {
+      "availability": "available",
+      "observedAt": "2026-10-13T08:42:07.132Z",
+      "version": "0.1.13",
+      "publishedAt": "2026-10-10T13:53:40.077Z",
+      "distTags": {
+        "latest": "0.1.13",
+        "next": "0.1.2"
+      },
+      "licence": "Apache-2.0",
+      "node": ">=18",
+      "deprecated": null,
+      "dependencies": {},
+      "optionalDependencies": {},
+      "integrity": "sha512-iiOePPaDz4hsQ8kJantn7/2Hd5/D+C33S4ZF7OybQZWy6luy5kLSif2qLCNMdghosREemvgxCxFxtqAYmA3UNg==",
+      "url": "https://www.npmjs.com/package/@arxo/canon-bgb-fristen"
+    },
+    "@arxo/canon-fr-benefits": {
+      "availability": "available",
+      "observedAt": "2026-10-13T08:42:07.132Z",
+      "version": "0.1.2",
+      "publishedAt": "2026-10-12T22:23:56.825Z",
+      "distTags": {
+        "latest": "0.1.2"
+      },
+      "licence": "Apache-2.0",
+      "node": ">=20",
+      "deprecated": null,
+      "dependencies": {},
+      "optionalDependencies": {},
+      "integrity": "sha512-rx8dBg8uvK6PW2nL2CgZpjIKrZm5pOJt2opQTyBvULtPQvXnU+55aitP21+DMSfdnE2O8Am3n/B/kb2N5p4J3Q==",
+      "url": "https://www.npmjs.com/package/@arxo/canon-fr-benefits"
+    },
+    "@arxo/canon-ogpo-vts": {
+      "availability": "available",
+      "observedAt": "2026-10-13T08:42:07.132Z",
+      "version": "0.1.10",
+      "publishedAt": "2026-10-10T13:53:25.715Z",
+      "distTags": {
+        "latest": "0.1.10",
+        "next": "0.1.0"
+      },
+      "licence": "Apache-2.0",
+      "node": ">=18",
+      "deprecated": null,
+      "dependencies": {},
+      "optionalDependencies": {},
+      "integrity": "sha512-ZWuGu+33zoCx+uS0Xa8e3i7N1FJsstmkg1cUUahGyJr2WNpghtCGud9sdCVzXQHTpUzY7I9rJH7DgNZZBVqlDg==",
+      "url": "https://www.npmjs.com/package/@arxo/canon-ogpo-vts"
+    },
+    "@arxo/canon-swift-lilliput": {
+      "availability": "available",
+      "observedAt": "2026-10-13T08:42:07.132Z",
+      "version": "0.1.10",
+      "publishedAt": "2026-10-10T13:54:55.460Z",
+      "distTags": {
+        "latest": "0.1.10"
+      },
+      "licence": "Apache-2.0",
+      "node": ">=18",
+      "deprecated": null,
+      "dependencies": {},
+      "optionalDependencies": {},
+      "integrity": "sha512-Eeme8HHiMI/pcoNzjlDAMjXo2YwC4e4z6HX+lGcwKNvqHgELrq75IeXqRdlgL5lcBT8ojXGNyfm1+Ttb5CvE1g==",
+      "url": "https://www.npmjs.com/package/@arxo/canon-swift-lilliput"
+    },
+    "@arxo/canon-unidroit-picc": {
+      "availability": "available",
+      "observedAt": "2026-10-13T08:42:07.132Z",
+      "version": "0.1.11",
+      "publishedAt": "2026-10-10T13:53:20.915Z",
+      "distTags": {
+        "latest": "0.1.11",
+        "next": "0.1.0"
+      },
+      "licence": "Apache-2.0",
+      "node": ">=18",
+      "deprecated": null,
+      "dependencies": {},
+      "optionalDependencies": {},
+      "integrity": "sha512-TSWG4bIgFUK/6T/Utglk8Fka/xALOFEULjyEwEIzhBeGw3WKQ2BvqNXsFEN6IiEZi32kGvrcDtM11u8+S7jXSA==",
+      "url": "https://www.npmjs.com/package/@arxo/canon-unidroit-picc"
+    },
+    "@arxo/mcp-charter": {
+      "availability": "available",
+      "observedAt": "2026-10-13T08:42:07.132Z",
+      "version": "0.1.7",
+      "publishedAt": "2026-10-10T14:11:35.375Z",
+      "distTags": {
+        "latest": "0.1.7"
+      },
+      "licence": "Apache-2.0",
+      "node": ">=18",
+      "deprecated": null,
+      "dependencies": {},
+      "optionalDependencies": {
+        "@arxo/mcp-host-darwin-arm64": "0.3.10",
+        "@arxo/mcp-host-linux-x64": "0.3.10"
+      },
+      "integrity": "sha512-DH1ok7a2THFXE3EGWVFNeTXj809cMc8RsMilvEJdbepoT9OO6r1LKQo3Z/j4LfM8kiOPrgEAD+AyKMpoCDMRDQ==",
+      "url": "https://www.npmjs.com/package/@arxo/mcp-charter"
+    },
+    "@arxo/mcp-code-civil": {
+      "availability": "available",
+      "observedAt": "2026-10-13T08:42:07.132Z",
+      "version": "0.1.9",
+      "publishedAt": "2026-10-10T14:09:22.163Z",
+      "distTags": {
+        "latest": "0.1.9"
+      },
+      "licence": "Apache-2.0",
+      "node": ">=18",
+      "deprecated": null,
+      "dependencies": {},
+      "optionalDependencies": {
+        "@arxo/mcp-host-darwin-arm64": "0.3.10",
+        "@arxo/mcp-host-linux-x64": "0.3.10"
+      },
+      "integrity": "sha512-gyWXf4s51GZk360qPF9dFeT6TlKGnwcWHY2TxykHK3QuvdVdlmr+qYcurg2f13VSjyjd0y9wb5Qcnh17S9WmjA==",
+      "url": "https://www.npmjs.com/package/@arxo/mcp-code-civil"
+    },
+    "@arxo/mcp-de-bgb": {
+      "availability": "available",
+      "observedAt": "2026-10-13T08:42:07.132Z",
+      "version": "0.1.8",
+      "publishedAt": "2026-10-10T14:09:22.201Z",
+      "distTags": {
+        "latest": "0.1.8"
+      },
+      "licence": "Apache-2.0",
+      "node": ">=18",
+      "deprecated": null,
+      "dependencies": {},
+      "optionalDependencies": {
+        "@arxo/mcp-host-darwin-arm64": "0.3.10",
+        "@arxo/mcp-host-linux-x64": "0.3.10"
+      },
+      "integrity": "sha512-HhVO1DplT6/3HZBV9cWVZKd0vfTbeNQN1JIGY9hW1kh1Isez6iOdlRDjraha3gJ8jmMYtfcrBYUyezfDLBB1aQ==",
+      "url": "https://www.npmjs.com/package/@arxo/mcp-de-bgb"
+    },
+    "@arxo/mcp-picc": {
+      "availability": "available",
+      "observedAt": "2026-10-13T08:42:07.132Z",
+      "version": "0.3.9",
+      "publishedAt": "2026-10-10T14:05:57.337Z",
+      "distTags": {
+        "latest": "0.3.9"
+      },
+      "licence": "Apache-2.0",
+      "node": ">=18",
+      "deprecated": null,
+      "dependencies": {},
+      "optionalDependencies": {
+        "@arxo/mcp-host-darwin-arm64": "0.3.10",
+        "@arxo/mcp-host-linux-x64": "0.3.10"
+      },
+      "integrity": "sha512-bVo8fUSP6wpDTkVGoyiM1O64b87iarHIt9kbN56sKm5ON7wgCLzuQd2nQZnlUFHxensXdfr6swj60gvQPQeN+Q==",
+      "url": "https://www.npmjs.com/package/@arxo/mcp-picc"
+    },
+    "@arxo/cli-darwin-arm64": {
+      "availability": "available",
+      "observedAt": "2026-10-13T08:42:07.132Z",
+      "version": "0.2.2",
+      "publishedAt": "2026-10-12T16:37:00.796Z",
+      "distTags": {
+        "latest": "0.2.2"
+      },
+      "licence": "Apache-2.0",
+      "node": null,
+      "deprecated": null,
+      "dependencies": {},
+      "optionalDependencies": {},
+      "integrity": "sha512-sKGjwv0rvWodiWTxVhXAQ4rvckQpbzkXXkpAOvhdOl+XRkrIlg42U+BQujMmzTdeKBPu8WXedjndjlaY4D0sVA==",
+      "url": "https://www.npmjs.com/package/@arxo/cli-darwin-arm64"
+    },
+    "@arxo/cli-linux-x64": {
+      "availability": "available",
+      "observedAt": "2026-10-13T08:42:07.132Z",
+      "version": "0.2.2",
+      "publishedAt": "2026-10-12T16:37:04.932Z",
+      "distTags": {
+        "latest": "0.2.2"
+      },
+      "licence": "Apache-2.0",
+      "node": null,
+      "deprecated": null,
+      "dependencies": {},
+      "optionalDependencies": {},
+      "integrity": "sha512-UoxC7HRKL3DjxvS3zgeYGGTgwCSyTQ1R0oWf5/Iv/fYzCFIV17CiKjqziWfp2SOTE0o0gNSpbycP3B/06HoSVA==",
+      "url": "https://www.npmjs.com/package/@arxo/cli-linux-x64"
+    },
+    "@arxo/mcp-host-darwin-arm64": {
+      "availability": "available",
+      "observedAt": "2026-10-13T08:42:07.132Z",
+      "version": "0.4.1",
+      "publishedAt": "2026-10-12T10:13:46.720Z",
+      "distTags": {
+        "latest": "0.4.1"
+      },
+      "licence": "Apache-2.0",
+      "node": null,
+      "deprecated": null,
+      "dependencies": {},
+      "optionalDependencies": {},
+      "integrity": "sha512-mpMwpaFFYbePBzwBZ0xt7pyyE6rcrPlYVmx7ekmzNZG7Rn0L/S6KeBWL+EkALrq8MjKlnc+yJTKq2+k2ULrlXg==",
+      "url": "https://www.npmjs.com/package/@arxo/mcp-host-darwin-arm64"
+    },
+    "@arxo/mcp-host-linux-x64": {
+      "availability": "available",
+      "observedAt": "2026-10-13T08:42:07.132Z",
+      "version": "0.4.1",
+      "publishedAt": "2026-10-12T10:26:49.436Z",
+      "distTags": {
+        "latest": "0.4.1"
+      },
+      "licence": "Apache-2.0",
+      "node": null,
+      "deprecated": null,
+      "dependencies": {},
+      "optionalDependencies": {},
+      "integrity": "sha512-r01PPKQtatmSG7Uy00K99gqm9u0zLrk7XESGv03+GMegfL1YyiFxuUmm3ihLU9wOS9/wWXserqE15/tx0NC7vg==",
+      "url": "https://www.npmjs.com/package/@arxo/mcp-host-linux-x64"
+    }
+  },
+  "repositories": {
+    "arxohq/law-releases": {
+      "availability": "available",
+      "observedAt": "2026-10-13T08:42:07.132Z",
+      "url": "https://github.com/arxohq/law-releases",
+      "defaultBranch": "main",
+      "archived": false
+    },
+    "arxohq/homebrew-tap": {
+      "availability": "available",
+      "observedAt": "2026-10-13T08:42:07.132Z",
+      "url": "https://github.com/arxohq/homebrew-tap",
+      "defaultBranch": "main",
+      "archived": false
+    },
+    "arxohq/arxo-vscode": {
+      "availability": "available",
+      "observedAt": "2026-10-13T08:42:07.132Z",
+      "url": "https://github.com/arxohq/arxo-vscode",
+      "defaultBranch": "main",
+      "archived": false
+    },
+    "arxohq/arxo-bgb": {
+      "availability": "available",
+      "observedAt": "2026-10-13T08:42:07.132Z",
+      "url": "https://github.com/arxohq/arxo-bgb",
+      "defaultBranch": "main",
+      "archived": false
+    },
+    "arxohq/arxo-unidroit-picc": {
+      "availability": "available",
+      "observedAt": "2026-10-13T08:42:07.132Z",
+      "url": "https://github.com/arxohq/arxo-unidroit-picc",
+      "defaultBranch": "main",
+      "archived": false
+    },
+    "arxohq/arxo-charter-1945": {
+      "availability": "available",
+      "observedAt": "2026-10-13T08:42:07.132Z",
+      "url": "https://github.com/arxohq/arxo-charter-1945",
+      "defaultBranch": "main",
+      "archived": false
+    },
+    "arxohq/arxo-ogpo-public": {
+      "availability": "available",
+      "observedAt": "2026-10-13T08:42:07.132Z",
+      "url": "https://github.com/arxohq/arxo-ogpo-public",
+      "defaultBranch": "main",
+      "archived": false
+    },
+    "arxohq/arxo-cnaf": {
+      "availability": "available",
+      "observedAt": "2026-10-13T08:42:07.132Z",
+      "url": "https://github.com/arxohq/arxo-cnaf",
+      "defaultBranch": "main",
+      "archived": false
+    },
+    "arxohq/law-as-code-france-examples": {
+      "availability": "available",
+      "observedAt": "2026-10-13T08:42:07.132Z",
+      "url": "https://github.com/arxohq/law-as-code-france-examples",
+      "defaultBranch": "main",
+      "archived": false
+    },
+    "arxohq/arxo-catala-parity": {
+      "availability": "available",
+      "observedAt": "2026-10-13T08:42:07.132Z",
+      "url": "https://github.com/arxohq/arxo-catala-parity",
+      "defaultBranch": "main",
+      "archived": false
+    }
+  },
+  "binaryRelease": {
+    "availability": "available",
+    "observedAt": "2026-10-13T08:42:07.132Z",
+    "tag": "law-v0.2.2",
+    "publishedAt": "2026-10-12T16:38:59Z",
+    "url": "https://github.com/arxohq/law-releases/releases/tag/law-v0.2.2",
+    "assets": [
+      {
+        "name": "arxo-nix-0.2.2.tar.gz",
+        "bytes": 3190,
+        "url": "https://github.com/arxohq/law-releases/releases/download/law-v0.2.2/arxo-nix-0.2.2.tar.gz"
+      },
+      {
+        "name": "install.sh",
+        "bytes": 2225,
+        "url": "https://github.com/arxohq/law-releases/releases/download/law-v0.2.2/install.sh"
+      },
+      {
+        "name": "law-0.2.2-aarch64-apple-darwin.tar.gz",
+        "bytes": 14833003,
+        "url": "https://github.com/arxohq/law-releases/releases/download/law-v0.2.2/law-0.2.2-aarch64-apple-darwin.tar.gz"
+      },
+      {
+        "name": "law-0.2.2-aarch64-apple-darwin.tar.gz.sha256",
+        "bytes": 104,
+        "url": "https://github.com/arxohq/law-releases/releases/download/law-v0.2.2/law-0.2.2-aarch64-apple-darwin.tar.gz.sha256"
+      },
+      {
+        "name": "law-0.2.2-x86_64-unknown-linux-gnu.tar.gz",
+        "bytes": 16148873,
+        "url": "https://github.com/arxohq/law-releases/releases/download/law-v0.2.2/law-0.2.2-x86_64-unknown-linux-gnu.tar.gz"
+      },
+      {
+        "name": "law-0.2.2-x86_64-unknown-linux-gnu.tar.gz.sha256",
+        "bytes": 108,
+        "url": "https://github.com/arxohq/law-releases/releases/download/law-v0.2.2/law-0.2.2-x86_64-unknown-linux-gnu.tar.gz.sha256"
+      }
+    ]
+  }
+}

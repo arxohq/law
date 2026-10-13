@@ -1,0 +1,10 @@
+name: Catalogue or documentation
+description: Suggest a public resource or report an inaccurate instruction.
+body:
+  - type: textarea
+    id: correction
+    attributes:
+      label: Resource or correction
+      description: Include the public URL and explain which instruction or catalogue entry needs changing.
+    validations:
+      required: true

@@ -1,0 +1,154 @@
+{
+  "format": "arxo.public-delivery-sources/1",
+  "packages": [
+    {
+      "name": "@arxo/law",
+      "group": "SDK",
+      "purpose": "Open a canon and ask a question",
+      "featured": true
+    },
+    {
+      "name": "@arxo/law-engine",
+      "group": "SDK",
+      "purpose": "Compile sources and embed the WebAssembly evaluator",
+      "featured": true
+    },
+    {
+      "name": "@arxo/law-types",
+      "group": "SDK",
+      "purpose": "TypeScript document and diagnostic types",
+      "featured": true
+    },
+    {
+      "name": "@arxo/law-client",
+      "group": "SDK",
+      "purpose": "Typed MCP and registry client",
+      "featured": true
+    },
+    {
+      "name": "@arxo/law-forms",
+      "group": "SDK",
+      "purpose": "Question forms and structural case assembly",
+      "featured": true
+    },
+    {
+      "name": "@arxo/cli",
+      "group": "CLI",
+      "purpose": "Install the law command",
+      "featured": true
+    },
+    {
+      "name": "create-arxo",
+      "group": "CLI",
+      "purpose": "Scaffold a TypeScript project",
+      "featured": true
+    },
+    {
+      "name": "@arxo/canon-bgb-fristen",
+      "group": "Canons",
+      "purpose": "German Civil Code period and deadline model"
+    },
+    {
+      "name": "@arxo/canon-fr-benefits",
+      "group": "Canons",
+      "purpose": "Selected French benefit models"
+    },
+    {
+      "name": "@arxo/canon-ogpo-vts",
+      "group": "Canons",
+      "purpose": "Pinned Kazakhstan OGPO vehicle-insurance model"
+    },
+    {
+      "name": "@arxo/canon-swift-lilliput",
+      "group": "Canons",
+      "purpose": "Fictional Lilliput rules for learning"
+    },
+    {
+      "name": "@arxo/canon-unidroit-picc",
+      "group": "Canons",
+      "purpose": "UNIDROIT PICC models"
+    },
+    {
+      "name": "@arxo/mcp-charter",
+      "group": "MCP",
+      "purpose": "United Nations Charter slice"
+    },
+    {
+      "name": "@arxo/mcp-code-civil",
+      "group": "MCP",
+      "purpose": "French Civil Code slice"
+    },
+    {
+      "name": "@arxo/mcp-de-bgb",
+      "group": "MCP",
+      "purpose": "German Civil Code slice"
+    },
+    {
+      "name": "@arxo/mcp-picc",
+      "group": "MCP",
+      "purpose": "UNIDROIT PICC slice"
+    },
+    {
+      "name": "@arxo/cli-darwin-arm64",
+      "group": "Platform dependencies",
+      "purpose": "cli binary for darwin-arm64"
+    },
+    {
+      "name": "@arxo/cli-linux-x64",
+      "group": "Platform dependencies",
+      "purpose": "cli binary for linux-x64"
+    },
+    {
+      "name": "@arxo/mcp-host-darwin-arm64",
+      "group": "Platform dependencies",
+      "purpose": "mcp-host binary for darwin-arm64"
+    },
+    {
+      "name": "@arxo/mcp-host-linux-x64",
+      "group": "Platform dependencies",
+      "purpose": "mcp-host binary for linux-x64"
+    }
+  ],
+  "repositories": [
+    {
+      "name": "arxohq/law-releases",
+      "purpose": "CLI and LSP binary archives, installers and checksums"
+    },
+    {
+      "name": "arxohq/homebrew-tap",
+      "purpose": "Homebrew formulae"
+    },
+    {
+      "name": "arxohq/arxo-vscode",
+      "purpose": "VS Code and Cursor extension source mirror"
+    },
+    {
+      "name": "arxohq/arxo-bgb",
+      "purpose": "Executable German Civil Code packages"
+    },
+    {
+      "name": "arxohq/arxo-unidroit-picc",
+      "purpose": "UNIDROIT PICC packages and worked scenarios"
+    },
+    {
+      "name": "arxohq/arxo-charter-1945",
+      "purpose": "United Nations Charter executable model"
+    },
+    {
+      "name": "arxohq/arxo-ogpo-public",
+      "purpose": "Pinned OGPO canon releases and public verification"
+    },
+    {
+      "name": "arxohq/arxo-cnaf",
+      "purpose": "French benefit models and Node.js distribution"
+    },
+    {
+      "name": "arxohq/law-as-code-france-examples",
+      "purpose": "Fictional French benefit cases and book examples"
+    },
+    {
+      "name": "arxohq/arxo-catala-parity",
+      "purpose": "Arxo and Catala comparison artefact"
+    }
+  ]
+}
