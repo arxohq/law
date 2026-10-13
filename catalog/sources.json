@@ -17,19 +17,19 @@
       "name": "@arxo/law-types",
       "group": "SDK",
       "purpose": "TypeScript document and diagnostic types",
-      "featured": true
+      "featured": false
     },
     {
       "name": "@arxo/law-client",
       "group": "SDK",
       "purpose": "Typed MCP and registry client",
-      "featured": true
+      "featured": false
     },
     {
       "name": "@arxo/law-forms",
       "group": "SDK",
       "purpose": "Question forms and structural case assembly",
-      "featured": true
+      "featured": false
     },
     {
       "name": "@arxo/cli",
@@ -41,7 +41,7 @@
       "name": "create-arxo",
       "group": "CLI",
       "purpose": "Scaffold a TypeScript project",
-      "featured": true
+      "featured": false
     },
     {
       "name": "@arxo/canon-bgb-fristen",
@@ -149,6 +149,16 @@
     {
       "name": "arxohq/arxo-catala-parity",
       "purpose": "Arxo and Catala comparison artefact"
+    }
+  ],
+  "knownIssues": [
+    {
+      "package": "@arxo/canon-bgb-fristen",
+      "version": "0.1.13",
+      "engine": "@arxo/law-engine",
+      "engineVersion": "0.5.2",
+      "summary": "Model load issue",
+      "guide": "compatibility.md#bgb-package-load"
     }
   ]
 }

@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { attemptObservation, packageObservation, repositoryObservation, validateSources, refresh } from '../tools/catalog.mjs';
+import { attemptObservation, packageObservation, repositoryObservation, validateSources, refresh, render } from '../tools/catalog.mjs';
+import { readFile } from 'node:fs/promises';
 
 const now = '2026-10-13T12:00:00.000Z';
 test('latest distribution tag wins over newer prereleases and stale next tags', () => {
@@ -59,4 +60,18 @@ test('a private binary repository cannot leak authenticated release metadata', a
   assert.equal(snapshot.repositories['arxohq/law-releases'].availability, 'unavailable');
   assert.equal(snapshot.binaryRelease.availability, 'unavailable');
   assert.equal(requested.some(url => url.endsWith('/releases/latest')), false);
+});
+test('catalogue distinguishes a tested pin from a newer untested latest and exact known issues', async () => {
+  const sources = JSON.parse(await readFile(new URL('../catalog/sources.json', import.meta.url)));
+  const snapshot = JSON.parse(await readFile(new URL('../catalog/snapshot.json', import.meta.url)));
+  const pkg = JSON.parse(await readFile(new URL('../package.json', import.meta.url)));
+  const page = render(sources, snapshot, pkg.dependencies).packages;
+  assert.match(page, /@arxo\/law\).*0\.4\.2.*Example set/);
+  assert.match(page, /@arxo\/canon-bgb-fristen\).*0\.1\.13.*Model load issue/);
+  const changed = structuredClone(snapshot);
+  changed.packages['@arxo/law'].version = '0.4.99';
+  changed.packages['@arxo/canon-bgb-fristen'].version = '0.1.99';
+  const newer = render(sources, changed, pkg.dependencies).packages;
+  assert.match(newer, /@arxo\/law\).*0\.4\.99.*Not checked here/);
+  assert.doesNotMatch(newer, /@arxo\/canon-bgb-fristen\).*Model load issue/);
 });

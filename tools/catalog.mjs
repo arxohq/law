@@ -30,6 +30,16 @@ export function validateSources(sources) {
       }
     }
   }
+  if (sources.knownIssues !== undefined && !Array.isArray(sources.knownIssues)) throw Error('Invalid knownIssues selection');
+  for (const issue of sources.knownIssues ?? []) {
+    if (!sources.packages.some(row => row.name === issue.package) ||
+        !sources.packages.some(row => row.name === issue.engine) ||
+        !versionPattern.test(issue.version ?? '') || !versionPattern.test(issue.engineVersion ?? '') ||
+        typeof issue.summary !== 'string' || !issue.summary ||
+        !/^[a-z][a-z-]*\.md(?:#[a-z-]+)?$/.test(issue.guide ?? '')) {
+      throw Error('Known issue needs selected packages, exact versions and a local guide');
+    }
+  }
 }
 
 export async function fetchJson(url) {
@@ -119,91 +129,128 @@ export async function refresh(sources, previous = {}, get = fetchJson, now = new
 }
 
 function observed(row) {
-  if (!row?.observedAt) return 'unobserved';
+  if (!row?.observedAt) return 'not yet observed';
   return `${row.observedAt}${row.availability === 'available' ? '' : ' (previous observation; fetch failed)'}`;
 }
 
-function packageTable(sources, snapshot, detailed = false) {
-  const lines = detailed
-    ? ['| Package | Observed `latest` | Purpose | Published (UTC) | Observation (UTC) |', '|---|---|---|---|---|']
-    : ['| Package | Observed `latest` | Use it for |', '|---|---|---|'];
-  for (const spec of sources) {
-    const item = snapshot.packages[spec.name];
-    const warning = item?.deprecated ? ' (deprecated)' : '';
-    const version = (item?.version ?? 'unobserved') + warning +
-      (item?.availability === 'available' ? '' : ' (unavailable)');
-    const cells = [`[${spec.name}](https://www.npmjs.com/package/${spec.name})`,
-      cell(version), cell(spec.purpose)];
-    if (detailed) cells.push(cell(item?.publishedAt ?? '—'), cell(observed(item)));
+function shortDate(value) {
+  return value && Number.isFinite(Date.parse(value))
+    ? new Date(value).toISOString().slice(0, 16).replace('T', ' ') + ' UTC'
+    : 'not yet observed';
+}
+
+function availability(row) {
+  if (row?.availability === 'available') return '';
+  return row?.observedAt ? ` — unavailable; last seen ${shortDate(row.observedAt)}` : ' — unavailable';
+}
+
+function exampleStatus(spec, row, dependencies, sources) {
+  const issue = (sources.knownIssues ?? []).find(item => item.package === spec.name &&
+    item.version === row?.version && dependencies[item.engine] === item.engineVersion);
+  if (issue) return `[${cell(issue.summary)}](${issue.guide})`;
+  if (row?.version && dependencies[spec.name] === row.version) return '[Example set](compatibility.md)';
+  return 'Not checked here';
+}
+
+function packageTable(selection, snapshot, { featured = false, dependencies = {}, sources = {} } = {}) {
+  const lines = featured
+    ? ['| Package | Latest | Start with |', '|---|---|---|']
+    : ['| Package | Latest | Use it for | Checks |', '|---|---|---|---|'];
+  const starts = {
+    '@arxo/law': '[Run a model](docs/run-a-model.md)',
+    '@arxo/law-engine': '[Write rules](docs/write-rules.md)',
+    '@arxo/cli': '[CLI and editor](docs/write-rules.md#use-the-cli-or-editor)',
+  };
+  for (const spec of selection) {
+    const row = snapshot.packages[spec.name];
+    const version = (row?.version ?? 'not observed') + (row?.deprecated ? ' (deprecated)' : '') + availability(row);
+    const cells = [`[${spec.name}](https://www.npmjs.com/package/${spec.name})`, cell(version)];
+    if (featured) cells.push(starts[spec.name] ?? cell(spec.purpose));
+    else cells.push(cell(spec.purpose), exampleStatus(spec, row, dependencies, sources));
     lines.push(`| ${cells.join(' | ')} |`);
   }
   return lines.join('\n');
 }
 
-export function render(sources, snapshot) {
+export function render(sources, snapshot, dependencies = {}) {
   validateSources(sources);
   if (snapshot.format !== 'arxo.public-delivery-catalogue/1') throw Error('Unknown snapshot format');
   const packages = [
-    '# Published packages', '',
-    'Generated from [the selected public sources](../catalog/sources.json) and',
-    '[the captured observations](../catalog/snapshot.json). Package owners retain',
-    'their versions; this is a delivery catalogue, not a conformance report.', '',
-    `Last refresh attempt: **${snapshot.refreshedAt}**. Each row records its own successful observation.`, '',
-    'An unavailable row retains its previous metadata and observation date. An',
-    'observation is not a real-time availability guarantee. npm `latest` is the',
-    'selected distribution tag, not the largest version number or a claim about',
-    'compatibility. Exact dependency pins and integrity strings are in the JSON snapshot.', '',
+    '# Choose a package', '', '[← Arxo Law](../README.md)', '',
+    '| I want to… | Start with |', '|---|---|',
+    '| Run a published model | [Run a model](run-a-model.md) with `@arxo/law` |',
+    '| Compile my own rules | [Write rules](write-rules.md) with `@arxo/law-engine` |',
+    '| Connect an assistant | [Connect MCP](connect-mcp.md) with a selected slice |', '',
+    `Last refresh attempt: **${shortDate(snapshot.refreshedAt)}**.`, '',
+    '**Example set** means that exact version is used by this repository\'s CI examples.',
+    'Other entries are observed deliveries with the checks stated below. Each package',
+    'has its own version. See [tested combinations](compatibility.md).', '',
   ];
-  for (const group of ['SDK', 'CLI', 'Canons', 'MCP', 'Platform dependencies']) {
-    packages.push(`## ${group}`, '', packageTable(sources.packages.filter(row => row.group === group), snapshot, true), '');
+  for (const group of ['SDK', 'CLI', 'Canons', 'MCP']) {
+    packages.push(`## ${group}`, '', packageTable(sources.packages.filter(row => row.group === group), snapshot,
+      { dependencies, sources }), '');
+    if (group === 'MCP') packages.push('A slice keeps its own pinned MCP host version.',
+      '[Connection instructions →](connect-mcp.md)', '');
   }
-  packages.push('## Using the catalogue', '',
-    'Start with `@arxo/law` to ask a model a question, `@arxo/law-engine` to compile',
-    'sources or embed the evaluator, or `@arxo/cli` for a command-line project.',
-    'Canon packages contain particular models; MCP packages contain particular slices.',
-    'Platform dependencies are installed by their launchers and are normally not chosen manually.', '',
-    'For example, a slice pins its own MCP host version. A newer host release does',
-    'not switch that slice automatically. The examples use a tested exact dependency',
-    'set in [package-lock.json](../package-lock.json), independently of later catalogue updates.', '',
-    'See [tested combinations and observed limitations](compatibility.md) before',
-    'assuming that independently published packages are mutually compatible.', '',
-    'Install an MCP slice with, for example:', '', '```sh',
-    'claude mcp add arxo-bgb -- npx -y @arxo/mcp-de-bgb', '```', '',
-    'Review the linked package README for its supported platforms and selected models.', '',
-    'To refresh the catalogue, follow [the contribution instructions](../CONTRIBUTING.md).', '');
-  const ecosystem = ['# Public ecosystem', '',
-    'Generated from explicitly selected public repositories. Availability is',
-    'checked against the public GitHub API; private or redirected private repositories',
-    'are not accepted as public observations.', '',
-    '| Repository | Purpose | Observation (UTC) |', '|---|---|---|'];
+  packages.push('<details>', '<summary>Platform dependencies — installed by the launchers</summary>', '',
+    'These are normally selected automatically for the operating system and architecture.', '',
+    packageTable(sources.packages.filter(row => row.group === 'Platform dependencies'), snapshot,
+      { dependencies, sources }), '', '</details>', '',
+    '<details>', '<summary>Publication dates, observations and package integrity</summary>', '',
+    '| Package | Published (UTC) | Last successful observation (UTC) |', '|---|---|---|');
+  for (const spec of sources.packages) {
+    const row = snapshot.packages[spec.name];
+    packages.push(`| ${spec.name} | ${cell(row?.publishedAt)} | ${cell(observed(row))} |`);
+  }
+  packages.push('', 'Full integrity strings and exact dependency pins are in the',
+    '[captured snapshot](../catalog/snapshot.json). npm `latest` is a distribution',
+    'tag; it does not establish compatibility. When a fetch fails, the version',
+    'retains its original observation date and is labelled unavailable.', '',
+    'The [source selection](../catalog/sources.json) is curated. Follow the',
+    '[contribution instructions](../CONTRIBUTING.md) to refresh it.', '', '</details>', '',
+    'The [example lockfile](../package-lock.json) pins the runnable examples.',
+    'Refreshing the catalogue does not upgrade those examples or validate the full corpus.', '');
+
+  const ecosystem = ['# Explore the public ecosystem', '', '[← Arxo Law](../README.md)', '',
+    'Model sources, examples, editor tools and delivery channels maintained separately.',
+    `Last refresh attempt: **${shortDate(snapshot.refreshedAt)}**.`, '',
+    '| Project | What you can do |', '|---|---|'];
   for (const spec of sources.repositories) {
-    const item = snapshot.repositories[spec.name];
-    ecosystem.push(`| [${spec.name}](https://github.com/${spec.name}) | ${cell(spec.purpose)} | ${cell(observed(item))} |`);
+    const row = snapshot.repositories[spec.name];
+    ecosystem.push(`| [${spec.name}](https://github.com/${spec.name})${cell(availability(row))} | ${cell(spec.purpose)} |`);
   }
   const binary = snapshot.binaryRelease;
-  ecosystem.push('', '## Downloadable CLI and LSP', '',
-    binary?.tag ? `Observed stable release: [${cell(binary.tag)}](${binary.url}), published ${cell(binary.publishedAt)}.`
-      : 'A stable binary release has not been observed.', '', `Observation (UTC): ${observed(binary)}.`, '',
-    'Archives, installers and checksums stay in the existing binary-delivery repository.',
-    'Download the archive and its checksum from the same release and follow its installation instructions.', '');
+  ecosystem.push('', '## Install the CLI', '', '```sh', 'npm install -g @arxo/cli',
+    'law --help', '```', '',
+    binary?.tag ? `Observed stable binary release: [${cell(binary.tag)}](${binary.url})${cell(availability(binary))}.`
+      : 'A stable binary release has not been observed.', '',
+    'CLI and LSP archives, installers and matching checksums are in',
+    '[law-releases](https://github.com/arxohq/law-releases).', '',
+    '<details>', '<summary>Binary assets and observation details</summary>', '',
+    `Binary observation (UTC): ${observed(binary)}.`, '');
   if (binary?.assets?.length) {
     ecosystem.push('| Asset | Bytes |', '|---|---:|');
     for (const asset of binary.assets) ecosystem.push(`| [${cell(asset.name)}](${asset.url}) | ${asset.bytes} |`);
     ecosystem.push('');
   }
-  ecosystem.push('## More entry points', '',
-    '- [Arxo](https://www.arxo.io/): project overview.',
-    '- [Documentation](https://docs.arxo.io/): authoring and integration guides.',
-    '- [npm catalogue](packages.md): SDK, CLI, canons and available MCP slices.',
-    '- [French benefits lab](https://french-benefits.law.arxo.io/): explore the selected demonstration models.', '',
-    'These are separate projects with their own licences and notices.',
-    'A model repository or demonstration is not a claim of complete legal coverage.', '');
-  return { featured: packageTable(sources.packages.filter(row => row.featured), snapshot),
+  ecosystem.push('| Repository | Last successful observation (UTC) |', '|---|---|');
+  for (const spec of sources.repositories) {
+    ecosystem.push(`| ${spec.name} | ${cell(observed(snapshot.repositories[spec.name]))} |`);
+  }
+  ecosystem.push('', 'Only repositories reported public at the selected address are accepted',
+    'as successful observations. Linked projects retain their own licences and notices.', '',
+    '</details>', '', '## More entry points', '',
+    '- [Try the French benefits lab](https://french-benefits.law.arxo.io/).',
+    '- [Read the authoring and integration guides](https://docs.arxo.io/).',
+    '- [Choose an npm package or MCP slice](packages.md).',
+    '- [Visit Arxo](https://www.arxo.io/).', '');
+  return { featured: packageTable(sources.packages.filter(row => row.featured), snapshot, { featured: true }),
     packages: packages.join('\n'), ecosystem: ecosystem.join('\n') };
 }
 
 export async function renderedFiles(sources, snapshot) {
-  const pages = render(sources, snapshot);
+  const pkg = await readJson('package.json');
+  const pages = render(sources, snapshot, pkg.dependencies);
   const readme = await readFile(path.join(root, 'README.md'), 'utf8');
   const start = '<!-- catalog:featured:start -->';
   const end = '<!-- catalog:featured:end -->';

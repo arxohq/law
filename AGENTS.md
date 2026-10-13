@@ -17,6 +17,10 @@ root, including after an ordinary clone outside any larger workspace.
   to render the captured snapshot. Do not fabricate a successful observation.
 - Keep exact example dependencies and the lockfile. Catalogue updates must not
   automatically update the examples' dependency set.
+- First-run examples accept changed facts without enforcing the original
+  answer. Put fixed baseline assertions in tests. Preserve readable default
+  output, parseable `--json`, explicit unknown/negative/conflict statuses and
+  concrete next steps. Update the task guides with changed commands.
 - No engine source is included yet. Future source imports must have an explicit
   file ownership map, preserve manually maintained files, record provenance and
   provide a documented contribution round trip. See `docs/source-availability.md`.

@@ -1,40 +1,25 @@
-import assert from 'node:assert/strict';
-import { pathToFileURL } from 'node:url';
+import { readFile } from 'node:fs/promises';
 import { loadEngine } from '@arxo/law-engine/node';
+import { isMain, runTerminal, describeCompiler } from './terminal.mjs';
 
 export async function runCompiler() {
   const engine = await loadEngine();
-  const source = `language "law.core" version "0.2";
-package demo.age version "0.1.0";
-namespace "urn:example:demo-age";
-
-pub entity Person;
-pub relation age(p: Person, years: Integer) kind empirical;
-pub relation adult(p: Person) kind institutional;
-
-rule Adult(p: Person, y: Integer) strict {
-  when aeg(p, y);
-  when y >= 18;
-  then adult(p);
-}
-`;
+  const fixed = await readFile(new URL('./age.law', import.meta.url), 'utf8');
+  const source = fixed.replace('when age(', 'when aeg(');
   const call = (op, text) => engine.call({
-    op, path: 'demo.law', files: { 'demo.law': text },
+    op, path: 'age.law', files: { 'age.law': text },
   }).answer;
   const broken = call('check', source);
-  assert.equal(broken.ok, false);
-  assert.ok(broken.diagnostics.some(d => d.code === 'LDC-E2102'));
-  const fixed = source.replace('when aeg(', 'when age(');
   const checked = call('check', fixed);
-  assert.equal(checked.ok, true);
   const lowered = call('lower', fixed);
-  assert.equal(typeof lowered.bytes, 'string');
+  if (typeof lowered.bytes !== 'string') throw Error('The corrected source did not compile. Check examples/age.law.');
   const ir = JSON.parse(lowered.bytes);
-  assert.match(ir.artifactHash, /^sha256:[0-9a-f]{64}$/);
-  return { typoDiagnostic: 'LDC-E2102', fixedCheck: checked.ok,
+  return { typoDiagnostic: broken.diagnostics?.find(d => d.code === 'LDC-E2102')?.code,
+    fixedCheck: checked.ok,
     semanticVersion: ir.semanticVersion, artifactHash: ir.artifactHash };
 }
 
-if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
-  console.log(JSON.stringify(await runCompiler(), null, 2));
+if (isMain(import.meta.url)) {
+  await runTerminal({ name: 'Compiler example', command: 'npm run example:compiler',
+    run: runCompiler, describe: describeCompiler });
 }
