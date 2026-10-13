@@ -51,7 +51,7 @@ test('a private binary repository cannot leak authenticated release metadata', a
       name: '@arxo/law', 'dist-tags': { latest: '0.4.2' }, time: { '0.4.2': now },
       versions: { '0.4.2': { dist: { integrity: 'sha512-test' } } },
     };
-    if (url.endsWith('/releases/latest')) throw Error('Private release must not be requested');
+    if (url.includes('/releases?')) throw Error('Private release must not be requested');
     return { full_name: 'arxohq/law-releases', private: true, visibility: 'private' };
   };
   const snapshot = await refresh({ format: 'arxo.public-delivery-sources/1',
@@ -60,7 +60,36 @@ test('a private binary repository cannot leak authenticated release metadata', a
   }, {}, get, now);
   assert.equal(snapshot.repositories['arxohq/law-releases'].availability, 'unavailable');
   assert.equal(snapshot.binaryRelease.availability, 'unavailable');
-  assert.equal(requested.some(url => url.endsWith('/releases/latest')), false);
+  assert.equal(requested.some(url => url.includes('/releases?')), false);
+});
+test('binary catalogue skips newer canon images, draft and prerelease distributions', async () => {
+  const sources = { format: 'arxo.public-delivery-sources/1',
+    packages: [{ name: '@arxo/law', group: 'SDK', purpose: 'SDK' }],
+    repositories: [{ name: 'arxohq/law-releases', purpose: 'Binaries' }] };
+  const release = (tag, publishedAt, extra = {}) => ({ tag_name: tag, published_at: publishedAt,
+    html_url: `https://github.com/arxohq/law-releases/releases/tag/${tag}`,
+    assets: [{ name: 'install.sh', size: 100,
+      browser_download_url: `https://github.com/arxohq/law-releases/releases/download/${tag}/install.sh` }],
+    ...extra });
+  let releases = [release('canon-de-wohngeld-assets-v0.1.0', now),
+    release('law-v0.2.3', now, { draft: true }),
+    release('law-v0.2.4', now, { prerelease: true }),
+    release('law-v0.2.1', '2026-10-11T12:00:00.000Z'),
+    release('law-v0.2.2', '2026-10-12T12:00:00.000Z')];
+  const get = async url => {
+    if (url.includes('registry.npmjs.org')) return { name: '@arxo/law', 'dist-tags': { latest: '0.4.2' },
+      time: { '0.4.2': now }, versions: { '0.4.2': { dist: { integrity: 'sha512-test' } } } };
+    if (url.includes('/releases?')) return releases;
+    return { full_name: 'arxohq/law-releases', private: false, visibility: 'public' };
+  };
+  const first = await refresh(sources, {}, get, now);
+  assert.equal(first.binaryRelease.tag, 'law-v0.2.2');
+  assert.equal(first.binaryRelease.assets[0].name, 'install.sh');
+  releases = [releases[0]];
+  const second = await refresh(sources, first, get, '2026-10-14T12:00:00.000Z');
+  assert.equal(second.binaryRelease.availability, 'unavailable');
+  assert.equal(second.binaryRelease.tag, 'law-v0.2.2');
+  assert.equal(second.binaryRelease.observedAt, now);
 });
 test('catalogue distinguishes a tested pin from a newer untested latest and exact known issues', async () => {
   const sources = JSON.parse(await readFile(new URL('../catalog/sources.json', import.meta.url)));
@@ -134,8 +163,8 @@ test('store versions stay independent and an older editor fetch is never present
       return marketplaceRelease();
     }
     if (url.includes('open-vsx.org')) return openVsxRelease();
-    if (url.endsWith('/releases/latest')) return { tag_name: 'law-v0.2.2',
-      html_url: 'https://github.com/arxohq/law-releases/releases/tag/law-v0.2.2', assets: [] };
+    if (url.includes('/releases?')) return [{ tag_name: 'law-v0.2.2', published_at: now,
+      html_url: 'https://github.com/arxohq/law-releases/releases/tag/law-v0.2.2', assets: [] }];
     return { full_name: 'arxohq/law-releases', private: false, visibility: 'public' };
   };
   const first = await refresh(sources, {}, get, now);
