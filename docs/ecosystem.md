@@ -3,7 +3,7 @@
 [← Arxo Law](../README.md)
 
 Choose an editor, installation route, browser tool or learning format.
-Last refresh attempt: **2026-10-13 17:31 UTC**.
+Last refresh attempt: **2026-10-13 17:51 UTC**.
 
 ## Install the editor
 
@@ -118,7 +118,7 @@ below record publication metadata; they do not establish runtime compatibility.
 <details>
 <summary>Binary assets and observation details</summary>
 
-Binary observation (UTC): 2026-10-13T17:31:08.434Z.
+Binary observation (UTC): 2026-10-13T17:51:07.486Z.
 
 | Asset | Bytes |
 |---|---:|
@@ -131,23 +131,23 @@ Binary observation (UTC): 2026-10-13T17:31:08.434Z.
 
 | Repository | Last successful observation (UTC) |
 |---|---|
-| arxohq/law-releases | 2026-10-13T17:31:08.434Z |
-| arxohq/homebrew-tap | 2026-10-13T17:31:08.434Z |
-| arxohq/arxo-vscode | 2026-10-13T17:31:08.434Z |
-| arxohq/arxo-bgb | 2026-10-13T17:31:08.434Z |
-| arxohq/arxo-unidroit-picc | 2026-10-13T17:31:08.434Z |
-| arxohq/arxo-charter-1945 | 2026-10-13T17:31:08.434Z |
-| arxohq/arxo-ogpo-public | 2026-10-13T17:31:08.434Z |
-| arxohq/arxo-cnaf | 2026-10-13T17:31:08.434Z |
-| arxohq/law-as-code-france-examples | 2026-10-13T17:31:08.434Z |
-| arxohq/arxo-wohngeld | 2026-10-13T17:31:08.434Z |
-| arxohq/law-as-code-germany-examples | 2026-10-13T17:31:08.434Z |
-| arxohq/arxo-catala-parity | 2026-10-13T17:31:08.434Z |
+| arxohq/law-releases | 2026-10-13T17:51:07.486Z |
+| arxohq/homebrew-tap | 2026-10-13T17:51:07.486Z |
+| arxohq/arxo-vscode | 2026-10-13T17:51:07.486Z |
+| arxohq/arxo-bgb | 2026-10-13T17:51:07.486Z |
+| arxohq/arxo-unidroit-picc | 2026-10-13T17:51:07.486Z |
+| arxohq/arxo-charter-1945 | 2026-10-13T17:51:07.486Z |
+| arxohq/arxo-ogpo-public | 2026-10-13T17:51:07.486Z |
+| arxohq/arxo-cnaf | 2026-10-13T17:51:07.486Z |
+| arxohq/law-as-code-france-examples | 2026-10-13T17:51:07.486Z |
+| arxohq/arxo-wohngeld | 2026-10-13T17:51:07.486Z |
+| arxohq/law-as-code-germany-examples | 2026-10-13T17:51:07.486Z |
+| arxohq/arxo-catala-parity | 2026-10-13T17:51:07.486Z |
 
 | Editor store | Published / updated (UTC) | Last successful observation (UTC) |
 |---|---|---|
-| marketplace: arxo.law | 2026-10-13T10:47:06.143Z | 2026-10-13T17:31:08.434Z |
-| open-vsx: arxo.law | 2026-10-13T10:41:46.338008Z | 2026-10-13T17:31:08.434Z |
+| marketplace: arxo.law | 2026-10-13T10:47:06.143Z | 2026-10-13T17:51:07.486Z |
+| open-vsx: arxo.law | 2026-10-13T10:41:46.338008Z | 2026-10-13T17:51:07.486Z |
 
 Only repositories reported public at the selected address are accepted
 as successful observations. Linked projects retain their own licences and notices.
