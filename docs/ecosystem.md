@@ -6,22 +6,22 @@ are not accepted as public observations.
 
 | Repository | Purpose | Observation (UTC) |
 |---|---|---|
-| [arxohq/law-releases](https://github.com/arxohq/law-releases) | CLI and LSP binary archives, installers and checksums | 2026-10-13T08:42:07.132Z |
-| [arxohq/homebrew-tap](https://github.com/arxohq/homebrew-tap) | Homebrew formulae | 2026-10-13T08:42:07.132Z |
-| [arxohq/arxo-vscode](https://github.com/arxohq/arxo-vscode) | VS Code and Cursor extension source mirror | 2026-10-13T08:42:07.132Z |
-| [arxohq/arxo-bgb](https://github.com/arxohq/arxo-bgb) | Executable German Civil Code packages | 2026-10-13T08:42:07.132Z |
-| [arxohq/arxo-unidroit-picc](https://github.com/arxohq/arxo-unidroit-picc) | UNIDROIT PICC packages and worked scenarios | 2026-10-13T08:42:07.132Z |
-| [arxohq/arxo-charter-1945](https://github.com/arxohq/arxo-charter-1945) | United Nations Charter executable model | 2026-10-13T08:42:07.132Z |
-| [arxohq/arxo-ogpo-public](https://github.com/arxohq/arxo-ogpo-public) | Pinned OGPO canon releases and public verification | 2026-10-13T08:42:07.132Z |
-| [arxohq/arxo-cnaf](https://github.com/arxohq/arxo-cnaf) | French benefit models and Node.js distribution | 2026-10-13T08:42:07.132Z |
-| [arxohq/law-as-code-france-examples](https://github.com/arxohq/law-as-code-france-examples) | Fictional French benefit cases and book examples | 2026-10-13T08:42:07.132Z |
-| [arxohq/arxo-catala-parity](https://github.com/arxohq/arxo-catala-parity) | Arxo and Catala comparison artefact | 2026-10-13T08:42:07.132Z |
+| [arxohq/law-releases](https://github.com/arxohq/law-releases) | CLI and LSP binary archives, installers and checksums | 2026-10-13T08:51:18.745Z |
+| [arxohq/homebrew-tap](https://github.com/arxohq/homebrew-tap) | Homebrew formulae | 2026-10-13T08:51:18.745Z |
+| [arxohq/arxo-vscode](https://github.com/arxohq/arxo-vscode) | VS Code and Cursor extension source mirror | 2026-10-13T08:51:18.745Z |
+| [arxohq/arxo-bgb](https://github.com/arxohq/arxo-bgb) | Executable German Civil Code packages | 2026-10-13T08:51:18.745Z |
+| [arxohq/arxo-unidroit-picc](https://github.com/arxohq/arxo-unidroit-picc) | UNIDROIT PICC packages and worked scenarios | 2026-10-13T08:51:18.745Z |
+| [arxohq/arxo-charter-1945](https://github.com/arxohq/arxo-charter-1945) | United Nations Charter executable model | 2026-10-13T08:51:18.745Z |
+| [arxohq/arxo-ogpo-public](https://github.com/arxohq/arxo-ogpo-public) | Pinned OGPO canon releases and public verification | 2026-10-13T08:51:18.745Z |
+| [arxohq/arxo-cnaf](https://github.com/arxohq/arxo-cnaf) | French benefit models and Node.js distribution | 2026-10-13T08:51:18.745Z |
+| [arxohq/law-as-code-france-examples](https://github.com/arxohq/law-as-code-france-examples) | Fictional French benefit cases and book examples | 2026-10-13T08:51:18.745Z |
+| [arxohq/arxo-catala-parity](https://github.com/arxohq/arxo-catala-parity) | Arxo and Catala comparison artefact | 2026-10-13T08:51:18.745Z |
 
 ## Downloadable CLI and LSP
 
 Observed stable release: [law-v0.2.2](https://github.com/arxohq/law-releases/releases/tag/law-v0.2.2), published 2026-10-12T16:38:59Z.
 
-Observation (UTC): 2026-10-13T08:42:07.132Z.
+Observation (UTC): 2026-10-13T08:51:18.745Z.
 
 Archives, installers and checksums stay in the existing binary-delivery repository.
 Download the archive and its checksum from the same release and follow its installation instructions.
