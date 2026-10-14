@@ -44,20 +44,33 @@ Try **`npm start -- --age 16`**. The answer becomes unknown: this model has no
 rule establishing adulthood below 18. Then edit [the rule](examples/age.law)
 and run again. [Walk through the example →](docs/write-rules.md)
 
-## Five subjects, one runtime
+## Modelling on Arxo: what runs today
 
-Published models of the FIDE Laws of Chess, OpenStax mechanics, the French
-Civil Code, the Constitution of Japan and Aquinas's Summa Theologiae run on
-the same language and runtime. Each repository pins its sources, records its
+The public model repositories are a demonstration of what can be modelled on
+Arxo. They share one language and runtime; each pins its sources, records its
 cases with their answers and states its scope per package.
 
-| Source | Repository | One recorded question |
-|---|---|---|
-| FIDE Laws of Chess | [arxohq/arxo-fide-chess](https://github.com/arxohq/arxo-fide-chess) | Second completed illegal move: loss `COMPUTED / TRUE_ONLY`; with the opponent's inability to checkmate established, draw `COMPUTED / TRUE_ONLY` |
-| OpenStax University Physics | [arxohq/arxo-openstax-mechanics](https://github.com/arxohq/arxo-openstax-mechanics) | Applied force 80 N against a maximum static friction of 80 N: stays at rest `TRUE_ONLY`; at 90 N, `FALSE_ONLY` |
-| Code civil | [arxohq/arxo-code-civil](https://github.com/arxohq/arxo-code-civil) | A debt from 2000, proceedings in 2015: time-barred `FALSE_ONLY` under the 1804 model, `TRUE_ONLY` under the modern limitation model |
-| Constitution of Japan | [arxohq/arxo-japan](https://github.com/arxohq/arxo-japan) | Eight votes of all twelve members of a House: Article 96 threshold `TRUE_ONLY`; seven votes, `NEITHER` |
-| Summa Theologiae | [arxohq/arxo-summa-theologiae](https://github.com/arxohq/arxo-summa-theologiae) | Self-defence with an adjudicated proportionality assessment: `TRUE_ONLY`; without it, `REQUIRES_JUDGMENT` |
+| Area | Repositories |
+|---|---|
+| Constitutions | [Japan](https://github.com/arxohq/arxo-japan) · [Kazakhstan](https://github.com/arxohq/arxo-kazakhstan) |
+| Civil codes | [Code civil](https://github.com/arxohq/arxo-code-civil) · [BGB](https://github.com/arxohq/arxo-bgb) |
+| Tax | [US Internal Revenue Code](https://github.com/arxohq/arxo-irc) |
+| Treaties and principles | [UN Charter](https://github.com/arxohq/arxo-charter-1945) · [UNIDROIT Principles](https://github.com/arxohq/arxo-unidroit-picc) |
+| Benefits and insurance | [French family benefits](https://github.com/arxohq/arxo-cnaf) · [German housing benefit](https://github.com/arxohq/arxo-wohngeld) · [Kazakhstan motor insurance](https://github.com/arxohq/arxo-ogpo-public) |
+| Game rules | [FIDE Laws of Chess](https://github.com/arxohq/arxo-fide-chess) |
+| Sciences | [OpenStax mechanics](https://github.com/arxohq/arxo-openstax-mechanics) · [chemistry](https://github.com/arxohq/arxo-openstax-chemistry) · [biology](https://github.com/arxohq/arxo-openstax-biology) |
+| Philosophy | [Summa Theologiae](https://github.com/arxohq/arxo-summa-theologiae) |
+| Comparison | [Catala and Arxo on one regulation](https://github.com/arxohq/arxo-catala-parity) |
+
+One recorded question from five of them:
+
+| Source | One recorded question |
+|---|---|
+| FIDE Laws of Chess | Second completed illegal move: loss `COMPUTED / TRUE_ONLY`; with the opponent's inability to checkmate established, draw `COMPUTED / TRUE_ONLY` |
+| OpenStax mechanics | Applied force 80 N against a maximum static friction of 80 N: stays at rest `TRUE_ONLY`; at 90 N, `FALSE_ONLY` |
+| Code civil | A debt from 2000, proceedings in 2015: time-barred `FALSE_ONLY` under the 1804 model, `TRUE_ONLY` under the modern limitation model |
+| Constitution of Japan | Eight votes of all twelve members of a House: Article 96 threshold `TRUE_ONLY`; seven votes, `NEITHER` |
+| Summa Theologiae | Self-defence with an adjudicated proportionality assessment: `TRUE_ONLY`; without it, `REQUIRES_JUDGMENT` |
 
 Start with chess in a fresh directory:
 
@@ -67,16 +80,17 @@ npm install --ignore-scripts @arxo/canon-fide-chess@0.1.0 @arxo/law@0.4.3
 ```
 
 Save the [chess README's example](https://github.com/arxohq/arxo-fide-chess#start-in-nodejs)
-as `example.mjs` and run `node example.mjs`. The other four repositories run
-with the CLI: `npm install -g @arxo/cli@0.2.4`, clone the repository, then
-`law eval examples/<case>` as each README shows.
+as `example.mjs` and run `node example.mjs`. Most other repositories run
+with the CLI: `npm install -g @arxo/cli`, clone the repository, then
+`law eval examples/<case>` as each README shows. The full list with
+observation details is in [the ecosystem page](docs/ecosystem.md).
 
 ## Choose your next step
 
 | I want to… | Start here |
 |---|---|
 | Run an existing model | [French housing-aid formula: input → answer → evidence](docs/run-a-model.md) |
-| Run a published source model | [Five subjects, one runtime](#five-subjects-one-runtime) |
+| Run a published source model | [Modelling on Arxo: what runs today](#modelling-on-arxo-what-runs-today) |
 | Write my own rules | [A small `.law` source, compiler diagnostics and replay](docs/write-rules.md) |
 | Work in an editor | [Install Arxo Law in VS Code or through Open VSX](docs/install-editor.md) |
 | Use Python | [Published Python SDK and canon packages](docs/packages.md#python-pypi) |
