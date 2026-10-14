@@ -69,9 +69,9 @@ use the same machinery. A proof explains the selected model's answer.
 
 | Package | Latest | Start with |
 |---|---|---|
-| [@arxo/law](https://www.npmjs.com/package/@arxo/law) | 0.4.3 | [Run a model](docs/run-a-model.md) |
-| [@arxo/law-engine](https://www.npmjs.com/package/@arxo/law-engine) | 0.5.3 | [Write rules](docs/write-rules.md) |
-| [@arxo/cli](https://www.npmjs.com/package/@arxo/cli) | 0.2.4 | [CLI and editor](docs/write-rules.md#use-the-cli-or-editor) |
+| [@arxo/law](https://www.npmjs.com/package/@arxo/law) | 0.4.4 | [Run a model](docs/run-a-model.md) |
+| [@arxo/law-engine](https://www.npmjs.com/package/@arxo/law-engine) | 0.5.4 | [Write rules](docs/write-rules.md) |
+| [@arxo/cli](https://www.npmjs.com/package/@arxo/cli) | 0.2.5 | [CLI and editor](docs/write-rules.md#use-the-cli-or-editor) |
 
 <!-- catalog:featured:end -->
 
