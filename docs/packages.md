@@ -9,7 +9,7 @@
 | Work in Python | [Python packages](#python-pypi) and the Python SDK guide |
 | Connect an assistant | [Connect MCP](connect-mcp.md) with a selected slice |
 
-Last refresh attempt: **2026-10-13 19:19 UTC**.
+Last refresh attempt: **2026-10-14 08:08 UTC**.
 
 **Example set** means that exact version is used by this repository's CI examples.
 Other entries are observed deliveries with the checks stated below. Each package
@@ -19,8 +19,8 @@ has its own version. See [tested combinations](compatibility.md).
 
 | Package | Latest | Use it for | Checks |
 |---|---|---|---|
-| [@arxo/law](https://www.npmjs.com/package/@arxo/law) | 0.4.3 | Open a canon and ask a question | Not checked here |
-| [@arxo/law-engine](https://www.npmjs.com/package/@arxo/law-engine) | 0.5.3 | Compile sources and embed the WebAssembly evaluator | Not checked here |
+| [@arxo/law](https://www.npmjs.com/package/@arxo/law) | 0.4.4 | Open a canon and ask a question | Not checked here |
+| [@arxo/law-engine](https://www.npmjs.com/package/@arxo/law-engine) | 0.5.4 | Compile sources and embed the WebAssembly evaluator | Not checked here |
 | [@arxo/law-types](https://www.npmjs.com/package/@arxo/law-types) | 0.3.3 | TypeScript document and diagnostic types | Not checked here |
 | [@arxo/law-client](https://www.npmjs.com/package/@arxo/law-client) | 0.3.3 | Typed MCP and registry client | Not checked here |
 | [@arxo/law-forms](https://www.npmjs.com/package/@arxo/law-forms) | 0.3.3 | Question forms and structural case assembly | Not checked here |
@@ -29,8 +29,8 @@ has its own version. See [tested combinations](compatibility.md).
 
 | Package | Latest | Use it for | Checks |
 |---|---|---|---|
-| [@arxo/cli](https://www.npmjs.com/package/@arxo/cli) | 0.2.4 | Install the law command | Not checked here |
-| [create-arxo](https://www.npmjs.com/package/create-arxo) | 0.3.2 | Scaffold a TypeScript project | Not checked here |
+| [@arxo/cli](https://www.npmjs.com/package/@arxo/cli) | 0.2.5 | Install the law command | Not checked here |
+| [create-arxo](https://www.npmjs.com/package/create-arxo) | 0.3.3 | Scaffold a TypeScript project | Not checked here |
 
 ## Canons
 
@@ -81,10 +81,10 @@ These are normally selected automatically for the operating system and architect
 
 | Package | Latest | Use it for | Checks |
 |---|---|---|---|
-| [@arxo/cli-darwin-arm64](https://www.npmjs.com/package/@arxo/cli-darwin-arm64) | 0.2.4 | cli binary for darwin-arm64 | Not checked here |
-| [@arxo/cli-linux-x64](https://www.npmjs.com/package/@arxo/cli-linux-x64) | 0.2.4 | cli binary for linux-x64 | Not checked here |
-| [@arxo/mcp-host-darwin-arm64](https://www.npmjs.com/package/@arxo/mcp-host-darwin-arm64) | 0.4.2 | mcp-host binary for darwin-arm64 | Not checked here |
-| [@arxo/mcp-host-linux-x64](https://www.npmjs.com/package/@arxo/mcp-host-linux-x64) | 0.4.2 | mcp-host binary for linux-x64 | Not checked here |
+| [@arxo/cli-darwin-arm64](https://www.npmjs.com/package/@arxo/cli-darwin-arm64) | 0.2.5 | cli binary for darwin-arm64 | Not checked here |
+| [@arxo/cli-linux-x64](https://www.npmjs.com/package/@arxo/cli-linux-x64) | 0.2.5 | cli binary for linux-x64 | Not checked here |
+| [@arxo/mcp-host-darwin-arm64](https://www.npmjs.com/package/@arxo/mcp-host-darwin-arm64) | 0.4.3 | mcp-host binary for darwin-arm64 | Not checked here |
+| [@arxo/mcp-host-linux-x64](https://www.npmjs.com/package/@arxo/mcp-host-linux-x64) | 0.4.3 | mcp-host binary for linux-x64 | Not checked here |
 
 </details>
 
@@ -93,32 +93,32 @@ These are normally selected automatically for the operating system and architect
 
 | Package | Published (UTC) | Last successful observation (UTC) |
 |---|---|---|
-| @arxo/law | 2026-10-13T17:36:18.907Z | 2026-10-13T19:19:02.453Z |
-| @arxo/law-engine | 2026-10-13T17:33:49.846Z | 2026-10-13T19:19:02.453Z |
-| @arxo/law-types | 2026-10-13T17:31:33.828Z | 2026-10-13T19:19:02.453Z |
-| @arxo/law-client | 2026-10-13T17:36:54.973Z | 2026-10-13T19:19:02.453Z |
-| @arxo/law-forms | 2026-10-13T17:38:29.357Z | 2026-10-13T19:19:02.453Z |
-| @arxo/cli | 2026-10-13T18:58:55.355Z | 2026-10-13T19:19:02.453Z |
-| create-arxo | 2026-10-13T17:37:02.090Z | 2026-10-13T19:19:02.453Z |
-| @arxo/canon-bgb-fristen | 2026-10-10T13:53:40.077Z | 2026-10-13T19:19:02.453Z |
-| @arxo/canon-fr-benefits | 2026-10-12T22:23:56.825Z | 2026-10-13T19:19:02.453Z |
-| @arxo/canon-de-wohngeld | 2026-10-13T16:58:35.285Z | 2026-10-13T19:19:02.453Z |
-| @arxo/canon-fide-chess | 2026-10-13T19:14:35.642Z | 2026-10-13T19:19:02.453Z |
-| @arxo/canon-ogpo-vts | 2026-10-10T13:53:25.715Z | 2026-10-13T19:19:02.453Z |
-| @arxo/canon-swift-lilliput | 2026-10-10T13:54:55.460Z | 2026-10-13T19:19:02.453Z |
-| @arxo/canon-unidroit-picc | 2026-10-10T13:53:20.915Z | 2026-10-13T19:19:02.453Z |
-| @arxo/mcp-charter | 2026-10-10T14:11:35.375Z | 2026-10-13T19:19:02.453Z |
-| @arxo/mcp-code-civil | 2026-10-10T14:09:22.163Z | 2026-10-13T19:19:02.453Z |
-| @arxo/mcp-de-bgb | 2026-10-10T14:09:22.201Z | 2026-10-13T19:19:02.453Z |
-| @arxo/mcp-picc | 2026-10-10T14:05:57.337Z | 2026-10-13T19:19:02.453Z |
-| @arxo/cli-darwin-arm64 | 2026-10-13T19:01:52.095Z | 2026-10-13T19:19:02.453Z |
-| @arxo/cli-linux-x64 | 2026-10-13T18:59:26.951Z | 2026-10-13T19:19:02.453Z |
-| @arxo/mcp-host-darwin-arm64 | 2026-10-13T17:46:37.147Z | 2026-10-13T19:19:02.453Z |
-| @arxo/mcp-host-linux-x64 | 2026-10-13T17:48:10.068Z | 2026-10-13T19:19:02.453Z |
-| arxo (PyPI) | 2026-09-21T20:28:19.824263Z | 2026-10-13T19:19:02.453Z |
-| arxo-canon-bgb-fristen (PyPI) | 2026-09-21T20:28:21.413232Z | 2026-10-13T19:19:02.453Z |
-| arxo-canon-unidroit-picc (PyPI) | 2026-09-21T20:28:24.757029Z | 2026-10-13T19:19:02.453Z |
-| arxo-canon-ogpo-vts (PyPI) | 2026-09-21T20:28:23.173718Z | 2026-10-13T19:19:02.453Z |
+| @arxo/law | 2026-10-14T08:01:59.938Z | 2026-10-14T08:08:26.385Z |
+| @arxo/law-engine | 2026-10-14T07:55:32.747Z | 2026-10-14T08:08:26.385Z |
+| @arxo/law-types | 2026-10-13T17:31:33.828Z | 2026-10-14T08:08:26.385Z |
+| @arxo/law-client | 2026-10-13T17:36:54.973Z | 2026-10-14T08:08:26.385Z |
+| @arxo/law-forms | 2026-10-13T17:38:29.357Z | 2026-10-14T08:08:26.385Z |
+| @arxo/cli | 2026-10-14T08:02:48.485Z | 2026-10-14T08:08:26.385Z |
+| create-arxo | 2026-10-14T08:02:02.245Z | 2026-10-14T08:08:26.385Z |
+| @arxo/canon-bgb-fristen | 2026-10-10T13:53:40.077Z | 2026-10-14T08:08:26.385Z |
+| @arxo/canon-fr-benefits | 2026-10-12T22:23:56.825Z | 2026-10-14T08:08:26.385Z |
+| @arxo/canon-de-wohngeld | 2026-10-13T16:58:35.285Z | 2026-10-14T08:08:26.385Z |
+| @arxo/canon-fide-chess | 2026-10-13T19:14:35.642Z | 2026-10-14T08:08:26.385Z |
+| @arxo/canon-ogpo-vts | 2026-10-10T13:53:25.715Z | 2026-10-14T08:08:26.385Z |
+| @arxo/canon-swift-lilliput | 2026-10-10T13:54:55.460Z | 2026-10-14T08:08:26.385Z |
+| @arxo/canon-unidroit-picc | 2026-10-10T13:53:20.915Z | 2026-10-14T08:08:26.385Z |
+| @arxo/mcp-charter | 2026-10-10T14:11:35.375Z | 2026-10-14T08:08:26.385Z |
+| @arxo/mcp-code-civil | 2026-10-10T14:09:22.163Z | 2026-10-14T08:08:26.385Z |
+| @arxo/mcp-de-bgb | 2026-10-10T14:09:22.201Z | 2026-10-14T08:08:26.385Z |
+| @arxo/mcp-picc | 2026-10-10T14:05:57.337Z | 2026-10-14T08:08:26.385Z |
+| @arxo/cli-darwin-arm64 | 2026-10-14T08:05:55.327Z | 2026-10-14T08:08:26.385Z |
+| @arxo/cli-linux-x64 | 2026-10-14T08:03:05.429Z | 2026-10-14T08:08:26.385Z |
+| @arxo/mcp-host-darwin-arm64 | 2026-10-14T08:05:06.689Z | 2026-10-14T08:08:26.385Z |
+| @arxo/mcp-host-linux-x64 | 2026-10-14T08:06:58.182Z | 2026-10-14T08:08:26.385Z |
+| arxo (PyPI) | 2026-09-21T20:28:19.824263Z | 2026-10-14T08:08:26.385Z |
+| arxo-canon-bgb-fristen (PyPI) | 2026-09-21T20:28:21.413232Z | 2026-10-14T08:08:26.385Z |
+| arxo-canon-unidroit-picc (PyPI) | 2026-09-21T20:28:24.757029Z | 2026-10-14T08:08:26.385Z |
+| arxo-canon-ogpo-vts (PyPI) | 2026-09-21T20:28:23.173718Z | 2026-10-14T08:08:26.385Z |
 
 Full integrity strings and exact dependency pins are in the
 [captured snapshot](../catalog/snapshot.json), alongside SHA-256 hashes of PyPI release files.
