@@ -561,6 +561,79 @@ Version numbers are yours to assign; the registry enforces immutability and
 the exact semantics release, not semantic-versioning compatibility of the
 model's behaviour.
 
+## 8. Submit to the Arxo registry
+
+Your own registry stays the main route. Submitting to the public `arxo`
+registry adds a curated copy: consumers then install your package with
+`law add acme.parcel_tariff@0.1.0`, without `--from` or `--registry`.
+Requests go to [arxohq/registry-requests](https://github.com/arxohq/registry-requests)
+as pull requests. You need no Arxo account or token, only your own public
+GitHub repository and a fork of the requests repository.
+The outputs in this section are not from `tools/publish-package.sh`: they come
+from the intake checks of a test request, with hashes and paths shortened.
+
+**What you bring.** The packed files as assets of a GitHub Release in your
+repository, and one file, `requests/<name>-<version>/request.json`, that names
+the Release, the commit its tag points to, an SPDX license and the sha256
+and size of every file:
+
+```sh
+law publish artifacts/acme.parcel_tariff-0.1.0 \
+  --request requests/acme.parcel_tariff-0.1.0/request.json --bytes release-assets \
+  --source acme/parcel-tariff@parcel-tariff-0.1.0 \
+  --commit "$(git rev-parse 'parcel-tariff-0.1.0^{commit}')" --license Apache-2.0
+gh release create parcel-tariff-0.1.0 release-assets/* --repo acme/parcel-tariff
+```
+
+`law publish --request` arrives with the next CLI release. With `@arxo/cli`
+0.2.6, write a candidate (`law publish … --candidate cand.json --bytes
+release-assets`) and convert it with `tools/make_request.py` from the
+requests repository; the result is the same file. Packages that depend on
+each other travel in one request under one Release. Dependencies must already
+be in `arxo` or be part of the same request.
+
+**What the machine checks**, on the pull request and without secrets: the
+request format and its paths and sizes; that the tag points to the named
+commit; that every Release asset, downloaded anonymously, has the named size
+and sha256; that the artifacts publish with the pinned `law` into a scratch
+copy of the registry, dependencies first, and pass the registry's own gate;
+that a scratch project installs them with `law add … --from arxo`; and that
+the name prefix (`acme` in `acme.parcel_tariff`) is not reserved for Arxo
+packages and not held by another owner. The first accepted request claims a
+new prefix for the owner of its source repository. The report arrives as a
+comment on the pull request:
+
+```text
+### Arxo registry intake — ✅ machine checks passed
+
+| package | version | contentHash | worldHash |
+|---|---|---|---|
+| `acme.parcel_tariff` | `0.1.0` | `sha256:a126c314…ade0a6` | `sha256:89d3b601…53cc54` |
+```
+
+Refusals are named in the same report, and nothing is published:
+
+```text
+- acme.parcel_tariff-0.1.0.world.lawir.json: asset has 127392 bytes, the request says 127391
+- law: REFUSAL LPK-E0601: acme.parcel_tariff@0.1.0 package.lawir.json: … already holds different bytes at this address — releases are immutable
+- acme.parcel_local@0.1.0: dependency acme.leaf@0.1.0 comes from registry `acme`; only `arxo` dependencies are accepted (LPK-E0603)
+- kz.parcel_tariff: prefix `kz` is reserved for Arxo packages
+- acme.parcel_tariff: prefix `acme` belongs to acme-corp; requests with it come only from that owner
+```
+
+**What a person checks.** A maintainer reviews what a machine cannot: that
+the license allows redistribution, that the texts the package carries are
+public domain, official acts or your own, and that the name and description
+say what the package is. Merging the pull request approves exactly the
+sha256 in the request. After the merge the files are downloaded once more,
+stored under Arxo's control and published; from then on the published
+release does not depend on your Release staying online.
+
+**What is not promised.** No review deadline. No automatic acceptance: a
+green check is necessary, not sufficient. No publisher signature: packages
+in `arxo` are verified by hash, and consumers' `trustedKeys` for `arxo` are
+empty. No rewriting: a fix is the next version and a new request.
+
 ## Other ways out
 
 - **`.arxo` container.** `law pack --project tariff --out parcel-tariff.arxo`
@@ -574,9 +647,8 @@ model's behaviour.
   Applications that need your package in Node.js run the CLI or
   `law serve` over a project that pins it.
 - **The public Arxo registry.** The `arxo` registry is curated: releases are
-  published by the Arxo maintainers from reviewed requests. Submission of
-  external packages is not open yet; your own registry is the route
-  described on this page, and it does not change when submissions open.
+  published from reviewed requests, see [section 8](#8-submit-to-the-arxo-registry).
+  Your own registry does not change when a package is also in `arxo`.
 - **Code generation.** Printing a package as a standalone module without the
   rule engine is a separate route and is not part of the published CLI.
 
