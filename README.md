@@ -44,11 +44,12 @@ Try **`npm start -- --age 16`**. The answer becomes unknown: this model has no
 rule establishing adulthood below 18. Then edit [the rule](examples/age.law)
 and run again. [Walk through the example →](docs/write-rules.md)
 
-## Modelling on Arxo: what runs today
+## Modelling on Arxo: public demonstrations
 
-The public model repositories are a demonstration of what can be modelled on
-Arxo. They share one language and runtime; each pins its sources, records its
-cases with their answers and states its scope per package.
+These public model repositories are demonstrations: a small sample of a much
+larger corpus of models on Arxo, chosen to show what modelling looks like
+across subjects. They share one language and runtime; each pins its sources,
+records its cases with their answers and states its scope per package.
 
 | Area | Repositories |
 |---|---|
@@ -90,7 +91,7 @@ observation details is in [the ecosystem page](docs/ecosystem.md).
 | I want to… | Start here |
 |---|---|
 | Run an existing model | [French housing-aid formula: input → answer → evidence](docs/run-a-model.md) |
-| Run a published source model | [Modelling on Arxo: what runs today](#modelling-on-arxo-what-runs-today) |
+| Run a published source model | [Modelling on Arxo: public demonstrations](#modelling-on-arxo-public-demonstrations) |
 | Write my own rules | [A small `.law` source, compiler diagnostics and replay](docs/write-rules.md) |
 | Work in an editor | [Install Arxo Law in VS Code or through Open VSX](docs/install-editor.md) |
 | Use Python | [Published Python SDK and canon packages](docs/packages.md#python-pypi) |
