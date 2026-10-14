@@ -10,6 +10,7 @@
 
 [![Checks](https://github.com/arxohq/law/actions/workflows/ci.yml/badge.svg)](https://github.com/arxohq/law/actions/workflows/ci.yml)
 [![npm](https://img.shields.io/npm/v/@arxo/law)](https://www.npmjs.com/package/@arxo/law)
+[![Arxo on DevHunt](docs/assets/devhunt.svg)](https://devhunt.org/tool/arxo)
 
 [Try in browser](https://french-benefits.law.arxo.io/) · [Run locally](#run-locally) ·
 [Write rules](docs/write-rules.md) · [Publish a package](docs/publish-package.md) · [Install in VS Code](https://marketplace.visualstudio.com/items?itemName=arxo.law) ·
