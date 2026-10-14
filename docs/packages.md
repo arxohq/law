@@ -9,7 +9,7 @@
 | Work in Python | [Python packages](#python-pypi) and the Python SDK guide |
 | Connect an assistant | [Connect MCP](connect-mcp.md) with a selected slice |
 
-Last refresh attempt: **2026-10-14 17:17 UTC**.
+Last refresh attempt: **2026-10-14 17:24 UTC**.
 
 **Example set** means that exact version is used by this repository's CI examples.
 Other entries are observed deliveries with the checks stated below. Each package
@@ -94,33 +94,33 @@ These are normally selected automatically for the operating system and architect
 
 | Package | Published (UTC) | Last successful observation (UTC) |
 |---|---|---|
-| @arxo/law | 2026-10-14T08:01:59.938Z | 2026-10-14T17:17:50.029Z |
-| @arxo/law-engine | 2026-10-14T07:55:32.747Z | 2026-10-14T17:17:50.029Z |
-| @arxo/law-types | 2026-10-13T17:31:33.828Z | 2026-10-14T17:17:50.029Z |
-| @arxo/law-client | 2026-10-13T17:36:54.973Z | 2026-10-14T17:17:50.029Z |
-| @arxo/law-forms | 2026-10-13T17:38:29.357Z | 2026-10-14T17:17:50.029Z |
-| @arxo/cli | 2026-10-14T08:02:48.485Z | 2026-10-14T17:17:50.029Z |
-| create-arxo | 2026-10-14T08:02:02.245Z | 2026-10-14T17:17:50.029Z |
-| @arxo/canon-bgb-fristen | 2026-10-10T13:53:40.077Z | 2026-10-14T17:17:50.029Z |
-| @arxo/canon-fr-benefits | 2026-10-12T22:23:56.825Z | 2026-10-14T17:17:50.029Z |
-| @arxo/canon-de-wohngeld | 2026-10-13T16:58:35.285Z | 2026-10-14T17:17:50.029Z |
-| @arxo/canon-fide-chess | 2026-10-13T19:14:35.642Z | 2026-10-14T17:17:50.029Z |
-| @arxo/canon-ogpo-vts | 2026-10-10T13:53:25.715Z | 2026-10-14T17:17:50.029Z |
-| @arxo/canon-swift-lilliput | 2026-10-10T13:54:55.460Z | 2026-10-14T17:17:50.029Z |
-| @arxo/canon-unidroit-picc | 2026-10-10T13:53:20.915Z | 2026-10-14T17:17:50.029Z |
-| @arxo/mcp-charter | 2026-10-10T14:11:35.375Z | 2026-10-14T17:17:50.029Z |
-| @arxo/mcp-code-civil | 2026-10-10T14:09:22.163Z | 2026-10-14T17:17:50.029Z |
-| @arxo/mcp-de-bgb | 2026-10-10T14:09:22.201Z | 2026-10-14T17:17:50.029Z |
-| @arxo/mcp-picc | 2026-10-14T09:34:09.736Z | 2026-10-14T17:17:50.029Z |
-| @arxo/mcp-fide-chess | 2026-10-13T21:59:26.001Z | 2026-10-14T17:17:50.029Z |
-| @arxo/cli-darwin-arm64 | 2026-10-14T08:05:55.327Z | 2026-10-14T17:17:50.029Z |
-| @arxo/cli-linux-x64 | 2026-10-14T08:03:05.429Z | 2026-10-14T17:17:50.029Z |
-| @arxo/mcp-host-darwin-arm64 | 2026-10-14T08:05:06.689Z | 2026-10-14T17:17:50.029Z |
-| @arxo/mcp-host-linux-x64 | 2026-10-14T08:06:58.182Z | 2026-10-14T17:17:50.029Z |
-| arxo (PyPI) | 2026-09-21T20:28:19.824263Z | 2026-10-14T17:17:50.029Z |
-| arxo-canon-bgb-fristen (PyPI) | 2026-09-21T20:28:21.413232Z | 2026-10-14T17:17:50.029Z |
-| arxo-canon-unidroit-picc (PyPI) | 2026-09-21T20:28:24.757029Z | 2026-10-14T17:17:50.029Z |
-| arxo-canon-ogpo-vts (PyPI) | 2026-09-21T20:28:23.173718Z | 2026-10-14T17:17:50.029Z |
+| @arxo/law | 2026-10-14T08:01:59.938Z | 2026-10-14T17:24:18.501Z |
+| @arxo/law-engine | 2026-10-14T07:55:32.747Z | 2026-10-14T17:24:18.501Z |
+| @arxo/law-types | 2026-10-13T17:31:33.828Z | 2026-10-14T17:24:18.501Z |
+| @arxo/law-client | 2026-10-13T17:36:54.973Z | 2026-10-14T17:24:18.501Z |
+| @arxo/law-forms | 2026-10-13T17:38:29.357Z | 2026-10-14T17:24:18.501Z |
+| @arxo/cli | 2026-10-14T08:02:48.485Z | 2026-10-14T17:24:18.501Z |
+| create-arxo | 2026-10-14T08:02:02.245Z | 2026-10-14T17:24:18.501Z |
+| @arxo/canon-bgb-fristen | 2026-10-10T13:53:40.077Z | 2026-10-14T17:24:18.501Z |
+| @arxo/canon-fr-benefits | 2026-10-12T22:23:56.825Z | 2026-10-14T17:24:18.501Z |
+| @arxo/canon-de-wohngeld | 2026-10-13T16:58:35.285Z | 2026-10-14T17:24:18.501Z |
+| @arxo/canon-fide-chess | 2026-10-13T19:14:35.642Z | 2026-10-14T17:24:18.501Z |
+| @arxo/canon-ogpo-vts | 2026-10-10T13:53:25.715Z | 2026-10-14T17:24:18.501Z |
+| @arxo/canon-swift-lilliput | 2026-10-10T13:54:55.460Z | 2026-10-14T17:24:18.501Z |
+| @arxo/canon-unidroit-picc | 2026-10-10T13:53:20.915Z | 2026-10-14T17:24:18.501Z |
+| @arxo/mcp-charter | 2026-10-10T14:11:35.375Z | 2026-10-14T17:24:18.501Z |
+| @arxo/mcp-code-civil | 2026-10-10T14:09:22.163Z | 2026-10-14T17:24:18.501Z |
+| @arxo/mcp-de-bgb | 2026-10-10T14:09:22.201Z | 2026-10-14T17:24:18.501Z |
+| @arxo/mcp-picc | 2026-10-14T09:34:09.736Z | 2026-10-14T17:24:18.501Z |
+| @arxo/mcp-fide-chess | 2026-10-13T21:59:26.001Z | 2026-10-14T17:24:18.501Z |
+| @arxo/cli-darwin-arm64 | 2026-10-14T08:05:55.327Z | 2026-10-14T17:24:18.501Z |
+| @arxo/cli-linux-x64 | 2026-10-14T08:03:05.429Z | 2026-10-14T17:24:18.501Z |
+| @arxo/mcp-host-darwin-arm64 | 2026-10-14T08:05:06.689Z | 2026-10-14T17:24:18.501Z |
+| @arxo/mcp-host-linux-x64 | 2026-10-14T08:06:58.182Z | 2026-10-14T17:24:18.501Z |
+| arxo (PyPI) | 2026-09-21T20:28:19.824263Z | 2026-10-14T17:24:18.501Z |
+| arxo-canon-bgb-fristen (PyPI) | 2026-09-21T20:28:21.413232Z | 2026-10-14T17:24:18.501Z |
+| arxo-canon-unidroit-picc (PyPI) | 2026-09-21T20:28:24.757029Z | 2026-10-14T17:24:18.501Z |
+| arxo-canon-ogpo-vts (PyPI) | 2026-09-21T20:28:23.173718Z | 2026-10-14T17:24:18.501Z |
 
 Full integrity strings and exact dependency pins are in the
 [captured snapshot](../catalog/snapshot.json), alongside SHA-256 hashes of PyPI release files.

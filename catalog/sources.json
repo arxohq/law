@@ -190,6 +190,22 @@
       "purpose": "Summa Theologiae argument models and case questions"
     },
     {
+      "name": "arxohq/arxo-openstax-chemistry",
+      "purpose": "OpenStax chemistry models with runnable examples"
+    },
+    {
+      "name": "arxohq/arxo-openstax-biology",
+      "purpose": "OpenStax biology models with runnable examples"
+    },
+    {
+      "name": "arxohq/arxo-kazakhstan",
+      "purpose": "Kazakhstan Constitution models, 2026 and 1995 editions, with runnable examples"
+    },
+    {
+      "name": "arxohq/arxo-irc",
+      "purpose": "US Internal Revenue Code models with runnable examples"
+    },
+    {
       "name": "arxohq/arxo-catala-parity",
       "purpose": "Arxo and Catala comparison artefact"
     }
