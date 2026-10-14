@@ -1,6 +1,6 @@
 # Write your first rule
 
-[← Arxo Law](../README.md) · [Run a model](run-a-model.md) · [Connect MCP](connect-mcp.md)
+[← Arxo Law](../README.md) · [Run a model](run-a-model.md) · [Publish a package](publish-package.md) · [Connect MCP](connect-mcp.md)
 
 Start in the cloned repository with Node.js 20 or newer:
 
@@ -66,7 +66,8 @@ JSON includes `truthStatus`, `rulesApplied`, the full `resultHash`, the
 evaluation document's size and the replay comparison. Use `--help` to see
 available options. [`npm test`](../CONTRIBUTING.md) checks the fixed baseline.
 
-Next: [run a published model](run-a-model.md) or
+Next: [run a published model](run-a-model.md),
+[publish your rules as a package](publish-package.md) or
 [read the package catalogue](packages.md).
 
 ## Use the CLI or editor

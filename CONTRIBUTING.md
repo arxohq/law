@@ -5,6 +5,11 @@ are welcome. Open an issue for a reproducible engine or package problem even
 while engine source is not available here. Core changes currently require
 maintainer integration; there is no public engine-source PR workflow yet.
 
+Publishing a package of your own rules is not a contribution to this
+repository: it is a release into a registry you own, described in
+[Publish your package](docs/publish-package.md). Open an issue here when
+that route fails.
+
 ## Local checks
 
 Use Node.js 20 or newer:
@@ -40,6 +45,10 @@ when the observed version matches a direct dependency pin.
 npm run catalog:refresh
 npm run check
 ```
+
+`tools/publish-package.sh` replays the publishing guide with the installed
+`law` CLI in a temporary directory; its transcript is the source of the
+output blocks in `docs/publish-package.md`.
 
 Review changes to `catalog/snapshot.json`, `docs/packages.md`,
 `docs/ecosystem.md` and the README catalogue and community blocks together. A failed fetch
