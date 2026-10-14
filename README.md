@@ -12,7 +12,7 @@
 [![npm](https://img.shields.io/npm/v/@arxo/law)](https://www.npmjs.com/package/@arxo/law)
 
 [Try in browser](https://french-benefits.law.arxo.io/) · [Run locally](#run-locally) ·
-[Write rules](docs/write-rules.md) · [Install in VS Code](https://marketplace.visualstudio.com/items?itemName=arxo.law) ·
+[Write rules](docs/write-rules.md) · [Publish a package](docs/publish-package.md) · [Install in VS Code](https://marketplace.visualstudio.com/items?itemName=arxo.law) ·
 [Connect MCP](docs/connect-mcp.md)
 
 SDK and CLI packages are available. [Engine source is planned](docs/source-availability.md).
@@ -93,6 +93,7 @@ observation details is in [the ecosystem page](docs/ecosystem.md).
 | Run an existing model | [French housing-aid formula: input → answer → evidence](docs/run-a-model.md) |
 | Run a published source model | [Modelling on Arxo: public demonstrations](#modelling-on-arxo-public-demonstrations) |
 | Write my own rules | [A small `.law` source, compiler diagnostics and replay](docs/write-rules.md) |
+| Publish my own package | [From rules to a release another project installs by exact version](docs/publish-package.md) |
 | Work in an editor | [Install Arxo Law in VS Code or through Open VSX](docs/install-editor.md) |
 | Use Python | [Published Python SDK and canon packages](docs/packages.md#python-pypi) |
 | Use a model with an assistant | [Install a specific MCP slice and verify the connection](docs/connect-mcp.md) |
