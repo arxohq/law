@@ -14,22 +14,15 @@ machinery is the same for a tariff, a standard, a game rulebook or a
 calculation: rules with a provenance, scenarios with expected answers, a
 release with hashes, and an answer with its proof.
 
-**Verified with:** `law` 0.2.5 (`law version` prints the tool version, the
-semantics line `law.core/0.2` and the hash of the binary). Every output block
+**Verified with:** `law` 0.2.6, published as `@arxo/cli` 0.2.6 (`law version`
+prints the tool version, the semantics line `law.core/0.2` and the hash of
+the binary). Every output block
 below is the verbatim transcript of [`tools/publish-package.sh`](../tools/publish-package.sh),
 which replays the whole route in a temporary directory:
 
 ```sh
 sh tools/publish-package.sh
 ```
-
-> **Published `@arxo/cli` 0.2.5.** That build refuses `law engine lock . --write`
-> for a package that is not inside an Arxo workspace
-> (`current lock requires root CLIR directory`). The fix is in the main branch
-> and ships with the next CLI release. Until then, write your rules and
-> scenarios *before* the first `law add`: `law add` writes the lock over the
-> current source, and the rest of the route is unchanged. A package with no
-> dependency cannot be relocked by that build after its source is edited.
 
 ## What a package is
 
@@ -485,7 +478,7 @@ law publish artifacts/parcel-tariff-0.1.0 --registry acme=registry-signed --key 
 
 ```text
 key → acme.key (the secret lives only in this file)
-public ed25519:32dbab992ba6cbd77b8ed1fb04bb69c61c897808545014443bbc2c3260679c06
+public ed25519:40a9977e1bda3afc88bdd1c369d1a298b1c1d4007639f3a84608c13f1afe73b8
 ```
 
 The key file is created with owner-only permissions and holds the secret;
@@ -494,7 +487,7 @@ publish the public half. The consumer names it next to the address:
 ```toml
 [registries.acme]
 url = "https://packages.example.org/registry"
-trustedKeys = ["ed25519:32dbab992ba6cbd77b8ed1fb04bb69c61c897808545014443bbc2c3260679c06"]
+trustedKeys = ["ed25519:40a9977e1bda3afc88bdd1c369d1a298b1c1d4007639f3a84608c13f1afe73b8"]
 ```
 
 With the publisher's key trusted, `add` and `install --offline` proceed as
@@ -502,13 +495,13 @@ before. With another key trusted, or with a signed registry and no
 `trustedKeys` at all, the release is refused:
 
 ```text
-law: REFUSAL: package acme.parcel_tariff: signature.keyId ed25519:32dbab992ba6cbd77b8ed1fb04bb69c61c897808545014443bbc2c3260679c06: key not in trustedKeys
+law: REFUSAL: package acme.parcel_tariff: signature.keyId ed25519:40a9977e1bda3afc88bdd1c369d1a298b1c1d4007639f3a84608c13f1afe73b8: key not in trustedKeys
 ```
 
 And with `trustedKeys` configured, an unsigned release is refused:
 
 ```text
-law: REFUSAL: package acme.parcel_tariff: no trusted-key signature (DECISION-0369 R7)
+law: REFUSAL: package acme.parcel_tariff: no signature by a trusted key: the registry declares trusted keys, so an unsigned manifest is refused
 ```
 
 So a signed registry commits you to publishing the public key where
@@ -528,7 +521,7 @@ pack into a new directory and publish into the same registry. What happens
 if you skip the bump:
 
 ```text
-law: REFUSAL LPK-E0601: acme.parcel_tariff@0.1.0 package.lawir.json: registry/p/acme.parcel_tariff/0.1.0/package.lawir.json already holds different bytes at this address — releases are immutable (§6 DECISION-0168)
+law: REFUSAL LPK-E0601: acme.parcel_tariff@0.1.0 package.lawir.json: registry/p/acme.parcel_tariff/0.1.0/package.lawir.json already holds different bytes at this address — releases are immutable
   → cut the next version; a published release is never rewritten
 ```
 
@@ -546,7 +539,7 @@ above). A release built for another exact release is refused at
 installation, not patched:
 
 ```text
-law: REFUSAL LPK-E0403: acme.parcel_tariff@0.1.0: the release declares languageSemantics law.core/0.2.10, but the root executes exactly law.core/0.2.11; every closure package must carry the root's exact law.core release (§6 DECISION-0168, DECISION-0464)
+law: REFUSAL LPK-E0403: acme.parcel_tariff@0.1.0: the release declares languageSemantics law.core/0.2.10, but the root executes exactly law.core/0.2.11; every closure package must carry the root's exact law.core release, since one world executes under one semantics release
   → take a package version published for the root's exact law.core release (`law outdated` lists the versions); a release of the same major.minor line is not enough
 ```
 
