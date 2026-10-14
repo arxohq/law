@@ -99,6 +99,11 @@
       "purpose": "UNIDROIT PICC slice"
     },
     {
+      "name": "@arxo/mcp-fide-chess",
+      "group": "MCP",
+      "purpose": "FIDE Laws of Chess slice"
+    },
+    {
       "name": "@arxo/cli-darwin-arm64",
       "group": "Platform dependencies",
       "purpose": "cli binary for darwin-arm64"
@@ -167,6 +172,22 @@
     {
       "name": "arxohq/arxo-fide-chess",
       "purpose": "FIDE Laws of Chess model, arbiter cases and Node.js distribution"
+    },
+    {
+      "name": "arxohq/arxo-japan",
+      "purpose": "Constitution of Japan and Official Gazette models with runnable examples"
+    },
+    {
+      "name": "arxohq/arxo-code-civil",
+      "purpose": "French Civil Code packages, a 1804 model and worked cases"
+    },
+    {
+      "name": "arxohq/arxo-openstax-mechanics",
+      "purpose": "OpenStax mechanics models with runnable examples"
+    },
+    {
+      "name": "arxohq/arxo-summa-theologiae",
+      "purpose": "Summa Theologiae argument models and case questions"
     },
     {
       "name": "arxohq/arxo-catala-parity",
