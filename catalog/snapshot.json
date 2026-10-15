@@ -1,14 +1,14 @@
 {
   "format": "arxo.public-delivery-catalogue/1",
-  "refreshedAt": "2026-10-14T17:24:18.501Z",
+  "refreshedAt": "2026-10-15T23:27:56.695Z",
   "packages": {
     "@arxo/law": {
       "availability": "available",
-      "observedAt": "2026-10-14T17:24:18.501Z",
-      "version": "0.4.4",
-      "publishedAt": "2026-10-14T08:01:59.938Z",
+      "observedAt": "2026-10-15T23:27:56.695Z",
+      "version": "0.4.6",
+      "publishedAt": "2026-10-15T23:27:03.968Z",
       "distTags": {
-        "latest": "0.4.4",
+        "latest": "0.4.6",
         "next": "0.2.0"
       },
       "licence": "Apache-2.0",
@@ -16,40 +16,40 @@
       "deprecated": null,
       "dependencies": {
         "@arxo/law-client": "0.3.3",
-        "@arxo/law-engine": "0.5.4",
+        "@arxo/law-engine": "0.5.5",
         "@arxo/law-forms": "0.3.3",
-        "@arxo/law-types": "0.3.3"
+        "@arxo/law-types": "0.3.4"
       },
       "optionalDependencies": {},
-      "integrity": "sha512-yRSsy6gUy8rGPRHT0soX0Ybj944HUQDuz7pHyhmHSZaYzCETxCfpsCGiAQ2MoB0SnY/bN+kw6LbiSPOPr83JJQ==",
+      "integrity": "sha512-uuZT2A2iQx2CYzkQ8vao+YHb7ILHRA/3cRFe6Vfzx2UqN3P705k1a5hK5Z6mIYkeqsahLFYhaRC6kdYPin3anA==",
       "url": "https://www.npmjs.com/package/@arxo/law"
     },
     "@arxo/law-engine": {
       "availability": "available",
-      "observedAt": "2026-10-14T17:24:18.501Z",
-      "version": "0.5.4",
-      "publishedAt": "2026-10-14T07:55:32.747Z",
+      "observedAt": "2026-10-15T23:27:56.695Z",
+      "version": "0.5.5",
+      "publishedAt": "2026-10-15T22:57:27.997Z",
       "distTags": {
-        "latest": "0.5.4",
+        "latest": "0.5.5",
         "next": "0.3.2"
       },
       "licence": "Apache-2.0",
       "node": ">=18",
       "deprecated": null,
       "dependencies": {
-        "@arxo/law-types": "0.3.3"
+        "@arxo/law-types": "0.3.4"
       },
       "optionalDependencies": {},
-      "integrity": "sha512-2zC8tzOx0NYGLh7I/umIKpshsV+xqXRbLDTPtaETZAZqYzVVI5gKYYjxbpwtwivQKEsJ1q8bAHt/5QJWH4YSdw==",
+      "integrity": "sha512-ii0MHQg+1DF8c3UO7x3QEY0zopSY0qDsIo3d+t5uWo9vTHEYkARALD37kbjFimoSJV4rt9ucZCqJ6uwUjK1F8A==",
       "url": "https://www.npmjs.com/package/@arxo/law-engine"
     },
     "@arxo/law-types": {
       "availability": "available",
-      "observedAt": "2026-10-14T17:24:18.501Z",
-      "version": "0.3.3",
-      "publishedAt": "2026-10-13T17:31:33.828Z",
+      "observedAt": "2026-10-15T23:27:56.695Z",
+      "version": "0.3.4",
+      "publishedAt": "2026-10-15T22:55:11.579Z",
       "distTags": {
-        "latest": "0.3.3",
+        "latest": "0.3.4",
         "next": "0.2.0"
       },
       "licence": "Apache-2.0",
@@ -57,12 +57,12 @@
       "deprecated": null,
       "dependencies": {},
       "optionalDependencies": {},
-      "integrity": "sha512-4mdSSs2S3NttM+2gCf3vLBhWc8PoawBo+6HFzOxHRjpnEb+2BrOOT7Z0b0GEeB61Pnmcd4w8AXGbieBO2aneAA==",
+      "integrity": "sha512-7ldApmYf7Rd+pFCcxCIZy9CrIH1bsHPNtdCRFF/g6r9zOrc6TnXGXOwTJpl6ybulPJUqUpKOZqkhvfu/iTkaNg==",
       "url": "https://www.npmjs.com/package/@arxo/law-types"
     },
     "@arxo/law-client": {
       "availability": "available",
-      "observedAt": "2026-10-14T17:24:18.501Z",
+      "observedAt": "2026-10-15T23:27:56.695Z",
       "version": "0.3.3",
       "publishedAt": "2026-10-13T17:36:54.973Z",
       "distTags": {
@@ -81,7 +81,7 @@
     },
     "@arxo/law-forms": {
       "availability": "available",
-      "observedAt": "2026-10-14T17:24:18.501Z",
+      "observedAt": "2026-10-15T23:27:56.695Z",
       "version": "0.3.3",
       "publishedAt": "2026-10-13T17:38:29.357Z",
       "distTags": {
@@ -100,26 +100,26 @@
     },
     "@arxo/cli": {
       "availability": "available",
-      "observedAt": "2026-10-14T17:24:18.501Z",
-      "version": "0.2.5",
-      "publishedAt": "2026-10-14T08:02:48.485Z",
+      "observedAt": "2026-10-15T23:27:56.695Z",
+      "version": "0.2.8",
+      "publishedAt": "2026-10-15T22:53:48.142Z",
       "distTags": {
-        "latest": "0.2.5"
+        "latest": "0.2.8"
       },
       "licence": "Apache-2.0",
       "node": ">=20",
       "deprecated": null,
       "dependencies": {},
       "optionalDependencies": {
-        "@arxo/cli-darwin-arm64": "0.2.5",
-        "@arxo/cli-linux-x64": "0.2.5"
+        "@arxo/cli-darwin-arm64": "0.2.8",
+        "@arxo/cli-linux-x64": "0.2.8"
       },
-      "integrity": "sha512-0Q6FeQ5nWhs733Q0JchhWiHiBYOTqyD62QGiuXiSrVYRmNrL0s9351vdzSLCz2sbfADuT/IqoSbeKMZYSp7Tpw==",
+      "integrity": "sha512-zOMRp4ioCidUCf89Yp2oQIzeJD+gUVSDTuj6D7U6LNHU27MMZWW0h/G4tYi4rzSQPBm/iJLI6rK3BBpTHlxXoQ==",
       "url": "https://www.npmjs.com/package/@arxo/cli"
     },
     "create-arxo": {
       "availability": "available",
-      "observedAt": "2026-10-14T17:24:18.501Z",
+      "observedAt": "2026-10-15T23:27:56.695Z",
       "version": "0.3.3",
       "publishedAt": "2026-10-14T08:02:02.245Z",
       "distTags": {
@@ -136,11 +136,11 @@
     },
     "@arxo/canon-bgb-fristen": {
       "availability": "available",
-      "observedAt": "2026-10-14T17:24:18.501Z",
-      "version": "0.1.13",
-      "publishedAt": "2026-10-10T13:53:40.077Z",
+      "observedAt": "2026-10-15T23:27:56.695Z",
+      "version": "0.1.14",
+      "publishedAt": "2026-10-15T19:14:28.525Z",
       "distTags": {
-        "latest": "0.1.13",
+        "latest": "0.1.14",
         "next": "0.1.2"
       },
       "licence": "Apache-2.0",
@@ -148,12 +148,12 @@
       "deprecated": null,
       "dependencies": {},
       "optionalDependencies": {},
-      "integrity": "sha512-iiOePPaDz4hsQ8kJantn7/2Hd5/D+C33S4ZF7OybQZWy6luy5kLSif2qLCNMdghosREemvgxCxFxtqAYmA3UNg==",
+      "integrity": "sha512-LUT3BcTZ2s0561EZcRmh/s6CK6ac1992eeVBlAa1opgnHq+PwvixxEOMqjV1sDP3SM9uerAflESji1bgY6LjGg==",
       "url": "https://www.npmjs.com/package/@arxo/canon-bgb-fristen"
     },
     "@arxo/canon-fr-benefits": {
       "availability": "available",
-      "observedAt": "2026-10-14T17:24:18.501Z",
+      "observedAt": "2026-10-15T23:27:56.695Z",
       "version": "0.1.2",
       "publishedAt": "2026-10-12T22:23:56.825Z",
       "distTags": {
@@ -169,7 +169,7 @@
     },
     "@arxo/canon-de-wohngeld": {
       "availability": "available",
-      "observedAt": "2026-10-14T17:24:18.501Z",
+      "observedAt": "2026-10-15T23:27:56.695Z",
       "version": "0.1.0",
       "publishedAt": "2026-10-13T16:58:35.285Z",
       "distTags": {
@@ -185,7 +185,7 @@
     },
     "@arxo/canon-fide-chess": {
       "availability": "available",
-      "observedAt": "2026-10-14T17:24:18.501Z",
+      "observedAt": "2026-10-15T23:27:56.695Z",
       "version": "0.1.0",
       "publishedAt": "2026-10-13T19:14:35.642Z",
       "distTags": {
@@ -201,7 +201,7 @@
     },
     "@arxo/canon-ogpo-vts": {
       "availability": "available",
-      "observedAt": "2026-10-14T17:24:18.501Z",
+      "observedAt": "2026-10-15T23:27:56.695Z",
       "version": "0.1.10",
       "publishedAt": "2026-10-10T13:53:25.715Z",
       "distTags": {
@@ -218,7 +218,7 @@
     },
     "@arxo/canon-swift-lilliput": {
       "availability": "available",
-      "observedAt": "2026-10-14T17:24:18.501Z",
+      "observedAt": "2026-10-15T23:27:56.695Z",
       "version": "0.1.10",
       "publishedAt": "2026-10-10T13:54:55.460Z",
       "distTags": {
@@ -234,7 +234,7 @@
     },
     "@arxo/canon-unidroit-picc": {
       "availability": "available",
-      "observedAt": "2026-10-14T17:24:18.501Z",
+      "observedAt": "2026-10-15T23:27:56.695Z",
       "version": "0.1.11",
       "publishedAt": "2026-10-10T13:53:20.915Z",
       "distTags": {
@@ -251,47 +251,9 @@
     },
     "@arxo/mcp-charter": {
       "availability": "available",
-      "observedAt": "2026-10-14T17:24:18.501Z",
-      "version": "0.1.7",
-      "publishedAt": "2026-10-10T14:11:35.375Z",
-      "distTags": {
-        "latest": "0.1.7"
-      },
-      "licence": "Apache-2.0",
-      "node": ">=18",
-      "deprecated": null,
-      "dependencies": {},
-      "optionalDependencies": {
-        "@arxo/mcp-host-darwin-arm64": "0.3.10",
-        "@arxo/mcp-host-linux-x64": "0.3.10"
-      },
-      "integrity": "sha512-DH1ok7a2THFXE3EGWVFNeTXj809cMc8RsMilvEJdbepoT9OO6r1LKQo3Z/j4LfM8kiOPrgEAD+AyKMpoCDMRDQ==",
-      "url": "https://www.npmjs.com/package/@arxo/mcp-charter"
-    },
-    "@arxo/mcp-code-civil": {
-      "availability": "available",
-      "observedAt": "2026-10-14T17:24:18.501Z",
-      "version": "0.1.9",
-      "publishedAt": "2026-10-10T14:09:22.163Z",
-      "distTags": {
-        "latest": "0.1.9"
-      },
-      "licence": "Apache-2.0",
-      "node": ">=18",
-      "deprecated": null,
-      "dependencies": {},
-      "optionalDependencies": {
-        "@arxo/mcp-host-darwin-arm64": "0.3.10",
-        "@arxo/mcp-host-linux-x64": "0.3.10"
-      },
-      "integrity": "sha512-gyWXf4s51GZk360qPF9dFeT6TlKGnwcWHY2TxykHK3QuvdVdlmr+qYcurg2f13VSjyjd0y9wb5Qcnh17S9WmjA==",
-      "url": "https://www.npmjs.com/package/@arxo/mcp-code-civil"
-    },
-    "@arxo/mcp-de-bgb": {
-      "availability": "available",
-      "observedAt": "2026-10-14T17:24:18.501Z",
+      "observedAt": "2026-10-15T23:27:56.695Z",
       "version": "0.1.8",
-      "publishedAt": "2026-10-10T14:09:22.201Z",
+      "publishedAt": "2026-10-14T21:08:52.417Z",
       "distTags": {
         "latest": "0.1.8"
       },
@@ -303,16 +265,16 @@
         "@arxo/mcp-host-darwin-arm64": "0.3.10",
         "@arxo/mcp-host-linux-x64": "0.3.10"
       },
-      "integrity": "sha512-HhVO1DplT6/3HZBV9cWVZKd0vfTbeNQN1JIGY9hW1kh1Isez6iOdlRDjraha3gJ8jmMYtfcrBYUyezfDLBB1aQ==",
-      "url": "https://www.npmjs.com/package/@arxo/mcp-de-bgb"
+      "integrity": "sha512-n+dKQFyf3iSLNs2Cvo+1vXhhS/58nw++cRcyutkoLlCEIc2RfEILxcMkP1WkuSyVys3vBOjPfKly5SmlviNPRA==",
+      "url": "https://www.npmjs.com/package/@arxo/mcp-charter"
     },
-    "@arxo/mcp-picc": {
+    "@arxo/mcp-code-civil": {
       "availability": "available",
-      "observedAt": "2026-10-14T17:24:18.501Z",
-      "version": "0.3.10",
-      "publishedAt": "2026-10-14T09:34:09.736Z",
+      "observedAt": "2026-10-15T23:27:56.695Z",
+      "version": "0.1.10",
+      "publishedAt": "2026-10-14T21:18:28.152Z",
       "distTags": {
-        "latest": "0.3.10"
+        "latest": "0.1.10"
       },
       "licence": "Apache-2.0",
       "node": ">=18",
@@ -322,16 +284,54 @@
         "@arxo/mcp-host-darwin-arm64": "0.3.10",
         "@arxo/mcp-host-linux-x64": "0.3.10"
       },
-      "integrity": "sha512-shkJ91AcvOsTMyp/aHBgNFXyBMrqC9Ck3W/+n/v/M2qUXK5W14nYMjVLu+L+TcPymbo1NqKfn8jdMS0vI9hYdg==",
+      "integrity": "sha512-z1iPmSrQXcpMLwSPXxO46uohdnshvfAn3VmrhrD/hsDf7tJeZX2h7g0BUEX+hZTaX0tV/UzvWA8EWdaA4ePw+Q==",
+      "url": "https://www.npmjs.com/package/@arxo/mcp-code-civil"
+    },
+    "@arxo/mcp-de-bgb": {
+      "availability": "available",
+      "observedAt": "2026-10-15T23:27:56.695Z",
+      "version": "0.1.9",
+      "publishedAt": "2026-10-14T21:22:44.993Z",
+      "distTags": {
+        "latest": "0.1.9"
+      },
+      "licence": "Apache-2.0",
+      "node": ">=18",
+      "deprecated": null,
+      "dependencies": {},
+      "optionalDependencies": {
+        "@arxo/mcp-host-darwin-arm64": "0.3.10",
+        "@arxo/mcp-host-linux-x64": "0.3.10"
+      },
+      "integrity": "sha512-FXomh2fxZ43xDWVo5rHqVMmgs1ZtWa/X2PnjHVYA4GOl+K4GTzIWCM0AhEJfrIoTmiMe7RZJf0+UVIv84YpO4Q==",
+      "url": "https://www.npmjs.com/package/@arxo/mcp-de-bgb"
+    },
+    "@arxo/mcp-picc": {
+      "availability": "available",
+      "observedAt": "2026-10-15T23:27:56.695Z",
+      "version": "0.3.11",
+      "publishedAt": "2026-10-14T21:09:44.361Z",
+      "distTags": {
+        "latest": "0.3.11"
+      },
+      "licence": "Apache-2.0",
+      "node": ">=18",
+      "deprecated": null,
+      "dependencies": {},
+      "optionalDependencies": {
+        "@arxo/mcp-host-darwin-arm64": "0.3.10",
+        "@arxo/mcp-host-linux-x64": "0.3.10"
+      },
+      "integrity": "sha512-6bszAF0bDT6w2Lb6GoiqUC4tcQnb26oazm9Lh6fld/z3SiE54+NzodOlgJ4fWlDE1WpFMuLW9ovsGTJevbQzWA==",
       "url": "https://www.npmjs.com/package/@arxo/mcp-picc"
     },
     "@arxo/mcp-fide-chess": {
       "availability": "available",
-      "observedAt": "2026-10-14T17:24:18.501Z",
-      "version": "0.1.0",
-      "publishedAt": "2026-10-13T21:59:26.001Z",
+      "observedAt": "2026-10-15T23:27:56.695Z",
+      "version": "0.1.1",
+      "publishedAt": "2026-10-14T21:10:13.433Z",
       "distTags": {
-        "latest": "0.1.0"
+        "latest": "0.1.1"
       },
       "licence": "Apache-2.0",
       "node": ">=20",
@@ -341,80 +341,80 @@
         "@arxo/mcp-host-darwin-arm64": "0.4.2-cnafpreview.1",
         "@arxo/mcp-host-linux-x64": "0.4.2-cnafpreview.1"
       },
-      "integrity": "sha512-fv/kXVXIEHqVLXTb5Ji6sO08HL/hsq2CtIDBnSooY/Hzq9/Ogu6Doz2ihDuinczc0bAFk0QHDCbPeMw6qgZJUg==",
+      "integrity": "sha512-1eD2zv03I+Jse8bDouxiwIFeRinhekbKRnkY+YNUOsXohUN8wOW7HW6rYZqI8NkJD23FXgcqMf43igaUDB2I4A==",
       "url": "https://www.npmjs.com/package/@arxo/mcp-fide-chess"
     },
     "@arxo/cli-darwin-arm64": {
       "availability": "available",
-      "observedAt": "2026-10-14T17:24:18.501Z",
-      "version": "0.2.5",
-      "publishedAt": "2026-10-14T08:05:55.327Z",
+      "observedAt": "2026-10-15T23:27:56.695Z",
+      "version": "0.2.8",
+      "publishedAt": "2026-10-15T22:53:42.591Z",
       "distTags": {
-        "latest": "0.2.5"
+        "latest": "0.2.8"
       },
       "licence": "Apache-2.0",
       "node": null,
       "deprecated": null,
       "dependencies": {},
       "optionalDependencies": {},
-      "integrity": "sha512-kIWjO5m0dvUo4lP3mDptSXw890rxITmd1GFeDWXMa7RxAx4rjXFXkjbxSci7V9Seu6ubw+F/GUlsFXU4ue902Q==",
+      "integrity": "sha512-IzftVKaHCsYyFnvufqyIDbBsn9FjDcCOXosO5vUBez9pOzrKA/tc3lolL9XMBvARtIAXoafHxfeaUix33zPHGw==",
       "url": "https://www.npmjs.com/package/@arxo/cli-darwin-arm64"
     },
     "@arxo/cli-linux-x64": {
       "availability": "available",
-      "observedAt": "2026-10-14T17:24:18.501Z",
-      "version": "0.2.5",
-      "publishedAt": "2026-10-14T08:03:05.429Z",
+      "observedAt": "2026-10-15T23:27:56.695Z",
+      "version": "0.2.8",
+      "publishedAt": "2026-10-15T22:53:48.365Z",
       "distTags": {
-        "latest": "0.2.5"
+        "latest": "0.2.8"
       },
       "licence": "Apache-2.0",
       "node": null,
       "deprecated": null,
       "dependencies": {},
       "optionalDependencies": {},
-      "integrity": "sha512-/ucoQxxH3G5Tlb0l64vSVeWnR8KSDzOd+FPEjnPbYYTcTZ4uii0KrsrqdiX954bFoSrZalOzSjGKgbxcqcaz+A==",
+      "integrity": "sha512-YOqBnU4GsE6/StLb3EmU3d/abV4GqA+VZcwkMLoB8hH9C+o9KPRZG597dTiI5Q2ymNZB/Y88jKmEWF7wIHlICQ==",
       "url": "https://www.npmjs.com/package/@arxo/cli-linux-x64"
     },
     "@arxo/mcp-host-darwin-arm64": {
       "availability": "available",
-      "observedAt": "2026-10-14T17:24:18.501Z",
-      "version": "0.4.3",
-      "publishedAt": "2026-10-14T08:05:06.689Z",
+      "observedAt": "2026-10-15T23:27:56.695Z",
+      "version": "0.4.4",
+      "publishedAt": "2026-10-15T23:23:57.703Z",
       "distTags": {
         "cnaf-preview": "0.4.2-cnafpreview.1",
-        "latest": "0.4.3"
+        "latest": "0.4.4"
       },
       "licence": "Apache-2.0",
       "node": null,
       "deprecated": null,
       "dependencies": {},
       "optionalDependencies": {},
-      "integrity": "sha512-IHNQz1ad2JZInRs9+r+mmUPvPf5acaBbpnL2QuWZ+dGivnTFbySrzGs/1i6m52jJqKT2XqOrBVhfuL9loezk9Q==",
+      "integrity": "sha512-r+WTrSS/PAG5MWDj4hfgJu63Xc9URe3EkvNAZGKYRnYSdempdEMLg0fjg2HxNn7ycu4qZchdQY28O6Qfd6v4zg==",
       "url": "https://www.npmjs.com/package/@arxo/mcp-host-darwin-arm64"
     },
     "@arxo/mcp-host-linux-x64": {
       "availability": "available",
-      "observedAt": "2026-10-14T17:24:18.501Z",
-      "version": "0.4.3",
-      "publishedAt": "2026-10-14T08:06:58.182Z",
+      "observedAt": "2026-10-15T23:27:56.695Z",
+      "version": "0.4.4",
+      "publishedAt": "2026-10-15T23:25:27.214Z",
       "distTags": {
         "cnaf-preview": "0.4.2-cnafpreview.1",
-        "latest": "0.4.3"
+        "latest": "0.4.4"
       },
       "licence": "Apache-2.0",
       "node": null,
       "deprecated": null,
       "dependencies": {},
       "optionalDependencies": {},
-      "integrity": "sha512-ac14fOI0DrUvY1tbOu3+FKcF25IN/5AV9vvPAfiOVyH1gqY8MU58v0sEw974IfFT+pFUbZijzd6RtjB3udRvTw==",
+      "integrity": "sha512-bqRviaTbXjsFhV1abV8f2KV32q4XsOqAig+jbD7iryD/vWvnJJwHzHrA0w+GXCpHPHKHAsWiHdhJ212yPAXE1g==",
       "url": "https://www.npmjs.com/package/@arxo/mcp-host-linux-x64"
     }
   },
   "pythonPackages": {
     "arxo": {
       "availability": "available",
-      "observedAt": "2026-10-14T17:24:18.501Z",
+      "observedAt": "2026-10-15T23:27:56.695Z",
       "version": "0.2.0",
       "publishedAt": "2026-09-21T20:28:19.824263Z",
       "python": ">=3.12",
@@ -432,7 +432,7 @@
     },
     "arxo-canon-bgb-fristen": {
       "availability": "available",
-      "observedAt": "2026-10-14T17:24:18.501Z",
+      "observedAt": "2026-10-15T23:27:56.695Z",
       "version": "0.1.1",
       "publishedAt": "2026-09-21T20:28:21.413232Z",
       "python": ">=3.12",
@@ -450,7 +450,7 @@
     },
     "arxo-canon-unidroit-picc": {
       "availability": "available",
-      "observedAt": "2026-10-14T17:24:18.501Z",
+      "observedAt": "2026-10-15T23:27:56.695Z",
       "version": "0.1.0",
       "publishedAt": "2026-09-21T20:28:24.757029Z",
       "python": ">=3.12",
@@ -468,7 +468,7 @@
     },
     "arxo-canon-ogpo-vts": {
       "availability": "available",
-      "observedAt": "2026-10-14T17:24:18.501Z",
+      "observedAt": "2026-10-15T23:27:56.695Z",
       "version": "0.1.0",
       "publishedAt": "2026-09-21T20:28:23.173718Z",
       "python": ">=3.12",
@@ -488,7 +488,7 @@
   "extensions": {
     "marketplace:arxo.law": {
       "availability": "available",
-      "observedAt": "2026-10-14T17:24:18.501Z",
+      "observedAt": "2026-10-15T23:27:56.695Z",
       "version": "0.1.3",
       "publishedAt": "2026-10-13T10:47:06.143Z",
       "vscode": "^1.82.0",
@@ -498,7 +498,7 @@
     },
     "open-vsx:arxo.law": {
       "availability": "available",
-      "observedAt": "2026-10-14T17:24:18.501Z",
+      "observedAt": "2026-10-15T23:27:56.695Z",
       "version": "0.1.3",
       "publishedAt": "2026-10-13T10:41:46.338008Z",
       "vscode": "^1.82.0",
@@ -510,147 +510,147 @@
   "repositories": {
     "arxohq/law-releases": {
       "availability": "available",
-      "observedAt": "2026-10-14T17:24:18.501Z",
+      "observedAt": "2026-10-15T23:27:56.695Z",
       "url": "https://github.com/arxohq/law-releases",
       "defaultBranch": "main",
       "archived": false
     },
     "arxohq/homebrew-tap": {
       "availability": "available",
-      "observedAt": "2026-10-14T17:24:18.501Z",
+      "observedAt": "2026-10-15T23:27:56.695Z",
       "url": "https://github.com/arxohq/homebrew-tap",
       "defaultBranch": "main",
       "archived": false
     },
     "arxohq/arxo-vscode": {
       "availability": "available",
-      "observedAt": "2026-10-14T17:24:18.501Z",
+      "observedAt": "2026-10-15T23:27:56.695Z",
       "url": "https://github.com/arxohq/arxo-vscode",
       "defaultBranch": "main",
       "archived": false
     },
     "arxohq/arxo-bgb": {
       "availability": "available",
-      "observedAt": "2026-10-14T17:24:18.501Z",
+      "observedAt": "2026-10-15T23:27:56.695Z",
       "url": "https://github.com/arxohq/arxo-bgb",
       "defaultBranch": "main",
       "archived": false
     },
     "arxohq/arxo-unidroit-picc": {
       "availability": "available",
-      "observedAt": "2026-10-14T17:24:18.501Z",
+      "observedAt": "2026-10-15T23:27:56.695Z",
       "url": "https://github.com/arxohq/arxo-unidroit-picc",
       "defaultBranch": "main",
       "archived": false
     },
     "arxohq/arxo-charter-1945": {
       "availability": "available",
-      "observedAt": "2026-10-14T17:24:18.501Z",
+      "observedAt": "2026-10-15T23:27:56.695Z",
       "url": "https://github.com/arxohq/arxo-charter-1945",
       "defaultBranch": "main",
       "archived": false
     },
     "arxohq/arxo-ogpo-public": {
       "availability": "available",
-      "observedAt": "2026-10-14T17:24:18.501Z",
+      "observedAt": "2026-10-15T23:27:56.695Z",
       "url": "https://github.com/arxohq/arxo-ogpo-public",
       "defaultBranch": "main",
       "archived": false
     },
     "arxohq/arxo-cnaf": {
       "availability": "available",
-      "observedAt": "2026-10-14T17:24:18.501Z",
+      "observedAt": "2026-10-15T23:27:56.695Z",
       "url": "https://github.com/arxohq/arxo-cnaf",
       "defaultBranch": "main",
       "archived": false
     },
     "arxohq/law-as-code-france-examples": {
       "availability": "available",
-      "observedAt": "2026-10-14T17:24:18.501Z",
+      "observedAt": "2026-10-15T23:27:56.695Z",
       "url": "https://github.com/arxohq/law-as-code-france-examples",
       "defaultBranch": "main",
       "archived": false
     },
     "arxohq/arxo-wohngeld": {
       "availability": "available",
-      "observedAt": "2026-10-14T17:24:18.501Z",
+      "observedAt": "2026-10-15T23:27:56.695Z",
       "url": "https://github.com/arxohq/arxo-wohngeld",
       "defaultBranch": "main",
       "archived": false
     },
     "arxohq/law-as-code-germany-examples": {
       "availability": "available",
-      "observedAt": "2026-10-14T17:24:18.501Z",
+      "observedAt": "2026-10-15T23:27:56.695Z",
       "url": "https://github.com/arxohq/law-as-code-germany-examples",
       "defaultBranch": "main",
       "archived": false
     },
     "arxohq/arxo-fide-chess": {
       "availability": "available",
-      "observedAt": "2026-10-14T17:24:18.501Z",
+      "observedAt": "2026-10-15T23:27:56.695Z",
       "url": "https://github.com/arxohq/arxo-fide-chess",
       "defaultBranch": "main",
       "archived": false
     },
     "arxohq/arxo-japan": {
       "availability": "available",
-      "observedAt": "2026-10-14T17:24:18.501Z",
+      "observedAt": "2026-10-15T23:27:56.695Z",
       "url": "https://github.com/arxohq/arxo-japan",
       "defaultBranch": "main",
       "archived": false
     },
     "arxohq/arxo-code-civil": {
       "availability": "available",
-      "observedAt": "2026-10-14T17:24:18.501Z",
+      "observedAt": "2026-10-15T23:27:56.695Z",
       "url": "https://github.com/arxohq/arxo-code-civil",
       "defaultBranch": "main",
       "archived": false
     },
     "arxohq/arxo-openstax-mechanics": {
       "availability": "available",
-      "observedAt": "2026-10-14T17:24:18.501Z",
+      "observedAt": "2026-10-15T23:27:56.695Z",
       "url": "https://github.com/arxohq/arxo-openstax-mechanics",
       "defaultBranch": "main",
       "archived": false
     },
     "arxohq/arxo-summa-theologiae": {
       "availability": "available",
-      "observedAt": "2026-10-14T17:24:18.501Z",
+      "observedAt": "2026-10-15T23:27:56.695Z",
       "url": "https://github.com/arxohq/arxo-summa-theologiae",
       "defaultBranch": "main",
       "archived": false
     },
     "arxohq/arxo-openstax-chemistry": {
       "availability": "available",
-      "observedAt": "2026-10-14T17:24:18.501Z",
+      "observedAt": "2026-10-15T23:27:56.695Z",
       "url": "https://github.com/arxohq/arxo-openstax-chemistry",
       "defaultBranch": "main",
       "archived": false
     },
     "arxohq/arxo-openstax-biology": {
       "availability": "available",
-      "observedAt": "2026-10-14T17:24:18.501Z",
+      "observedAt": "2026-10-15T23:27:56.695Z",
       "url": "https://github.com/arxohq/arxo-openstax-biology",
       "defaultBranch": "main",
       "archived": false
     },
     "arxohq/arxo-kazakhstan": {
       "availability": "available",
-      "observedAt": "2026-10-14T17:24:18.501Z",
+      "observedAt": "2026-10-15T23:27:56.695Z",
       "url": "https://github.com/arxohq/arxo-kazakhstan",
       "defaultBranch": "main",
       "archived": false
     },
     "arxohq/arxo-irc": {
       "availability": "available",
-      "observedAt": "2026-10-14T17:24:18.501Z",
+      "observedAt": "2026-10-15T23:27:56.695Z",
       "url": "https://github.com/arxohq/arxo-irc",
       "defaultBranch": "main",
       "archived": false
     },
     "arxohq/arxo-catala-parity": {
       "availability": "available",
-      "observedAt": "2026-10-14T17:24:18.501Z",
+      "observedAt": "2026-10-15T23:27:56.695Z",
       "url": "https://github.com/arxohq/arxo-catala-parity",
       "defaultBranch": "main",
       "archived": false
@@ -658,40 +658,40 @@
   },
   "binaryRelease": {
     "availability": "available",
-    "observedAt": "2026-10-14T17:24:18.501Z",
-    "tag": "law-v0.2.2",
-    "publishedAt": "2026-10-12T16:38:59Z",
-    "url": "https://github.com/arxohq/law-releases/releases/tag/law-v0.2.2",
+    "observedAt": "2026-10-15T23:27:56.695Z",
+    "tag": "law-v0.2.8",
+    "publishedAt": "2026-10-15T22:28:21Z",
+    "url": "https://github.com/arxohq/law-releases/releases/tag/law-v0.2.8",
     "assets": [
       {
-        "name": "arxo-nix-0.2.2.tar.gz",
-        "bytes": 3190,
-        "url": "https://github.com/arxohq/law-releases/releases/download/law-v0.2.2/arxo-nix-0.2.2.tar.gz"
+        "name": "arxo-nix-0.2.8.tar.gz",
+        "bytes": 3317,
+        "url": "https://github.com/arxohq/law-releases/releases/download/law-v0.2.8/arxo-nix-0.2.8.tar.gz"
       },
       {
         "name": "install.sh",
         "bytes": 2225,
-        "url": "https://github.com/arxohq/law-releases/releases/download/law-v0.2.2/install.sh"
+        "url": "https://github.com/arxohq/law-releases/releases/download/law-v0.2.8/install.sh"
       },
       {
-        "name": "law-0.2.2-aarch64-apple-darwin.tar.gz",
-        "bytes": 14833003,
-        "url": "https://github.com/arxohq/law-releases/releases/download/law-v0.2.2/law-0.2.2-aarch64-apple-darwin.tar.gz"
+        "name": "law-0.2.8-aarch64-apple-darwin.tar.gz",
+        "bytes": 15124084,
+        "url": "https://github.com/arxohq/law-releases/releases/download/law-v0.2.8/law-0.2.8-aarch64-apple-darwin.tar.gz"
       },
       {
-        "name": "law-0.2.2-aarch64-apple-darwin.tar.gz.sha256",
+        "name": "law-0.2.8-aarch64-apple-darwin.tar.gz.sha256",
         "bytes": 104,
-        "url": "https://github.com/arxohq/law-releases/releases/download/law-v0.2.2/law-0.2.2-aarch64-apple-darwin.tar.gz.sha256"
+        "url": "https://github.com/arxohq/law-releases/releases/download/law-v0.2.8/law-0.2.8-aarch64-apple-darwin.tar.gz.sha256"
       },
       {
-        "name": "law-0.2.2-x86_64-unknown-linux-gnu.tar.gz",
-        "bytes": 16148873,
-        "url": "https://github.com/arxohq/law-releases/releases/download/law-v0.2.2/law-0.2.2-x86_64-unknown-linux-gnu.tar.gz"
+        "name": "law-0.2.8-x86_64-unknown-linux-gnu.tar.gz",
+        "bytes": 16526005,
+        "url": "https://github.com/arxohq/law-releases/releases/download/law-v0.2.8/law-0.2.8-x86_64-unknown-linux-gnu.tar.gz"
       },
       {
-        "name": "law-0.2.2-x86_64-unknown-linux-gnu.tar.gz.sha256",
+        "name": "law-0.2.8-x86_64-unknown-linux-gnu.tar.gz.sha256",
         "bytes": 108,
-        "url": "https://github.com/arxohq/law-releases/releases/download/law-v0.2.2/law-0.2.2-x86_64-unknown-linux-gnu.tar.gz.sha256"
+        "url": "https://github.com/arxohq/law-releases/releases/download/law-v0.2.8/law-0.2.8-x86_64-unknown-linux-gnu.tar.gz.sha256"
       }
     ]
   }
