@@ -3,7 +3,7 @@
 [← Arxo Law](../README.md)
 
 Choose an editor, installation route, browser tool or learning format.
-Last refresh attempt: **2026-10-14 17:24 UTC**.
+Last refresh attempt: **2026-10-15 23:27 UTC**.
 
 ## Install the editor
 
@@ -40,7 +40,7 @@ After installation, inspect the command:
 law --help
 ```
 
-Observed stable binary release: [law-v0.2.2](https://github.com/arxohq/law-releases/releases/tag/law-v0.2.2).
+Observed stable binary release: [law-v0.2.8](https://github.com/arxohq/law-releases/releases/tag/law-v0.2.8).
 
 CLI and LSP archives, installers and matching checksums are in
 [law-releases](https://github.com/arxohq/law-releases).
@@ -127,45 +127,45 @@ below record publication metadata; they do not establish runtime compatibility.
 <details>
 <summary>Binary assets and observation details</summary>
 
-Binary observation (UTC): 2026-10-14T17:24:18.501Z.
+Binary observation (UTC): 2026-10-15T23:27:56.695Z.
 
 | Asset | Bytes |
 |---|---:|
-| [arxo-nix-0.2.2.tar.gz](https://github.com/arxohq/law-releases/releases/download/law-v0.2.2/arxo-nix-0.2.2.tar.gz) | 3190 |
-| [install.sh](https://github.com/arxohq/law-releases/releases/download/law-v0.2.2/install.sh) | 2225 |
-| [law-0.2.2-aarch64-apple-darwin.tar.gz](https://github.com/arxohq/law-releases/releases/download/law-v0.2.2/law-0.2.2-aarch64-apple-darwin.tar.gz) | 14833003 |
-| [law-0.2.2-aarch64-apple-darwin.tar.gz.sha256](https://github.com/arxohq/law-releases/releases/download/law-v0.2.2/law-0.2.2-aarch64-apple-darwin.tar.gz.sha256) | 104 |
-| [law-0.2.2-x86_64-unknown-linux-gnu.tar.gz](https://github.com/arxohq/law-releases/releases/download/law-v0.2.2/law-0.2.2-x86_64-unknown-linux-gnu.tar.gz) | 16148873 |
-| [law-0.2.2-x86_64-unknown-linux-gnu.tar.gz.sha256](https://github.com/arxohq/law-releases/releases/download/law-v0.2.2/law-0.2.2-x86_64-unknown-linux-gnu.tar.gz.sha256) | 108 |
+| [arxo-nix-0.2.8.tar.gz](https://github.com/arxohq/law-releases/releases/download/law-v0.2.8/arxo-nix-0.2.8.tar.gz) | 3317 |
+| [install.sh](https://github.com/arxohq/law-releases/releases/download/law-v0.2.8/install.sh) | 2225 |
+| [law-0.2.8-aarch64-apple-darwin.tar.gz](https://github.com/arxohq/law-releases/releases/download/law-v0.2.8/law-0.2.8-aarch64-apple-darwin.tar.gz) | 15124084 |
+| [law-0.2.8-aarch64-apple-darwin.tar.gz.sha256](https://github.com/arxohq/law-releases/releases/download/law-v0.2.8/law-0.2.8-aarch64-apple-darwin.tar.gz.sha256) | 104 |
+| [law-0.2.8-x86_64-unknown-linux-gnu.tar.gz](https://github.com/arxohq/law-releases/releases/download/law-v0.2.8/law-0.2.8-x86_64-unknown-linux-gnu.tar.gz) | 16526005 |
+| [law-0.2.8-x86_64-unknown-linux-gnu.tar.gz.sha256](https://github.com/arxohq/law-releases/releases/download/law-v0.2.8/law-0.2.8-x86_64-unknown-linux-gnu.tar.gz.sha256) | 108 |
 
 | Repository | Last successful observation (UTC) |
 |---|---|
-| arxohq/law-releases | 2026-10-14T17:24:18.501Z |
-| arxohq/homebrew-tap | 2026-10-14T17:24:18.501Z |
-| arxohq/arxo-vscode | 2026-10-14T17:24:18.501Z |
-| arxohq/arxo-bgb | 2026-10-14T17:24:18.501Z |
-| arxohq/arxo-unidroit-picc | 2026-10-14T17:24:18.501Z |
-| arxohq/arxo-charter-1945 | 2026-10-14T17:24:18.501Z |
-| arxohq/arxo-ogpo-public | 2026-10-14T17:24:18.501Z |
-| arxohq/arxo-cnaf | 2026-10-14T17:24:18.501Z |
-| arxohq/law-as-code-france-examples | 2026-10-14T17:24:18.501Z |
-| arxohq/arxo-wohngeld | 2026-10-14T17:24:18.501Z |
-| arxohq/law-as-code-germany-examples | 2026-10-14T17:24:18.501Z |
-| arxohq/arxo-fide-chess | 2026-10-14T17:24:18.501Z |
-| arxohq/arxo-japan | 2026-10-14T17:24:18.501Z |
-| arxohq/arxo-code-civil | 2026-10-14T17:24:18.501Z |
-| arxohq/arxo-openstax-mechanics | 2026-10-14T17:24:18.501Z |
-| arxohq/arxo-summa-theologiae | 2026-10-14T17:24:18.501Z |
-| arxohq/arxo-openstax-chemistry | 2026-10-14T17:24:18.501Z |
-| arxohq/arxo-openstax-biology | 2026-10-14T17:24:18.501Z |
-| arxohq/arxo-kazakhstan | 2026-10-14T17:24:18.501Z |
-| arxohq/arxo-irc | 2026-10-14T17:24:18.501Z |
-| arxohq/arxo-catala-parity | 2026-10-14T17:24:18.501Z |
+| arxohq/law-releases | 2026-10-15T23:27:56.695Z |
+| arxohq/homebrew-tap | 2026-10-15T23:27:56.695Z |
+| arxohq/arxo-vscode | 2026-10-15T23:27:56.695Z |
+| arxohq/arxo-bgb | 2026-10-15T23:27:56.695Z |
+| arxohq/arxo-unidroit-picc | 2026-10-15T23:27:56.695Z |
+| arxohq/arxo-charter-1945 | 2026-10-15T23:27:56.695Z |
+| arxohq/arxo-ogpo-public | 2026-10-15T23:27:56.695Z |
+| arxohq/arxo-cnaf | 2026-10-15T23:27:56.695Z |
+| arxohq/law-as-code-france-examples | 2026-10-15T23:27:56.695Z |
+| arxohq/arxo-wohngeld | 2026-10-15T23:27:56.695Z |
+| arxohq/law-as-code-germany-examples | 2026-10-15T23:27:56.695Z |
+| arxohq/arxo-fide-chess | 2026-10-15T23:27:56.695Z |
+| arxohq/arxo-japan | 2026-10-15T23:27:56.695Z |
+| arxohq/arxo-code-civil | 2026-10-15T23:27:56.695Z |
+| arxohq/arxo-openstax-mechanics | 2026-10-15T23:27:56.695Z |
+| arxohq/arxo-summa-theologiae | 2026-10-15T23:27:56.695Z |
+| arxohq/arxo-openstax-chemistry | 2026-10-15T23:27:56.695Z |
+| arxohq/arxo-openstax-biology | 2026-10-15T23:27:56.695Z |
+| arxohq/arxo-kazakhstan | 2026-10-15T23:27:56.695Z |
+| arxohq/arxo-irc | 2026-10-15T23:27:56.695Z |
+| arxohq/arxo-catala-parity | 2026-10-15T23:27:56.695Z |
 
 | Editor store | Published / updated (UTC) | Last successful observation (UTC) |
 |---|---|---|
-| marketplace: arxo.law | 2026-10-13T10:47:06.143Z | 2026-10-14T17:24:18.501Z |
-| open-vsx: arxo.law | 2026-10-13T10:41:46.338008Z | 2026-10-14T17:24:18.501Z |
+| marketplace: arxo.law | 2026-10-13T10:47:06.143Z | 2026-10-15T23:27:56.695Z |
+| open-vsx: arxo.law | 2026-10-13T10:41:46.338008Z | 2026-10-15T23:27:56.695Z |
 
 Only repositories reported public at the selected address are accepted
 as successful observations. Linked projects retain their own licences and notices.
