@@ -596,7 +596,7 @@ be in `arxo` or be part of the same request.
 request format and its paths and sizes; that the tag points to the named
 commit; that every Release asset, downloaded anonymously, has the named size
 and sha256; that the artifacts publish with the pinned `law` into a scratch
-copy of the registry, dependencies first, and pass the registry's own gate;
+copy of the registry, dependencies first, and pass the registry's own validation;
 that a scratch project installs them with `law add … --from arxo`; and that
 the name prefix (`acme` in `acme.parcel_tariff`) is not reserved for Arxo
 packages and not held by another owner. The first accepted request claims a
