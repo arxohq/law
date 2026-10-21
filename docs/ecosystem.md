@@ -3,7 +3,7 @@
 [← Arxo Law](../README.md)
 
 Choose an editor, installation route, browser tool or learning format.
-Last refresh attempt: **2026-10-15 23:27 UTC**.
+Last refresh attempt: **2026-10-21 12:39 UTC**.
 
 ## Install the editor
 
@@ -127,7 +127,7 @@ below record publication metadata; they do not establish runtime compatibility.
 <details>
 <summary>Binary assets and observation details</summary>
 
-Binary observation (UTC): 2026-10-15T23:27:56.695Z.
+Binary observation (UTC): 2026-10-21T12:39:36.953Z.
 
 | Asset | Bytes |
 |---|---:|
@@ -140,32 +140,32 @@ Binary observation (UTC): 2026-10-15T23:27:56.695Z.
 
 | Repository | Last successful observation (UTC) |
 |---|---|
-| arxohq/law-releases | 2026-10-15T23:27:56.695Z |
-| arxohq/homebrew-tap | 2026-10-15T23:27:56.695Z |
-| arxohq/arxo-vscode | 2026-10-15T23:27:56.695Z |
-| arxohq/arxo-bgb | 2026-10-15T23:27:56.695Z |
-| arxohq/arxo-unidroit-picc | 2026-10-15T23:27:56.695Z |
-| arxohq/arxo-charter-1945 | 2026-10-15T23:27:56.695Z |
-| arxohq/arxo-ogpo-public | 2026-10-15T23:27:56.695Z |
-| arxohq/arxo-cnaf | 2026-10-15T23:27:56.695Z |
-| arxohq/law-as-code-france-examples | 2026-10-15T23:27:56.695Z |
-| arxohq/arxo-wohngeld | 2026-10-15T23:27:56.695Z |
-| arxohq/law-as-code-germany-examples | 2026-10-15T23:27:56.695Z |
-| arxohq/arxo-fide-chess | 2026-10-15T23:27:56.695Z |
-| arxohq/arxo-japan | 2026-10-15T23:27:56.695Z |
-| arxohq/arxo-code-civil | 2026-10-15T23:27:56.695Z |
-| arxohq/arxo-openstax-mechanics | 2026-10-15T23:27:56.695Z |
-| arxohq/arxo-summa-theologiae | 2026-10-15T23:27:56.695Z |
-| arxohq/arxo-openstax-chemistry | 2026-10-15T23:27:56.695Z |
-| arxohq/arxo-openstax-biology | 2026-10-15T23:27:56.695Z |
-| arxohq/arxo-kazakhstan | 2026-10-15T23:27:56.695Z |
-| arxohq/arxo-irc | 2026-10-15T23:27:56.695Z |
-| arxohq/arxo-catala-parity | 2026-10-15T23:27:56.695Z |
+| arxohq/law-releases | 2026-10-21T12:39:36.953Z |
+| arxohq/homebrew-tap | 2026-10-21T12:39:36.953Z |
+| arxohq/arxo-vscode | 2026-10-21T12:39:36.953Z |
+| arxohq/arxo-bgb | 2026-10-21T12:39:36.953Z |
+| arxohq/arxo-unidroit-picc | 2026-10-21T12:39:36.953Z |
+| arxohq/arxo-charter-1945 | 2026-10-21T12:39:36.953Z |
+| arxohq/arxo-ogpo-public | 2026-10-21T12:39:36.953Z |
+| arxohq/arxo-cnaf | 2026-10-21T12:39:36.953Z |
+| arxohq/law-as-code-france-examples | 2026-10-21T12:39:36.953Z |
+| arxohq/arxo-wohngeld | 2026-10-21T12:39:36.953Z |
+| arxohq/law-as-code-germany-examples | 2026-10-21T12:39:36.953Z |
+| arxohq/arxo-fide-chess | 2026-10-21T12:39:36.953Z |
+| arxohq/arxo-japan | 2026-10-21T12:39:36.953Z |
+| arxohq/arxo-code-civil | 2026-10-21T12:39:36.953Z |
+| arxohq/arxo-openstax-mechanics | 2026-10-21T12:39:36.953Z |
+| arxohq/arxo-summa-theologiae | 2026-10-21T12:39:36.953Z |
+| arxohq/arxo-openstax-chemistry | 2026-10-21T12:39:36.953Z |
+| arxohq/arxo-openstax-biology | 2026-10-21T12:39:36.953Z |
+| arxohq/arxo-kazakhstan | 2026-10-21T12:39:36.953Z |
+| arxohq/arxo-irc | 2026-10-21T12:39:36.953Z |
+| arxohq/arxo-catala-parity | 2026-10-21T12:39:36.953Z |
 
 | Editor store | Published / updated (UTC) | Last successful observation (UTC) |
 |---|---|---|
-| marketplace: arxo.law | 2026-10-13T10:47:06.143Z | 2026-10-15T23:27:56.695Z |
-| open-vsx: arxo.law | 2026-10-13T10:41:46.338008Z | 2026-10-15T23:27:56.695Z |
+| marketplace: arxo.law | 2026-10-13T10:47:06.143Z | 2026-10-21T12:39:36.953Z |
+| open-vsx: arxo.law | 2026-10-13T10:41:46.338008Z | 2026-10-21T12:39:36.953Z |
 
 Only repositories reported public at the selected address are accepted
 as successful observations. Linked projects retain their own licences and notices.
